@@ -1,11 +1,10 @@
-# Welcome to your Jupyter Book
+# Network Analysis in Python
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+**by [John R. Ladd](https://jrladd.com)**
 
-Check out the content pages bundled with this sample book to see more.
+This short book is intended as a guide to working with networks in Python. It includes tutorials for working with NetworkX, Pandas, Seaborn, and other libraries.
+
+Mainly, these tutorials are meant as a companion to [Advanced Data Analysis: Networks](https://jrladd.com/CIS397-networks/), my course at Washington & Jefferson College. But they're general enough to be useful to anyone curious about how to include networks into a Python data science workflow.
 
 ```{tableofcontents}
 ```
