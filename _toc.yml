@@ -6,8 +6,8 @@ root: intro
 parts:
   - caption: The Basics
     chapters:
-    - file: markdown
+    - file: python
   - caption: Network Attributes
     chapters:
-    - file: notebooks
-    - file: markdown-notebooks
+    - file: networkx
+    - file: homophily
