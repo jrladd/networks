@@ -8,6 +8,7 @@ parts:
     chapters:
     - file: python
     - file: pandas
+    - file: seaborn
   - caption: Network Attributes
     chapters:
     - file: networkx
