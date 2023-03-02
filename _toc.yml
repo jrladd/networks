@@ -9,7 +9,7 @@ parts:
     - file: python
     - file: pandas
     - file: seaborn
-  - caption: Network Attributes
+  - caption: NetworkX
     chapters:
     - file: networkx
     - file: homophily
