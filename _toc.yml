@@ -9,8 +9,10 @@ parts:
     - file: python
     - file: pandas
     - file: seaborn
-  - caption: NetworkX
+    - file: datasets
+  - caption: Networks
     chapters:
+    - file: visualization
     - file: networkx
     - file: metrics
     - file: homophily
