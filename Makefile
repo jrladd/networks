@@ -1,5 +1,5 @@
 book :
-	jupyter-book build .
+	jupyter-book build --all .
 	git add -A
 	git commit -am "rebuilding book"
 	git push
