@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Seaborn &#8212; Network Analysis in Python</title>
+    <title>Directed Networks &#8212; Network Analysis in Python</title>
   
   
   
@@ -58,11 +58,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'seaborn';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'directed';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Where to Find Network Data" href="datasets.html" />
-    <link rel="prev" title="Pandas" href="pandas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -150,8 +148,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="seaborn.html">
                         Seaborn
                       </a>
                     </li>
@@ -290,8 +288,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="seaborn.html">
                         Seaborn
                       </a>
                     </li>
@@ -415,10 +413,10 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Basics</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pandas.html">Pandas</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Seaborn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seaborn.html">Seaborn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Where to Find Network Data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Networks</span></p>
@@ -513,7 +511,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fseaborn.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fdirected.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -538,7 +536,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="_sources/seaborn.ipynb" target="_blank"
+      <li><a href="_sources/directed.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -581,7 +579,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Seaborn</h1>
+    <h1>Directed Networks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -592,28 +590,23 @@ title="Print to PDF"
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#distribution-plots">
-   Distribution Plots
+  <a class="reference internal nav-link" href="#digraph-objects">
+   DiGraph Objects
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-labels">
-   Adding labels
+  <a class="reference internal nav-link" href="#in-degree-and-out-degree">
+   In-Degree and Out-Degree
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#category-plots">
-   Category Plots
+  <a class="reference internal nav-link" href="#strongly-connected-components">
+   Strongly Connected Components
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#relationship-plots">
-   Relationship Plots
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#faceting">
-   Faceting
+  <a class="reference internal nav-link" href="#paths">
+   Paths
   </a>
  </li>
 </ul>
@@ -625,23 +618,70 @@ title="Print to PDF"
 
             <article class="bd-article" role="main">
               
-  <section class="tex2jax_ignore mathjax_ignore" id="seaborn">
-<h1>Seaborn<a class="headerlink" href="#seaborn" title="Permalink to this heading">#</a></h1>
-<p>Seaborn is a library for creating basic data visualization. It provides an easy to understand interface for some of the most common graph types.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>The <a class="reference external" href="https://seaborn.pydata.org/tutorial/introduction.html">Seaborn tutorial</a> has lots of detailed information about all the things you can do with the library.</p>
-</div>
-<p>To begin, you’ll need to import both <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>. For consistency, you can import the same <code class="docutils literal notranslate"><span class="pre">mpg</span></code> dataset that we used in the previous chapter. You’ll also want to use Seaborn’s <code class="docutils literal notranslate"><span class="pre">set_theme()</span></code> function. Even if you don’t specify a theme, the default theme makes things look much nicer.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="directed-networks">
+<h1>Directed Networks<a class="headerlink" href="#directed-networks" title="Permalink to this heading">#</a></h1>
+<p>As we begin to discuss information networks like citations networks, semantic networks, and especially the Web, being able to work with <em>directed</em> graphs becomes an essential skill.</p>
+<section id="digraph-objects">
+<h2>DiGraph Objects<a class="headerlink" href="#digraph-objects" title="Permalink to this heading">#</a></h2>
+<p>Unlike signed networks, which have no special designation in NetworkX, directed networks use a special <code class="docutils literal notranslate"><span class="pre">DiGraph()</span></code> object that retains directed information about the source and target of each edge.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read a DiGraph from a file</span>
+<span class="c1"># This is actually a &quot;MultiDiGraph&quot;, with multiple edges between nodes</span>
+<span class="c1"># This file contains the neural network of C. Elegans</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_gml</span><span class="p">(</span><span class="s2">&quot;data/celegansneural.gml&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiDiGraph with 297 nodes and 2359 edges
+</pre></div>
+</div>
+</div>
+</div>
+<p>Some files (especially <code class="docutils literal notranslate"><span class="pre">.gml</span></code> format) will already indicate that the network is directed. With other files and objects, like edgelists or Pandas DataFrames, you’ll need to read or convert the file using <code class="docutils literal notranslate"><span class="pre">create_using=nx.DiGraph</span></code> to make sure that the DiGraph constructor is used to create the object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import an edgelist of high school student interaction data as a DiGraph</span>
+<span class="n">HS</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_weighted_edgelist</span><span class="p">(</span><span class="s2">&quot;data/contact-high-school-proj-graph.txt&quot;</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">HS</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DiGraph with 327 nodes and 5818 edges
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="in-degree-and-out-degree">
+<h2>In-Degree and Out-Degree<a class="headerlink" href="#in-degree-and-out-degree" title="Permalink to this heading">#</a></h2>
+<p>When you create <code class="docutils literal notranslate"><span class="pre">DiGraph()</span></code> objects, they include methods for in-degree and out-degree as well as standard, undirected degree.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">in_degree</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">in_degree</span><span class="p">()</span> <span class="c1"># Calculate in-degree</span>
+<span class="n">out_degree</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">out_degree</span><span class="p">()</span> <span class="c1"># Calculate out-degree</span>
+<span class="n">degree</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span> <span class="c1"># Calculate degree</span>
 
-<span class="n">mpg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/mpg.csv&quot;</span><span class="p">)</span>
-<span class="n">mpg</span>
+<span class="c1"># Add attributes to Graph</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">in_degree</span><span class="p">),</span> <span class="s2">&quot;in_degree&quot;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">out_degree</span><span class="p">),</span> <span class="s2">&quot;out_degree&quot;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">degree</span><span class="p">),</span> <span class="s2">&quot;degree&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert nodes to a dataframe</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">D</span><span class="o">.</span><span class="n">nodes</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+<span class="n">nodes</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">names</span><span class="o">=</span><span class="s2">&quot;neuron_id&quot;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">nodes</span>
 </pre></div>
 </div>
 </div>
@@ -664,89 +704,47 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>manufacturer</th>
-      <th>model</th>
-      <th>displ</th>
-      <th>year</th>
-      <th>cyl</th>
-      <th>trans</th>
-      <th>drv</th>
-      <th>cty</th>
-      <th>hwy</th>
-      <th>fl</th>
-      <th>class</th>
+      <th>neuron_id</th>
+      <th>in_degree</th>
+      <th>out_degree</th>
+      <th>degree</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>audi</td>
-      <td>a4</td>
-      <td>1.8</td>
-      <td>1999</td>
-      <td>4</td>
-      <td>auto(l5)</td>
-      <td>f</td>
-      <td>18</td>
-      <td>29</td>
-      <td>p</td>
-      <td>compact</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>11</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>audi</td>
-      <td>a4</td>
-      <td>1.8</td>
-      <td>1999</td>
-      <td>4</td>
-      <td>manual(m5)</td>
-      <td>f</td>
-      <td>21</td>
-      <td>29</td>
-      <td>p</td>
-      <td>compact</td>
+      <td>51</td>
+      <td>24</td>
+      <td>10</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>audi</td>
-      <td>a4</td>
-      <td>2.0</td>
-      <td>2008</td>
-      <td>4</td>
-      <td>manual(m6)</td>
-      <td>f</td>
-      <td>20</td>
-      <td>31</td>
-      <td>p</td>
-      <td>compact</td>
+      <td>72</td>
+      <td>41</td>
+      <td>39</td>
+      <td>80</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>audi</td>
-      <td>a4</td>
-      <td>2.0</td>
-      <td>2008</td>
-      <td>4</td>
-      <td>auto(av)</td>
-      <td>f</td>
+      <td>77</td>
+      <td>33</td>
       <td>21</td>
-      <td>30</td>
-      <td>p</td>
-      <td>compact</td>
+      <td>54</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>audi</td>
-      <td>a4</td>
-      <td>2.8</td>
-      <td>1999</td>
-      <td>6</td>
-      <td>auto(l5)</td>
-      <td>f</td>
-      <td>16</td>
-      <td>26</td>
-      <td>p</td>
-      <td>compact</td>
+      <td>78</td>
+      <td>35</td>
+      <td>21</td>
+      <td>56</td>
     </tr>
     <tr>
       <th>...</th>
@@ -754,288 +752,232 @@ title="Print to PDF"
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>229</th>
-      <td>volkswagen</td>
-      <td>passat</td>
-      <td>2.0</td>
-      <td>2008</td>
-      <td>4</td>
-      <td>auto(s6)</td>
-      <td>f</td>
-      <td>19</td>
-      <td>28</td>
-      <td>p</td>
-      <td>midsize</td>
+      <th>292</th>
+      <td>298</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>230</th>
-      <td>volkswagen</td>
-      <td>passat</td>
-      <td>2.0</td>
-      <td>2008</td>
-      <td>4</td>
-      <td>manual(m6)</td>
-      <td>f</td>
-      <td>21</td>
-      <td>29</td>
-      <td>p</td>
-      <td>midsize</td>
+      <th>293</th>
+      <td>299</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>231</th>
-      <td>volkswagen</td>
-      <td>passat</td>
-      <td>2.8</td>
-      <td>1999</td>
-      <td>6</td>
-      <td>auto(l5)</td>
-      <td>f</td>
-      <td>16</td>
-      <td>26</td>
-      <td>p</td>
-      <td>midsize</td>
+      <th>294</th>
+      <td>300</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>232</th>
-      <td>volkswagen</td>
-      <td>passat</td>
-      <td>2.8</td>
-      <td>1999</td>
-      <td>6</td>
-      <td>manual(m5)</td>
-      <td>f</td>
-      <td>18</td>
-      <td>26</td>
-      <td>p</td>
-      <td>midsize</td>
+      <th>295</th>
+      <td>301</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>233</th>
-      <td>volkswagen</td>
-      <td>passat</td>
-      <td>3.6</td>
-      <td>2008</td>
-      <td>6</td>
-      <td>auto(s6)</td>
-      <td>f</td>
-      <td>17</td>
-      <td>26</td>
-      <td>p</td>
-      <td>midsize</td>
+      <th>296</th>
+      <td>302</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>234 rows × 11 columns</p>
+<p>297 rows × 4 columns</p>
 </div></div></div>
 </div>
-<p>Seaborn code follows a relatively simple formula. You choose variable names (surrounded by quotes) to map to the x- and y-axis of your graph, and you can also map variables to things like <code class="docutils literal notranslate"><span class="pre">hue</span></code> (for color) and <code class="docutils literal notranslate"><span class="pre">col</span></code> (for columns). You also set the <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter to refer to the DataFrame you’re working with.</p>
-<p>To get different kinds of visualizations, you choose from several different Seaborn functions, and you also set the <code class="docutils literal notranslate"><span class="pre">kind</span></code> parameter to change the kind of graph within those function groupings. In this tutorial you’ll learn some basic examples.</p>
-<section id="distribution-plots">
-<h2>Distribution Plots<a class="headerlink" href="#distribution-plots" title="Permalink to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">displot()</span></code> function shows distributions. Distribution plots with just one variable are histograms.</p>
+</section>
+<section id="strongly-connected-components">
+<h2>Strongly Connected Components<a class="headerlink" href="#strongly-connected-components" title="Permalink to this heading">#</a></h2>
+<p>You can easily find out if a <code class="docutils literal notranslate"><span class="pre">DiGraph</span></code> is strongly connected.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">is_strongly_connected</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x135bbfe20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
-<img alt="_images/8eaa14d733f99b4f3da7761af00cf2eba48046c81300ff91393937c7d3f6afc2.png" src="_images/8eaa14d733f99b4f3da7761af00cf2eba48046c81300ff91393937c7d3f6afc2.png" />
 </div>
 </div>
-<p>Change the <code class="docutils literal notranslate"><span class="pre">kind</span></code> parameter to make density plots.</p>
+<p>Using the <em>undirected</em> version of this function will return an error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x1035ddeb0&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NetworkXNotImplemented</span><span class="g g-Whitespace">                    </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/networkx/utils/decorators.py:766,</span> in <span class="ni">argmap.__call__.&lt;locals&gt;.func</span><span class="nt">(_argmap__wrapper, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">765</span> <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">__wrapper</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">766</span>     <span class="k">return</span> <span class="n">argmap</span><span class="o">.</span><span class="n">_lazy_compile</span><span class="p">(</span><span class="n">__wrapper</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File &lt;class &#39;networkx.utils.decorators.argmap&#39;&gt; compilation 26:3,</span> in <span class="ni">argmap_is_connected_23</span><span class="nt">(G)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">bz2</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">collections</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">gzip</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">inspect</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">itertools</span>
+
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/networkx/utils/decorators.py:86,</span> in <span class="ni">not_implemented_for.&lt;locals&gt;._not_implemented_for</span><span class="nt">(g)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span> <span class="k">def</span> <span class="nf">_not_implemented_for</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span>     <span class="k">if</span> <span class="p">(</span><span class="n">mval</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">mval</span> <span class="o">==</span> <span class="n">g</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">())</span> <span class="ow">and</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span>         <span class="n">dval</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">dval</span> <span class="o">==</span> <span class="n">g</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span>     <span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">86</span>         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXNotImplemented</span><span class="p">(</span><span class="n">errmsg</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span>     <span class="k">return</span> <span class="n">g</span>
+
+<span class="ne">NetworkXNotImplemented</span>: not implemented for directed type
 </pre></div>
 </div>
-<img alt="_images/79d2a8ec464379b1147a6fe86e6920195ddab479993d4bf8dd089457885c288e.png" src="_images/79d2a8ec464379b1147a6fe86e6920195ddab479993d4bf8dd089457885c288e.png" />
 </div>
 </div>
-<p>Distribution plots with two variables create heatmaps.</p>
+<p>To find out if a directed graph is connected simply by the presence or absence of an edge, use the “weakly connected” functions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;displ&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">is_weakly_connected</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x135e9ef10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
-<img alt="_images/c04f0580e50f6964081ef4c025ddda3c64ad4131bb727e84daa4a613f0f34681.png" src="_images/c04f0580e50f6964081ef4c025ddda3c64ad4131bb727e84daa4a613f0f34681.png" />
+</div>
+</div>
+<p>There are similar functions to get strongly connected components.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">strong_comp</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">strongly_connected_components</span><span class="p">(</span><span class="n">D</span><span class="p">))</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;displ&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count the number of strongly connected components</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">strong_comp</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x135f234f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>57
 </pre></div>
 </div>
-<img alt="_images/69e92909b2d625b2c4c92320c158c6681b1ee150d5f3020cf16559e688eaec76.png" src="_images/69e92909b2d625b2c4c92320c158c6681b1ee150d5f3020cf16559e688eaec76.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the largest strongly connected component</span>
+<span class="n">largest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">strong_comp</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="c1"># How many nodes are there in this component</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">largest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>239
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compare to the number of nodes in </span>
+<span class="c1"># the largest weekly connected component</span>
+
+<span class="n">weak_comp</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">weakly_connected_components</span><span class="p">(</span><span class="n">D</span><span class="p">))</span>
+<span class="nb">len</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">weak_comp</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>297
+</pre></div>
+</div>
 </div>
 </div>
 </section>
-<section id="adding-labels">
-<h2>Adding labels<a class="headerlink" href="#adding-labels" title="Permalink to this heading">#</a></h2>
-<p>Before learning about other visualization types, it’s important to know how to change axis labels and add a graph title. You can do this easily using the <code class="docutils literal notranslate"><span class="pre">.set()</span></code> method.</p>
+<section id="paths">
+<h2>Paths<a class="headerlink" href="#paths" title="Permalink to this heading">#</a></h2>
+<p>Many of the path functions work the same for directed graphs, but using the directed definition of a path rather than the undirected definition.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;displ&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
- <span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Comparing Distributions of Engine Displacement to Fuel Efficiency&quot;</span><span class="p">,</span> 
-      <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Engine Displacement (in liters)&quot;</span><span class="p">,</span>
-      <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;City Fuel Efficiency (in miles per gallon)&quot;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">shortest_path</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x135ff2d30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1&#39;, &#39;90&#39;, &#39;4&#39;, &#39;10&#39;]
 </pre></div>
 </div>
-<img alt="_images/a84ff830ef56eceaac52f8e82f95819b49ce5840ad6b7e1b03bc85484c19f3cc.png" src="_images/a84ff830ef56eceaac52f8e82f95819b49ce5840ad6b7e1b03bc85484c19f3cc.png" />
 </div>
 </div>
-</section>
-<section id="category-plots">
-<h2>Category Plots<a class="headerlink" href="#category-plots" title="Permalink to this heading">#</a></h2>
-<p>Categorical plots let you compare groups according to categorical variables. A standard category plot is the bar plot, which automatically compares means in Seaborn.</p>
+<p>But certain concepts, like average shortest path length, don’t make sense unless your graph is strongly connected. The following will throw an error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;drv&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;hwy&quot;</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mean Fuel Efficiency of Different Drive Trains&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x136148df0&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NetworkXError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">39</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/networkx/algorithms/shortest_paths/generic.py:409,</span> in <span class="ni">average_shortest_path_length</span><span class="nt">(G, weight, method)</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span> <span class="c1"># Shortest path length is undefined if the graph is not strongly connected.</span>
+<span class="g g-Whitespace">    </span><span class="mi">408</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_strongly_connected</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">409</span>     <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Graph is not strongly connected.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">410</span> <span class="c1"># Shortest path length is undefined if the graph is not connected.</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+
+<span class="ne">NetworkXError</span>: Graph is not strongly connected.
 </pre></div>
 </div>
-<img alt="_images/7bea8f9c69762deaafd52fc786ee85cfb553e7e5af59a7def4faa9dfcbc847b3.png" src="_images/7bea8f9c69762deaafd52fc786ee85cfb553e7e5af59a7def4faa9dfcbc847b3.png" />
 </div>
 </div>
-<p>You can similarly create a box plot to compare medians and distributions among groups instead.</p>
+<p>You can approximate average shortest path length with a subgraph of the largest strongly connect component.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;drv&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;hwy&quot;</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribution of Fuel Efficiency among Different Drive Trains&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">D</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">largest</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x1361af220&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.9943215780035866
 </pre></div>
 </div>
-<img alt="_images/8277e143704e23a42f59250a3d5fed5ffdc149ec40a65e83e418889992626491.png" src="_images/8277e143704e23a42f59250a3d5fed5ffdc149ec40a65e83e418889992626491.png" />
 </div>
 </div>
-</section>
-<section id="relationship-plots">
-<h2>Relationship Plots<a class="headerlink" href="#relationship-plots" title="Permalink to this heading">#</a></h2>
-<p>To show a correlation or regression between two variables, Seaborn uses <code class="docutils literal notranslate"><span class="pre">relplot()</span></code>. The default is a simple scatterplot.</p>
+<p>Or you could convert the directed network to undirected and then calculate average shortest path length (if this results in a connected graph). But keep in mind that this produces a completely different kind of measure that doesn’t directly apply to your original directed graph!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;displ&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x136382910&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.455318955318955
 </pre></div>
 </div>
-<img alt="_images/1908f28ec4d5b8cac7f4d94d63950bee8ce9dfcb0adba641883b9a1f2fcde867.png" src="_images/1908f28ec4d5b8cac7f4d94d63950bee8ce9dfcb0adba641883b9a1f2fcde867.png" />
-</div>
-</div>
-<p>You can separate this by color with <code class="docutils literal notranslate"><span class="pre">hue</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;displ&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s2">&quot;drv&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x13642ab20&gt;
-</pre></div>
-</div>
-<img alt="_images/3c6222a471f64e7a48369d70b9a9b64873d0719b240f6a4ef87370d8663e800e.png" src="_images/3c6222a471f64e7a48369d70b9a9b64873d0719b240f6a4ef87370d8663e800e.png" />
-</div>
-</div>
-<p>Line plots are also a kind of relationship plot. The function will automatically average values for you.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x1364cdb50&gt;
-</pre></div>
-</div>
-<img alt="_images/cf50926734523fe01739f27caf5a0499b13f2098dfd6e3ce69b78bcd65e5da58.png" src="_images/cf50926734523fe01739f27caf5a0499b13f2098dfd6e3ce69b78bcd65e5da58.png" />
-</div>
-</div>
-<p>You can add a regression line to a scatter plot with the <code class="docutils literal notranslate"><span class="pre">lmplot()</span></code> function (which stands for “linear model”).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;displ&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x1363536a0&gt;
-</pre></div>
-</div>
-<img alt="_images/1badfe0f592c2dc8298a244164bfff5ea8a8c573b53ee53890f5d993c334879e.png" src="_images/1badfe0f592c2dc8298a244164bfff5ea8a8c573b53ee53890f5d993c334879e.png" />
-</div>
-</div>
-<p>And you can add distributions to the above regression plot with <code class="docutils literal notranslate"><span class="pre">jointplot()</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;displ&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x1365c9b80&gt;
-</pre></div>
-</div>
-<img alt="_images/8a22c55447100da0c8ca324d677279ab482c4067c67b694d7e86c18470e9eccb.png" src="_images/8a22c55447100da0c8ca324d677279ab482c4067c67b694d7e86c18470e9eccb.png" />
-</div>
-</div>
-</section>
-<section id="faceting">
-<h2>Faceting<a class="headerlink" href="#faceting" title="Permalink to this heading">#</a></h2>
-<p>It sometimes makes sense to split data into separate graphs by category. The easiest way to do this is with the <code class="docutils literal notranslate"><span class="pre">col</span></code> parameter.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Distribution of fuel efficency by drive train</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;cty&quot;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;drv&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x135f02f40&gt;
-</pre></div>
-</div>
-<img alt="_images/cf71461abba45ddb2b9b175ebbe8cf581076ee1dd934778c3b31ffe51540439b.png" src="_images/cf71461abba45ddb2b9b175ebbe8cf581076ee1dd934778c3b31ffe51540439b.png" />
 </div>
 </div>
 </section>
@@ -1069,20 +1011,6 @@ title="Print to PDF"
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="pandas.html" title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Pandas</p>
-      </div>
-  </a>
-  <a class='right-next' id="next-link" href="datasets.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Where to Find Network Data</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
-  </a>
 </div>
             </footer>
             
@@ -1100,28 +1028,23 @@ title="Print to PDF"
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#distribution-plots">
-   Distribution Plots
+  <a class="reference internal nav-link" href="#digraph-objects">
+   DiGraph Objects
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-labels">
-   Adding labels
+  <a class="reference internal nav-link" href="#in-degree-and-out-degree">
+   In-Degree and Out-Degree
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#category-plots">
-   Category Plots
+  <a class="reference internal nav-link" href="#strongly-connected-components">
+   Strongly Connected Components
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#relationship-plots">
-   Relationship Plots
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#faceting">
-   Faceting
+  <a class="reference internal nav-link" href="#paths">
+   Paths
   </a>
  </li>
 </ul>
