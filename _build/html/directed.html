@@ -954,7 +954,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NetworkXError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">39</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
 
 <span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/networkx/algorithms/shortest_paths/generic.py:409,</span> in <span class="ni">average_shortest_path_length</span><span class="nt">(G, weight, method)</span>
@@ -996,6 +996,35 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>You can also check to see the paths that exist between two strongly connected components. This is known as an edge boundary, or a cut set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the edge boundary between the two largest components in the graph</span>
+
+<span class="c1"># First get the second largest component</span>
+<span class="n">second_largest</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">strong_comp</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Then get the edge boundary</span>
+<span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">edge_boundary</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">largest</span><span class="p">,</span> <span class="n">second_largest</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;148&#39;, &#39;275&#39;)
+(&#39;250&#39;, &#39;275&#39;)
+(&#39;187&#39;, &#39;275&#39;)
+(&#39;189&#39;, &#39;275&#39;)
+(&#39;186&#39;, &#39;275&#39;)
+(&#39;147&#39;, &#39;275&#39;)
+(&#39;239&#39;, &#39;275&#39;)
+(&#39;244&#39;, &#39;275&#39;)
+(&#39;188&#39;, &#39;275&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code above shows you all of the edges going <em>from</em> the largest component <em>to</em> the second largest component.</p>
 </section>
 </section>
 
