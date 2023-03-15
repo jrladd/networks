@@ -17,3 +17,4 @@ parts:
     - file: metrics
     - file: homophily
     - file: community
+    - file: directed
