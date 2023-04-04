@@ -18,3 +18,4 @@ parts:
     - file: homophily
     - file: community
     - file: directed
+    - file: bipartite
