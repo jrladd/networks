@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Homophily &#8212; Network Analysis in Python</title>
+    <title>Bipartite Networks &#8212; Network Analysis in Python</title>
   
   
   
@@ -58,11 +58,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'homophily';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'bipartite';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Community Detection" href="community.html" />
-    <link rel="prev" title="Metrics" href="metrics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -190,8 +188,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="homophily.html">
                         Homophily
                       </a>
                     </li>
@@ -255,6 +253,10 @@ const thebe_selector_output = ".output, .cell_output"
     </div>
   
 
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
   
 
 </div>
@@ -333,8 +335,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="homophily.html">
                         Homophily
                       </a>
                     </li>
@@ -432,11 +434,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Where to Find Network Data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Networks</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="visualization.html">Network Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="networkx.html">Working with Graph Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metrics.html">Metrics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homophily</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homophily.html">Homophily</a></li>
 <li class="toctree-l1"><a class="reference internal" href="community.html">Community Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="directed.html">Directed Networks</a></li>
 </ul>
@@ -524,7 +526,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fhomophily.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fbipartite.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -549,7 +551,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="_sources/homophily.ipynb" target="_blank"
+      <li><a href="_sources/bipartite.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -582,7 +584,9 @@ title="Print to PDF"
       
   </ul>
 </div>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
     </div>
 </div>
             </div>
@@ -590,440 +594,158 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Homophily</h1>
+    <h1>Bipartite Networks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-bipartite-graphs">
+   Importing Bipartite Graphs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#degree-and-betweenness">
+   Degree and Betweenness
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#drawing">
+   Drawing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#projection">
+   Projection
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
 
             <article class="bd-article" role="main">
               
-  <section class="tex2jax_ignore mathjax_ignore" id="homophily">
-<h1>Homophily<a class="headerlink" href="#homophily" title="Permalink to this heading">#</a></h1>
-<p>[More explanations coming soon!]</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="bipartite-networks">
+<h1>Bipartite Networks<a class="headerlink" href="#bipartite-networks" title="Permalink to this heading">#</a></h1>
+<p>Bipartite networks, or affiliation networks, have two separate sets of nodes and are typically used to describe group affiliations. You’ll find the complete documentation on the <a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/bipartite.html">NetworkX website</a>.</p>
+<section id="importing-bipartite-graphs">
+<h2>Importing Bipartite Graphs<a class="headerlink" href="#importing-bipartite-graphs" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import NetworkX and key data science libraries</span>
-<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+<span class="c1"># Note you will need a separate set of algorithms</span>
+<span class="kn">from</span> <span class="nn">networkx.algorithms</span> <span class="kn">import</span> <span class="n">bipartite</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edges</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/quaker-edges.csv&quot;</span><span class="p">)</span>
-<span class="n">edges</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in an edgelist</span>
+<span class="c1"># Data from: http://konect.cc/networks/brunson_club-membership/</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">bipartite</span><span class="o">.</span><span class="n">read_edgelist</span><span class="p">(</span><span class="s2">&quot;data/brunson_club-membership/out.brunson_club-membership_club-membership&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Source</th>
-      <th>Target</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>George Keith</td>
-      <td>William Bradford</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>George Keith</td>
-      <td>George Whitehead</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>George Keith</td>
-      <td>George Fox</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>George Keith</td>
-      <td>William Penn</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>George Keith</td>
-      <td>Franciscus Mercurius van Helmont</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>157</th>
-      <td>Joseph Besse</td>
-      <td>Samuel Bownas</td>
-    </tr>
-    <tr>
-      <th>158</th>
-      <td>Joseph Besse</td>
-      <td>Richard Claridge</td>
-    </tr>
-    <tr>
-      <th>159</th>
-      <td>Silvanus Bevan</td>
-      <td>Daniel Quare</td>
-    </tr>
-    <tr>
-      <th>160</th>
-      <td>John Penington</td>
-      <td>Mary Penington</td>
-    </tr>
-    <tr>
-      <th>161</th>
-      <td>Lewis Morris</td>
-      <td>Sir Charles Wager</td>
-    </tr>
-  </tbody>
-</table>
-<p>162 rows × 2 columns</p>
-</div></div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 40 nodes and 95 edges
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/quaker-nodes.csv&quot;</span><span class="p">)</span>
-<span class="n">nodes</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Id</th>
-      <th>Label</th>
-      <th>historical significance</th>
-      <th>gender</th>
-      <th>birthdate</th>
-      <th>deathdate</th>
-      <th>other_id</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>George Keith</td>
-      <td>George Keith</td>
-      <td>Quaker schismatic and Church of England clergyman</td>
-      <td>male</td>
-      <td>1638</td>
-      <td>1716</td>
-      <td>10006784</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Robert Barclay</td>
-      <td>Robert Barclay</td>
-      <td>religious writer and colonial governor</td>
-      <td>male</td>
-      <td>1648</td>
-      <td>1690</td>
-      <td>10054848</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Benjamin Furly</td>
-      <td>Benjamin Furly</td>
-      <td>merchant and religious writer</td>
-      <td>male</td>
-      <td>1636</td>
-      <td>1714</td>
-      <td>10004625</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Anne Conway Viscountess Conway and Killultagh</td>
-      <td>Anne Conway Viscountess Conway and Killultagh</td>
-      <td>philosopher</td>
-      <td>female</td>
-      <td>1631</td>
-      <td>1679</td>
-      <td>10002755</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Franciscus Mercurius van Helmont</td>
-      <td>Franciscus Mercurius van Helmont</td>
-      <td>physician and cabbalist</td>
-      <td>male</td>
-      <td>1614</td>
-      <td>1698</td>
-      <td>10005781</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>91</th>
-      <td>Elizabeth Leavens</td>
-      <td>Elizabeth Leavens</td>
-      <td>Quaker missionary</td>
-      <td>female</td>
-      <td>1555</td>
-      <td>1665</td>
-      <td>10007246</td>
-    </tr>
-    <tr>
-      <th>92</th>
-      <td>Lewis Morris</td>
-      <td>Lewis Morris</td>
-      <td>politician in America</td>
-      <td>male</td>
-      <td>1671</td>
-      <td>1746</td>
-      <td>10008534</td>
-    </tr>
-    <tr>
-      <th>93</th>
-      <td>Sir Charles Wager</td>
-      <td>Sir Charles Wager</td>
-      <td>naval officer and politician</td>
-      <td>male</td>
-      <td>1666</td>
-      <td>1743</td>
-      <td>10012403</td>
-    </tr>
-    <tr>
-      <th>94</th>
-      <td>William Simpson</td>
-      <td>William Simpson</td>
-      <td>Quaker preacher</td>
-      <td>male</td>
-      <td>1627</td>
-      <td>1671</td>
-      <td>10011114</td>
-    </tr>
-    <tr>
-      <th>95</th>
-      <td>Thomas Aldam</td>
-      <td>Thomas Aldam</td>
-      <td>Quaker preacher and writer</td>
-      <td>male</td>
-      <td>1616</td>
-      <td>1660</td>
-      <td>10000099</td>
-    </tr>
-  </tbody>
-</table>
-<p>96 rows × 7 columns</p>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NodeDataView({&#39;person_1&#39;: {&#39;bipartite&#39;: 0}, &#39;1&#39;: {&#39;bipartite&#39;: 1}, &#39;2&#39;: {&#39;bipartite&#39;: 1}, &#39;3&#39;: {&#39;bipartite&#39;: 1}, &#39;person_2&#39;: {&#39;bipartite&#39;: 0}, &#39;4&#39;: {&#39;bipartite&#39;: 1}, &#39;person_3&#39;: {&#39;bipartite&#39;: 0}, &#39;5&#39;: {&#39;bipartite&#39;: 1}, &#39;6&#39;: {&#39;bipartite&#39;: 1}, &#39;person_4&#39;: {&#39;bipartite&#39;: 0}, &#39;7&#39;: {&#39;bipartite&#39;: 1}, &#39;8&#39;: {&#39;bipartite&#39;: 1}, &#39;person_5&#39;: {&#39;bipartite&#39;: 0}, &#39;person_6&#39;: {&#39;bipartite&#39;: 0}, &#39;9&#39;: {&#39;bipartite&#39;: 1}, &#39;10&#39;: {&#39;bipartite&#39;: 1}, &#39;11&#39;: {&#39;bipartite&#39;: 1}, &#39;person_7&#39;: {&#39;bipartite&#39;: 0}, &#39;person_8&#39;: {&#39;bipartite&#39;: 0}, &#39;12&#39;: {&#39;bipartite&#39;: 1}, &#39;13&#39;: {&#39;bipartite&#39;: 1}, &#39;person_9&#39;: {&#39;bipartite&#39;: 0}, &#39;14&#39;: {&#39;bipartite&#39;: 1}, &#39;person_10&#39;: {&#39;bipartite&#39;: 0}, &#39;person_11&#39;: {&#39;bipartite&#39;: 0}, &#39;person_12&#39;: {&#39;bipartite&#39;: 0}, &#39;person_13&#39;: {&#39;bipartite&#39;: 0}, &#39;person_14&#39;: {&#39;bipartite&#39;: 0}, &#39;15&#39;: {&#39;bipartite&#39;: 1}, &#39;person_15&#39;: {&#39;bipartite&#39;: 0}, &#39;person_16&#39;: {&#39;bipartite&#39;: 0}, &#39;person_17&#39;: {&#39;bipartite&#39;: 0}, &#39;person_18&#39;: {&#39;bipartite&#39;: 0}, &#39;person_19&#39;: {&#39;bipartite&#39;: 0}, &#39;person_20&#39;: {&#39;bipartite&#39;: 0}, &#39;person_21&#39;: {&#39;bipartite&#39;: 0}, &#39;person_22&#39;: {&#39;bipartite&#39;: 0}, &#39;person_23&#39;: {&#39;bipartite&#39;: 0}, &#39;person_24&#39;: {&#39;bipartite&#39;: 0}, &#39;person_25&#39;: {&#39;bipartite&#39;: 0}})
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quakers</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;Source&quot;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;Target&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">quakers</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get node sets for later:</span>
+<span class="n">bottom_nodes</span><span class="p">,</span> <span class="n">top_nodes</span> <span class="o">=</span> <span class="n">bipartite</span><span class="o">.</span><span class="n">sets</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bottom_nodes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 96 nodes and 162 edges
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;person_6&#39;, &#39;person_23&#39;, &#39;person_10&#39;, &#39;person_14&#39;, &#39;person_2&#39;, &#39;person_21&#39;, &#39;person_20&#39;, &#39;person_24&#39;, &#39;person_1&#39;, &#39;person_5&#39;, &#39;person_8&#39;, &#39;person_7&#39;, &#39;person_12&#39;, &#39;person_17&#39;, &#39;person_19&#39;, &#39;person_18&#39;, &#39;person_16&#39;, &#39;person_22&#39;, &#39;person_15&#39;, &#39;person_4&#39;, &#39;person_13&#39;, &#39;person_25&#39;, &#39;person_9&#39;, &#39;person_11&#39;, &#39;person_3&#39;}
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="degree-and-betweenness">
+<h2>Degree and Betweenness<a class="headerlink" href="#degree-and-betweenness" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;gender&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">Id</span><span class="p">[</span><span class="s2">&quot;male&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">nodes</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">Id</span>
-<span class="n">p</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">degree</span> <span class="o">=</span> <span class="n">bipartite</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">top_nodes</span><span class="p">)</span>
+<span class="n">betweenness</span> <span class="o">=</span> <span class="n">bipartite</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">top_nodes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.84375
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;4&#39;: 0.2, &#39;7&#39;: 0.2, &#39;9&#39;: 0.44, &#39;2&#39;: 0.12, &#39;10&#39;: 0.12, &#39;1&#39;: 0.84, &#39;6&#39;: 0.36, &#39;14&#39;: 0.2, &#39;5&#39;: 0.44, &#39;12&#39;: 0.12, &#39;13&#39;: 0.16, &#39;11&#39;: 0.16, &#39;15&#39;: 0.16, &#39;3&#39;: 0.16, &#39;8&#39;: 0.12, &#39;person_6&#39;: 0.26666666666666666, &#39;person_23&#39;: 0.3333333333333333, &#39;person_10&#39;: 0.2, &#39;person_14&#39;: 0.3333333333333333, &#39;person_2&#39;: 0.13333333333333333, &#39;person_21&#39;: 0.2, &#39;person_20&#39;: 0.2, &#39;person_24&#39;: 0.2, &#39;person_1&#39;: 0.2, &#39;person_5&#39;: 0.2, &#39;person_8&#39;: 0.26666666666666666, &#39;person_7&#39;: 0.2, &#39;person_12&#39;: 0.26666666666666666, &#39;person_17&#39;: 0.3333333333333333, &#39;person_19&#39;: 0.3333333333333333, &#39;person_16&#39;: 0.4, &#39;person_18&#39;: 0.3333333333333333, &#39;person_22&#39;: 0.26666666666666666, &#39;person_15&#39;: 0.3333333333333333, &#39;person_4&#39;: 0.2, &#39;person_13&#39;: 0.4666666666666667, &#39;person_25&#39;: 0.2, &#39;person_9&#39;: 0.13333333333333333, &#39;person_11&#39;: 0.13333333333333333, &#39;person_3&#39;: 0.2}
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="drawing">
+<h2>Drawing<a class="headerlink" href="#drawing" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;gender&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">Id</span><span class="p">[</span><span class="s2">&quot;female&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">nodes</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">Id</span>
-<span class="n">q</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">bipartite_layout</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">top_nodes</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.15625
-</pre></div>
+<img alt="_images/159179c776b1919810d3d8c0e29be93f6a4def673d67d3b8d579f97580c06a25.png" src="_images/159179c776b1919810d3d8c0e29be93f6a4def673d67d3b8d579f97580c06a25.png" />
 </div>
 </div>
-</div>
+</section>
+<section id="projection">
+<h2>Projection<a class="headerlink" href="#projection" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="o">*</span><span class="n">q</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">people_projection</span> <span class="o">=</span> <span class="n">bipartite</span><span class="o">.</span><span class="n">weighted_projected_graph</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">bottom_nodes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">people_projection</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.263671875
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 25 nodes and 259 edges
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">quakers</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">nodes</span><span class="o">.</span><span class="n">Id</span><span class="p">,</span> <span class="n">nodes</span><span class="o">.</span><span class="n">gender</span><span class="p">)),</span> <span class="s1">&#39;gender&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_edges</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([(</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="n">quakers</span><span class="o">.</span><span class="n">edges</span> <span class="k">if</span> <span class="n">quakers</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">quakers</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="s1">&#39;gender&#39;</span><span class="p">]])</span>
-<span class="n">mixed_edges</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">people_projection</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32
-</pre></div>
+<img alt="_images/462d3d172e9576d548cc367c1b4b31bf9b213d362e01e20d7eea094cc2bb7b30.png" src="_images/462d3d172e9576d548cc367c1b4b31bf9b213d362e01e20d7eea094cc2bb7b30.png" />
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_edges</span><span class="o">/</span><span class="n">quakers</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.19753086419753085
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">homophily</span><span class="p">(</span><span class="n">mixed_edges</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="o">*</span><span class="n">q</span> <span class="o">-</span> <span class="n">mixed_edges</span><span class="o">/</span><span class="n">quakers</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obs_homophily</span> <span class="o">=</span> <span class="n">homophily</span><span class="p">(</span><span class="n">mixed_edges</span><span class="p">)</span>
-<span class="n">obs_homophily</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.06614101080246915
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_mixed_edges</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">id_attr</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
-    <span class="n">attr_column</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">attribute</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Reshuffle column</span>
-    <span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">id_attr</span><span class="p">],</span> <span class="n">attr_column</span><span class="p">)),</span> <span class="n">attribute</span><span class="p">)</span> <span class="c1"># Set node attribute</span>
-    <span class="n">mixed_edges</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([(</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span> <span class="k">if</span> <span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">attribute</span><span class="p">]</span> <span class="o">!=</span> <span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="n">attribute</span><span class="p">]])</span> <span class="c1"># Get number of mixed edges</span>
-    <span class="k">return</span> <span class="n">mixed_edges</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim_homophily</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">homophily</span><span class="p">(</span><span class="n">simulate_mixed_edges</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">quakers</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">)])</span>
-<span class="n">sim_homophily</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       0.041450
-1       0.047622
-2      -0.001760
-3      -0.100526
-4       0.047622
-          ...   
-4995    0.097005
-4996    0.016758
-4997   -0.007933
-4998    0.103178
-4999    0.004413
-Length: 5000, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sim_homophily</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">obs_homophily</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x12837fe80&gt;
-</pre></div>
-</div>
-<img alt="_images/3a58eec6f634807767d0b4a8594bff817c31392a85fa7c6c2d885f65a646bf5f.png" src="_images/3a58eec6f634807767d0b4a8594bff817c31392a85fa7c6c2d885f65a646bf5f.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sim_homophily</span> <span class="o">&gt;</span> <span class="n">obs_homophily</span><span class="p">)</span>
-<span class="n">p_value</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.11
-</pre></div>
-</div>
-</div>
-</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1054,26 +776,48 @@ Length: 5000, dtype: float64
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="metrics.html" title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Metrics</p>
-      </div>
-  </a>
-  <a class='right-next' id="next-link" href="community.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Community Detection</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
-  </a>
 </div>
             </footer>
             
           </div>
           
           
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-bipartite-graphs">
+   Importing Bipartite Graphs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#degree-and-betweenness">
+   Degree and Betweenness
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#drawing">
+   Drawing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#projection">
+   Projection
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
           
           
         </div>
