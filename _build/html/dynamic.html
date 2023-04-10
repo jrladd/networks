@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Where to Find Network Data &#8212; Network Analysis in Python</title>
+    <title>Dynamic Networks &#8212; Network Analysis in Python</title>
   
   
   
@@ -58,11 +58,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'datasets';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dynamic';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Network Visualization" href="visualization.html" />
-    <link rel="prev" title="Seaborn" href="seaborn.html" />
+    <link rel="prev" title="Bipartite Networks" href="bipartite.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -157,8 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="datasets.html">
                         Where to Find Network Data
                       </a>
                     </li>
@@ -218,8 +217,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="dynamic.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Dynamic Networks
                       </a>
                     </li>
@@ -270,6 +269,10 @@ const thebe_selector_output = ".output, .cell_output"
   
 
   
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
 
 </div>
   </nav>
@@ -314,8 +317,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="datasets.html">
                         Where to Find Network Data
                       </a>
                     </li>
@@ -375,8 +378,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="dynamic.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Dynamic Networks
                       </a>
                     </li>
@@ -453,14 +456,14 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Basics</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pandas.html">Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="seaborn.html">Seaborn</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Where to Find Network Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Where to Find Network Data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Networks</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="visualization.html">Network Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="networkx.html">Working with Graph Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metrics.html">Metrics</a></li>
@@ -468,7 +471,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="community.html">Community Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="directed.html">Directed Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bipartite.html">Bipartite Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dynamic.html">Dynamic Networks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dynamic Networks</a></li>
 </ul>
 
     </div>
@@ -508,6 +511,16 @@ const thebe_selector_output = ".output, .cell_output"
         </label>
     </div>
     <div class="header-article__right">
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+  </ul>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="btn btn-sm"
   data-toggle="tooltip"
@@ -544,7 +557,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fdatasets.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fdynamic.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -569,7 +582,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="_sources/datasets.md" target="_blank"
+      <li><a href="_sources/dynamic.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -580,7 +593,7 @@ title="Download source file"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </a>
       
@@ -602,7 +615,9 @@ title="Print to PDF"
       
   </ul>
 </div>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
     </div>
 </div>
             </div>
@@ -610,35 +625,323 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Where to Find Network Data</h1>
+    <h1>Dynamic Networks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-temporalnetwork-objects">
+   Creating TemporalNetwork Objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-temporal-network-measures">
+   Calculating Temporal Network Measures
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
 
             <article class="bd-article" role="main">
               
-  <section class="tex2jax_ignore mathjax_ignore" id="where-to-find-network-data">
-<h1>Where to Find Network Data<a class="headerlink" href="#where-to-find-network-data" title="Permalink to this heading">#</a></h1>
-<p>As we discussed in class, network data is all around us, any time there are links between entities to explore. That’s all well and good, but where do you actually find network data when you need it?</p>
-<p>This page includes a list of great resources for network data. Much of this data comes straight from real network researchers. You can use this page to find data for your projects, and much of the data for our in-class assignments comes from these same resources.</p>
-<p>No matter where your data came from, <strong>remember to always appropriately cite your sources</strong>. Many of these datasets took a lot of work to compile and process!</p>
-<ul class="simple">
-<li><p>Mark Newman’s <a class="reference external" href="http://www-personal.umich.edu/~mejn/netdata/">Network data page</a></p></li>
-<li><p>Melanie Walsh’s <a class="reference external" href="https://github.com/melaniewalsh/sample-social-network-datasets">Sample social network datasets repository</a></p></li>
-<li><p>The Stanford <a class="reference external" href="https://snap.stanford.edu/data/">Large Network Dataset Collection</a></p></li>
-<li><p>Gephi’s <a class="reference external" href="https://github.com/gephi/gephi/wiki/Datasets">Datasets wiki page</a></p></li>
-<li><p><a class="reference external" href="https://networkrepository.com/index.php">Network Repository</a> <em>Be careful with this one: it contains lots of datasets, but not all of them are cited or well-documented!</em></p></li>
-<li><p>Alex Arenas’s <a class="reference external" href="https://deim.urv.cat/~alexandre.arenas/data/welcome.htm">Datasets page</a></p></li>
-<li><p>CASOS <a class="reference external" href="http://www.casos.cs.cmu.edu/tools/data2.php">Network Science Data</a></p></li>
-<li><p>The UC Irvine <a class="reference external" href="http://networkdata.ics.uci.edu/index.html">Network Data Repository</a></p></li>
-<li><p><a class="reference download internal" download="" href="_downloads/ea3eee2e0c523f5e8af12d0d7c954992/Cow_edit.net"><span class="xref download myst">CoW Dataset</span></a> (This dataset of international relations is derived from the <a class="reference external" href="https://correlatesofwar.org/">Correlates of War Project</a>.)</p></li>
-<li><p><a class="reference external" href="http://konect.cc/networks/">KONECT datasets</a>: The Koblenz Network Collection</p></li>
-<li><p>The temporal Quaker network data: <a class="reference download internal" download="" href="_downloads/29f9f25da4824436d103e19bd40faf66/quaker_edgelist.csv"><span class="xref download myst">Edgelist</span></a>, <a class="reference download internal" download="" href="_downloads/c0119c53fc845da9146dac02e6cf5956/quaker_nodelist.csv"><span class="xref download myst">Nodelist</span></a></p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="dynamic-networks">
+<h1>Dynamic Networks<a class="headerlink" href="#dynamic-networks" title="Permalink to this heading">#</a></h1>
+<p>Dynamic, or temporal, networks are a special subset of multilayer networks that allow you to examine changes in a network over time. NetworkX currently has no functionality for dynamic networks, so you’ll use the Python library <a class="reference external" href="https://teneto.readthedocs.io/en/latest/">Teneto</a>.</p>
+<section id="creating-temporalnetwork-objects">
+<h2>Creating TemporalNetwork Objects<a class="headerlink" href="#creating-temporalnetwork-objects" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Import the main Teneto object:</span>
+<span class="kn">from</span> <span class="nn">teneto</span> <span class="kn">import</span> <span class="n">TemporalNetwork</span>
+<span class="c1"># Import the network measures you&#39;ll need:</span>
+<span class="kn">from</span> <span class="nn">teneto.networkmeasures</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jrladd/Library/Python/3.9/lib/python/site-packages/nilearn/input_data/__init__.py:23: FutureWarning: The import path &#39;nilearn.input_data&#39; is deprecated in version 0.9. Importing from &#39;nilearn.input_data&#39; will be possible at least until release 0.13.0. Please import from &#39;nilearn.maskers&#39; instead.
+  warnings.warn(message, FutureWarning)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Teneto’s <code class="docutils literal notranslate"><span class="pre">TemporalNetwork</span></code> objects are different from NetworkX’s <code class="docutils literal notranslate"><span class="pre">Graph</span></code> objects. You need to have a third column in your edge table that indicates the timespan in which that edge exists. This isn’t a date or a pair of dates/times but rather a sequential number that indicates what “slice” that edge is in. Many edges will wind up being in more than one “time slice”.</p>
+<p>This time column is typicall expressed as <code class="docutils literal notranslate"><span class="pre">t</span></code> in your graph. If you have an edgelist that includes start and stop dates, you’ll need to convert these into sequential groups. Below is an example of how to do that using the <em>Six Degrees of Francis Bacon</em> Quakers network. But keep in mind that this is an idiosyncratic example and your original data may format time in a different way.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import edges</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/quaker_edgelist.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Import nodes</span>
+<span class="c1"># Normally you wouldn&#39;t need to do that</span>
+<span class="c1"># But here we need to create IDs from the name indices</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/quaker_nodelist.csv&quot;</span><span class="p">)</span>
+<span class="n">all_nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+
+<span class="c1"># Set time intervals, here I&#39;ve chosen 20 years</span>
+<span class="n">intervals</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">edges</span><span class="p">[</span><span class="s2">&quot;Start Year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">edges</span><span class="p">[</span><span class="s2">&quot;End Year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">new_edges</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Iterate through each edge</span>
+<span class="k">for</span> <span class="n">n</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="n">edges</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="c1"># Look in every time interval</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">intervals</span><span class="p">):</span>
+        <span class="c1"># See if the start and end year of the edge contain that time interval</span>
+        <span class="c1"># If so, add them to an edge list with the correct sequential number</span>
+        <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Start Year&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;End Year&quot;</span><span class="p">]:</span>
+            <span class="n">new_edges</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="n">all_nodes</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Source&#39;</span><span class="p">]),</span> <span class="s1">&#39;j&#39;</span><span class="p">:</span> <span class="n">all_nodes</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Target&#39;</span><span class="p">]),</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">})</span>
+
+<span class="c1"># Put those edges into a new dataframe</span>
+<span class="n">new_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">new_edges</span><span class="p">)</span>
+<span class="n">new_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>i</th>
+      <th>j</th>
+      <th>t</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>122</td>
+      <td>28</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>122</td>
+      <td>28</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>122</td>
+      <td>167</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>122</td>
+      <td>167</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>122</td>
+      <td>127</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>939</th>
+      <td>163</td>
+      <td>74</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>940</th>
+      <td>163</td>
+      <td>74</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>941</th>
+      <td>74</td>
+      <td>2</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>942</th>
+      <td>74</td>
+      <td>2</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>943</th>
+      <td>74</td>
+      <td>2</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+<p>944 rows × 3 columns</p>
+</div></div></div>
+</div>
+<p>In the dataframe above, <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> are the source and target of each edge, and <code class="docutils literal notranslate"><span class="pre">t</span></code> is the time interval. Once you have a dataframe in this form you can load it directly into Teneto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tnet</span> <span class="o">=</span> <span class="n">TemporalNetwork</span><span class="p">(</span><span class="n">from_df</span><span class="o">=</span><span class="n">new_df</span><span class="p">)</span>
+<span class="n">tnet</span><span class="o">.</span><span class="n">network</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>i</th>
+      <th>j</th>
+      <th>t</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>122</td>
+      <td>28</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>122</td>
+      <td>28</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>122</td>
+      <td>167</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>122</td>
+      <td>167</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>122</td>
+      <td>127</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>939</th>
+      <td>163</td>
+      <td>74</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>940</th>
+      <td>163</td>
+      <td>74</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>941</th>
+      <td>74</td>
+      <td>2</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>942</th>
+      <td>74</td>
+      <td>2</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>943</th>
+      <td>74</td>
+      <td>2</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+<p>944 rows × 3 columns</p>
+</div></div></div>
+</div>
+<p>The display of the network looks exactly the same as the input data.</p>
+</section>
+<section id="calculating-temporal-network-measures">
+<h2>Calculating Temporal Network Measures<a class="headerlink" href="#calculating-temporal-network-measures" title="Permalink to this heading">#</a></h2>
+<p>There are many different functions in the <a class="reference external" href="https://teneto.readthedocs.io/en/latest/tutorial.html">Teneto documentation</a>, but if you’ve imported the functions correctly (see above), you can now run whichever metrics you like on your new <code class="docutils literal notranslate"><span class="pre">TemporalNetwork</span></code> object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temporal_degree_centrality</span><span class="p">(</span><span class="n">tnet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.,  4.,  0.,  0.,  8., 16.,  0.,  0.,  1.,  0.,  6.,  0.,  0.,
+       14.,  0.,  0., 18., 10.,  0., 10.,  0.,  2.,  0.,  0.,  3.,  2.,
+        0.,  0.,  0.,  0., 24.,  0.,  4.,  0.,  0.,  3.,  0.,  8.,  4.,
+       14.,  0., 14., 12., 18.,  6.,  3.,  1.,  7.,  0.,  6.,  0.,  1.,
+        4.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,  0., 30.,  0.,  4.,
+        0.,  0., 41.,  3.,  3.,  0.,  2.,  2.,  0., 20., 15., 22.,  0.,
+        1.,  0.,  2.,  4.,  0., 22.,  1.,  0.,  0.,  0.,  0.,  0.,  8.,
+        0.,  0.,  0.,  2.,  0.,  3.,  3.,  0.,  4.,  3.,  0.,  4.,  2.,
+        0., 14.,  0.,  6.,  6.,  0.,  6.,  3.,  4.,  9.,  0.,  0.,  3.,
+       40.,  3.,  3.,  0., 10., 41.,  2.,  4.,  1.,  0.,  8.,  3., 11.,
+        0.,  3., 22.,  0.,  0.,  5.,  0.,  2.,  0.,  0.,  0.,  3.,  1.,
+        4.,  0.,  3.,  1.,  8.,  0.,  4.,  2.,  0.,  7.,  0.,  0.,  0.,
+        6.,  4.,  0.,  3.,  3.,  2.,  0.,  2.,  6.,  0.,  6.,  2.,  0.,
+        4.,  3.,  1., 20.,  0.,  2.,  6.,  3.,  0.,  0.,  4.,  0., 73.,
+        0., 94.,  3., 20.,  1.,  6.,  0.,  0.,  2.,  0.])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -669,19 +972,12 @@ title="Print to PDF"
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="seaborn.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="bipartite.html" title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Seaborn</p>
+          <p class="prev-next-title">Bipartite Networks</p>
       </div>
-  </a>
-  <a class='right-next' id="next-link" href="visualization.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Network Visualization</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
   </a>
 </div>
             </footer>
@@ -689,6 +985,32 @@ title="Print to PDF"
           </div>
           
           
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-temporalnetwork-objects">
+   Creating TemporalNetwork Objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-temporal-network-measures">
+   Calculating Temporal Network Measures
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
           
           
         </div>

@@ -19,3 +19,4 @@ parts:
     - file: community
     - file: directed
     - file: bipartite
+    - file: dynamic
