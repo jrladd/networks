@@ -9,14 +9,19 @@ parts:
     - file: python
     - file: pandas
     - file: seaborn
-    - file: datasets
-  - caption: Networks
+  - caption: Understanding Networks
     chapters:
     - file: visualization
     - file: networkx
     - file: metrics
     - file: homophily
     - file: community
+  - caption: Special Networks
+    chapters:
     - file: directed
     - file: bipartite
     - file: dynamic
+  - caption: Resources
+    chapters:
+    - file: datasets
+    - file: glossary
