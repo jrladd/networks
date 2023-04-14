@@ -73,54 +73,54 @@
 - **clustering coefficient**: the ratio of how many of a node’s neighbors are connected to each other, relative to the total number of neighbors.
 - **bridge**: an edge that, if removed, would cause a single component to split into two components.
 - **local bridges**: an edge between two nodes that have no neighbors in common. If removed, it would make the path length between the two nodes increase by more than two.
-- **span**: The length of the path between two nodes if the local bridge between them were removed.
-- **weak ties**:
-- **strong triadic closure property
-- **neighborhood overlap
-- **structural holes
-- **brokers
+- **span**: the length of the path between two nodes if the local bridge between them were removed.
+- **weak ties**: a low-weight edge that typically has high betweenness, acting as a bridge. Weak ties are often the casual social acquaintances that tie a social network together and allow information to flow between groups, as in Granovetter's famous article "The Strength of Weak Ties." 
+- **strong triadic closure property**: if a node has two *strong* edges to two other nodes, this property says there should be either a strong or weak edge between them. This is a version of triadic closure that accounts for strong edges specifically.
+- **neighborhood overlap**: for two nodes A and B, the number of nodes who are neighbors of *both* A and B divided by the total neighbors of A or B.
+- **structural holes**: "the 'empty space' in the network between two sets of nodes that do not otherwise interact closely" (Easley & Kleinberg 67).
+- **broker**: a node that can communicate between groups and across structural holes, often also a pivotal node.
 
 ## Homophily and Communities
 
-- **homophily
-- **assortative mixing
-- **mixed edge
-- **selection
-- **social influence
-- **community detection
-- **component
-- **clique
-- **community
-- **embeddedness
-- **partition
-- **modularity
+- **homophily**: the network principle that describes the way that nodes which have common properties or attributes are likely to be or become linked to one another.
+- **assortative mixing**: a synonym for homophily.
+- **mixed edge**: an edge between nodes of different types or properties.
+- **selection**: "the tendency of people to form friendships with others who are like them" (Easley and Kleinberg 90).
+- **social influence**: the opposite of selection, i.e. the tendence of people to select their preferences and attributes based on their friendships.
+- **community detection**: a set of methods to determine subgroups or communities within a network.
+- **component**: a part of a network in which paths exist from any node to any other node.
+- **clique**: a subset of nodes in a network in which every node is connected any other. Cliques can have any number of nodes, and a triangle is the simplest type of clique.
+- **community**: a subset of nodes in a network, usually determined by some community detection method.
+- **embeddedness**: the number of neighbors that two nodes have in common, i.e. the first part of the formula for neighborhood overlap.
+- **partition**: a subset of nodes in a network, determined by a community detection method, a node attribute, or a completely different node type.
+- **modularity**: a set of community detection methods that tries to determine communities based on their internal density. The Louvain method is a type of modularity.
 
 ## Special Network Types
 
-- **signed networks
-- **structural balance
-- **directed networks
-- **directed paths
-- **strongly connected components
-- **in-degree
-- **out-degree
-- **"bow-tie" structure
-- **bipartite network
-- **multipartite network
-- **incidence matrix/biadjacency matrix
-- **hypergraph
-- **hyperedge
-- **projection
-- **multilayer network
-- **temporal/dynamic network
-- **topological overlap
+- **signed network**: a network that has positive or negative edges. These positive or negative signs are often part of an edge's weight: 1 for a positive edge, -1 for a negative edge, 0 for no edge.
+- **structural balance**: the network principle that describes how signed networks seek to become balanced by changing between positive and negative edges. In any set of three nodes, the set is structurally balanced if there are either three positive edges or just one.
+- **directed networks**: a network in which edges are directed from a source to a target. For example, in a correspondence network with edges representing letters sent, those letters have a sender (source) and a recipient (target).
+- **directed path**: a path in a network with the direction of edges going in the same direction. In a directed network, paths can only be traversed if they are appropriately directed. 
+- **strongly connected components**: a component in which there is a *directed* path from every node to every other node. If there are paths between every node but not all of those paths are directed, then it is a weakly connected component.
+- **in-degree**: the number of edges for which a given node is the target, i.e. the number of edges coming in.
+- **out-degree**: the number of edges for which a given node is the source, i.e. the number of edges going out.
+- **"bow-tie" structure**: a common directed network structure seen on the Web, in which a network has three large strongly connected components. One of these is a massive component in the center that has a slightly smaller component with edges only coming in and another smaller component with edges only going out.
+- **bipartite network**: a network with two distinct node types or partitions. Often the two node types are an entity and a group, as in an affiliation network.
+- **multipartite network**: a network with more than one distinct node types. Bipartite networks are type of multipartite networks.
+- **incidence matrix/biadjacency matrix**: the bipartite version of the adjacency matrix, in which the rows represent nodes of on type and the columns represent nodes of the other type.
+- **hypergraph**: another kind of network representing group affiliation, in which nodes are placed into groups rather than mapped to specific connections.
+- **hyperedge**: the assignment to overlapping groups that occurs in a hypergraph. Hyperedges are usually visually represented as curving areas drawn around groups of nodes.
+- **projection**: the process of turning a bipartite network into a unipartite network by turning one node set into the new network's nodes and the second node set into its edges.
+- **multilayer network**: a network with more than type of edges, usually organized into "layers."
+- **temporal/dynamic network**: a special kind of multilayer network showing change over time, in which the nodes are persistent but the edges change over time. A temporal network is a type of "multiplex" network, i.e. a multilayer network with nodes that persist across layers.
+- **topological overlap**: the amount of agreement or similarity between edges across layers in a multilayer network, usually expressed as a value between 0 and 1. A network that stays relatively the same over time will have high topological overlap.
 
 ## Network Behavior
 
-- **diffusion
-- **cascade
-- **complete cascade
-- **coordination game
-- **cascade threshold
-- **cascade capacity
-- **bilingual option
+- **diffusion**: the way in which behaviors spread across a social network.
+- **cascade**: a specific kind of diffusion in which a new behavior is iteratively triggered to "cascade" from node to node across a network.
+- **complete cascade**: a cascade in which the new behavior spreads to every node in the network.
+- **coordination game**: a system that describes how people make decisions to adopt new behaviors based on the payoff of those behaviors. If two people adopt the same behavior, they each get the payoff assigned to that behavior.
+- **cascade threshold**: adapted from a simple coordination game, the threshold at which the ratio of a node's neighbors that have adopted a new behavior A will cause it to switch from old behavior B. If behavior A has a payoff a and B has a payoff b, then the value of the cascade threshold will be $\frac{b}{a+b}$.
+- **cascade capacity**: "the largest threshold at which a finite set of nodes can cause a complete cascade" (Easley & Kleinberg 587).
+- **bilingual option**: an additional option for a coordination game, in which an individual can adopt *both* behaviors instead of just one. Adopting both behaviors usually comes with an additional cost.
