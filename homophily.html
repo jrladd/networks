@@ -58,6 +58,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'homophily';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -276,6 +278,10 @@ const thebe_selector_output = ".output, .cell_output"
     </div>
   
 
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
   
 
 </div>
@@ -633,7 +639,9 @@ title="Print to PDF"
       
   </ul>
 </div>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
     </div>
 </div>
             </div>
@@ -646,6 +654,34 @@ title="Print to PDF"
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-data">
+   Importing data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-mixed-edge-probability">
+   Calculating mixed edge probability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparing-to-the-observed-number-of-mixed-edges">
+   Comparing to the observed number of mixed edges
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypothesis-testing">
+   Hypothesis testing
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -654,7 +690,10 @@ title="Print to PDF"
               
   <section class="tex2jax_ignore mathjax_ignore" id="homophily">
 <h1>Homophily<a class="headerlink" href="#homophily" title="Permalink to this heading">#</a></h1>
-<p>[More explanations coming soon!]</p>
+<p>Homophily is the network principle that describes the way that nodes which have common properties or attributes are likely to be or become linked to one another. It’s sometimes also referred to as assortative mixing.</p>
+<p>In order to see if a network is homophilous, there must be node attributes for you to investigate. The example below uses the node attributes in the Quaker network from the <em>Six Degrees of Francis Bacon</em> project.</p>
+<section id="importing-data">
+<h2>Importing data<a class="headerlink" href="#importing-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import NetworkX and key data science libraries</span>
@@ -669,7 +708,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edges</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/quaker-edges.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import edge table as normal</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/quaker-edges.csv&quot;</span><span class="p">)</span>
 <span class="n">edges</span>
 </pre></div>
 </div>
@@ -760,7 +800,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/quaker-nodes.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import node table</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/quaker-nodes.csv&quot;</span><span class="p">)</span>
 <span class="n">nodes</span>
 </pre></div>
 </div>
@@ -911,7 +952,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quakers</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;Source&quot;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;Target&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add edges to graph object</span>
+<span class="n">quakers</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;Source&quot;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;Target&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">quakers</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -924,7 +966,20 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;gender&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">Id</span><span class="p">[</span><span class="s2">&quot;male&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">nodes</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">Id</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add node attributes for gender</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">quakers</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">nodes</span><span class="o">.</span><span class="n">Id</span><span class="p">,</span> <span class="n">nodes</span><span class="o">.</span><span class="n">gender</span><span class="p">)),</span> <span class="s1">&#39;gender&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="calculating-mixed-edge-probability">
+<h2>Calculating mixed edge probability<a class="headerlink" href="#calculating-mixed-edge-probability" title="Permalink to this heading">#</a></h2>
+<p>In a network that is <em>not</em> homophilous, the expected probability of mixed edges is 2 times the product of the percentage of nodes in the first group (<code class="docutils literal notranslate"><span class="pre">p</span></code>) and the percentage of the nodes in the second group (<code class="docutils literal notranslate"><span class="pre">q</span></code>): <span class="math notranslate nohighlight">\(2pq\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate percentage of male people in the Quaker graph, using pandas</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">gender</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="s2">&quot;male&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">nodes</span><span class="o">.</span><span class="n">gender</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 <span class="n">p</span>
 </pre></div>
 </div>
@@ -937,7 +992,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;gender&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">Id</span><span class="p">[</span><span class="s2">&quot;female&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">nodes</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">Id</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate percentage of female people in the Quaker graph, using pandas</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">gender</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="s2">&quot;female&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">nodes</span><span class="o">.</span><span class="n">gender</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 <span class="n">q</span>
 </pre></div>
 </div>
@@ -950,7 +1006,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="o">*</span><span class="n">q</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate probability of mixed edges</span>
+<span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="o">*</span><span class="n">q</span>
 </pre></div>
 </div>
 </div>
@@ -960,16 +1017,14 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+</section>
+<section id="comparing-to-the-observed-number-of-mixed-edges">
+<h2>Comparing to the observed number of mixed edges<a class="headerlink" href="#comparing-to-the-observed-number-of-mixed-edges" title="Permalink to this heading">#</a></h2>
+<p>We know that if the network is not homophilous we would expect that around 26% of its edges would be mixed edges. To test this we can first calculate the actual number of mixed edges and compare it to the probability above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">quakers</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">nodes</span><span class="o">.</span><span class="n">Id</span><span class="p">,</span> <span class="n">nodes</span><span class="o">.</span><span class="n">gender</span><span class="p">)),</span> <span class="s1">&#39;gender&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_edges</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([(</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="n">quakers</span><span class="o">.</span><span class="n">edges</span> <span class="k">if</span> <span class="n">quakers</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">quakers</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="s1">&#39;gender&#39;</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the total number of mixed edges in the network</span>
+<span class="n">mixed_edges</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([(</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="n">quakers</span><span class="o">.</span><span class="n">edges</span> <span class="k">if</span> <span class="n">quakers</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">quakers</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="s1">&#39;gender&#39;</span><span class="p">]])</span>
 <span class="n">mixed_edges</span>
 </pre></div>
 </div>
@@ -982,7 +1037,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_edges</span><span class="o">/</span><span class="n">quakers</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the percentage of mixed edges in the network</span>
+<span class="n">mixed_edges</span><span class="o">/</span><span class="n">quakers</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -992,6 +1048,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Let’s define a “homophily” measure as the different between the expected percentage of mixed edges and the observed percentage of mixed edges.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">homophily</span><span class="p">(</span><span class="n">mixed_edges</span><span class="p">):</span>
@@ -1013,9 +1070,15 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Our observed homophily measure is .07: we know that the percentage of mixed edges in this graph is 7% less than the percentage we would expect to see in a graph that is <em>not</em> homophilous. But how do we know if this measure is significant?</p>
+</section>
+<section id="hypothesis-testing">
+<h2>Hypothesis testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this heading">#</a></h2>
+<p>To see whether our graph is <em>significantly</em> homophilous, we can set up a resampling procedure to create a hypothesis test for the homophily statistic. This is similar to how you would set up a permutation test for a difference in means.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_mixed_edges</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">id_attr</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a simulation function</span>
+<span class="k">def</span> <span class="nf">simulate_mixed_edges</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">id_attr</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
     <span class="n">attr_column</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">attribute</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Reshuffle column</span>
     <span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">id_attr</span><span class="p">],</span> <span class="n">attr_column</span><span class="p">)),</span> <span class="n">attribute</span><span class="p">)</span> <span class="c1"># Set node attribute</span>
     <span class="n">mixed_edges</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([(</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span> <span class="k">if</span> <span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">attribute</span><span class="p">]</span> <span class="o">!=</span> <span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="n">attribute</span><span class="p">]])</span> <span class="c1"># Get number of mixed edges</span>
@@ -1026,23 +1089,24 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim_homophily</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">homophily</span><span class="p">(</span><span class="n">simulate_mixed_edges</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">quakers</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">)])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate homophily 5000 times</span>
+<span class="n">sim_homophily</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">homophily</span><span class="p">(</span><span class="n">simulate_mixed_edges</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">quakers</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">)])</span>
 <span class="n">sim_homophily</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       0.053795
-1      -0.007933
-2       0.022931
-3      -0.026452
-4      -0.014106
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       0.084660
+1      -0.032624
+2       0.047622
+3       0.084660
+4      -0.026452
           ...   
-4995    0.047622
-4996   -0.026452
-4997   -0.020279
-4998    0.016758
-4999   -0.020279
+4995   -0.044970
+4996    0.016758
+4997    0.029104
+4998    0.004413
+4999   -0.032624
 Length: 5000, dtype: float64
 </pre></div>
 </div>
@@ -1050,31 +1114,35 @@ Length: 5000, dtype: float64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sim_homophily</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the results of the permutation test</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sim_homophily</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">obs_homophily</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x12c753790&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x15e08ce50&gt;
 </pre></div>
 </div>
-<img alt="_images/687b7b342bb46f85f82a31408692512470f157312411082969250d0b08190cf3.png" src="_images/687b7b342bb46f85f82a31408692512470f157312411082969250d0b08190cf3.png" />
+<img alt="_images/9a77a4d1e7d14adbe62915c69fb7096bd998cd1ef1c22fcd3a35dd4109a1b487.png" src="_images/9a77a4d1e7d14adbe62915c69fb7096bd998cd1ef1c22fcd3a35dd4109a1b487.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sim_homophily</span> <span class="o">&gt;</span> <span class="n">obs_homophily</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate a p-value</span>
+<span class="n">p_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sim_homophily</span> <span class="o">&gt;</span> <span class="n">obs_homophily</span><span class="p">)</span>
 <span class="n">p_value</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1154
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1106
 </pre></div>
 </div>
 </div>
 </div>
+<p>Now we can use the resulting graph and p-value to determine whether the amount of homophily we see in the Quaker graph is statistically significant.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1125,6 +1193,42 @@ Length: 5000, dtype: float64
           </div>
           
           
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-data">
+   Importing data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-mixed-edge-probability">
+   Calculating mixed edge probability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparing-to-the-observed-number-of-mixed-edges">
+   Comparing to the observed number of mixed edges
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypothesis-testing">
+   Hypothesis testing
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
           
           
         </div>

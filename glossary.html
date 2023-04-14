@@ -58,6 +58,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'glossary';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -789,63 +791,63 @@ title="Print to PDF"
 <li><p><strong>clustering coefficient</strong>: the ratio of how many of a node’s neighbors are connected to each other, relative to the total number of neighbors.</p></li>
 <li><p><strong>bridge</strong>: an edge that, if removed, would cause a single component to split into two components.</p></li>
 <li><p><strong>local bridges</strong>: an edge between two nodes that have no neighbors in common. If removed, it would make the path length between the two nodes increase by more than two.</p></li>
-<li><p><strong>span</strong>: The length of the path between two nodes if the local bridge between them were removed.</p></li>
-<li><p><strong>weak ties</strong>:</p></li>
-<li><p>**strong triadic closure property</p></li>
-<li><p>**neighborhood overlap</p></li>
-<li><p>**structural holes</p></li>
-<li><p>**brokers</p></li>
+<li><p><strong>span</strong>: the length of the path between two nodes if the local bridge between them were removed.</p></li>
+<li><p><strong>weak ties</strong>: a low-weight edge that typically has high betweenness, acting as a bridge. Weak ties are often the casual social acquaintances that tie a social network together and allow information to flow between groups, as in Granovetter’s famous article “The Strength of Weak Ties.”</p></li>
+<li><p><strong>strong triadic closure property</strong>: if a node has two <em>strong</em> edges to two other nodes, this property says there should be either a strong or weak edge between them. This is a version of triadic closure that accounts for strong edges specifically.</p></li>
+<li><p><strong>neighborhood overlap</strong>: for two nodes A and B, the number of nodes who are neighbors of <em>both</em> A and B divided by the total neighbors of A or B.</p></li>
+<li><p><strong>structural holes</strong>: “the ‘empty space’ in the network between two sets of nodes that do not otherwise interact closely” (Easley &amp; Kleinberg 67).</p></li>
+<li><p><strong>broker</strong>: a node that can communicate between groups and across structural holes, often also a pivotal node.</p></li>
 </ul>
 </section>
 <section id="homophily-and-communities">
 <h2>Homophily and Communities<a class="headerlink" href="#homophily-and-communities" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>**homophily</p></li>
-<li><p>**assortative mixing</p></li>
-<li><p>**mixed edge</p></li>
-<li><p>**selection</p></li>
-<li><p>**social influence</p></li>
-<li><p>**community detection</p></li>
-<li><p>**component</p></li>
-<li><p>**clique</p></li>
-<li><p>**community</p></li>
-<li><p>**embeddedness</p></li>
-<li><p>**partition</p></li>
-<li><p>**modularity</p></li>
+<li><p><strong>homophily</strong>: the network principle that describes the way that nodes which have common properties or attributes are likely to be or become linked to one another.</p></li>
+<li><p><strong>assortative mixing</strong>: a synonym for homophily.</p></li>
+<li><p><strong>mixed edge</strong>: an edge between nodes of different types or properties.</p></li>
+<li><p><strong>selection</strong>: “the tendency of people to form friendships with others who are like them” (Easley and Kleinberg 90).</p></li>
+<li><p><strong>social influence</strong>: the opposite of selection, i.e. the tendence of people to select their preferences and attributes based on their friendships.</p></li>
+<li><p><strong>community detection</strong>: a set of methods to determine subgroups or communities within a network.</p></li>
+<li><p><strong>component</strong>: a part of a network in which paths exist from any node to any other node.</p></li>
+<li><p><strong>clique</strong>: a subset of nodes in a network in which every node is connected any other. Cliques can have any number of nodes, and a triangle is the simplest type of clique.</p></li>
+<li><p><strong>community</strong>: a subset of nodes in a network, usually determined by some community detection method.</p></li>
+<li><p><strong>embeddedness</strong>: the number of neighbors that two nodes have in common, i.e. the first part of the formula for neighborhood overlap.</p></li>
+<li><p><strong>partition</strong>: a subset of nodes in a network, determined by a community detection method, a node attribute, or a completely different node type.</p></li>
+<li><p><strong>modularity</strong>: a set of community detection methods that tries to determine communities based on their internal density. The Louvain method is a type of modularity.</p></li>
 </ul>
 </section>
 <section id="special-network-types">
 <h2>Special Network Types<a class="headerlink" href="#special-network-types" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>**signed networks</p></li>
-<li><p>**structural balance</p></li>
-<li><p>**directed networks</p></li>
-<li><p>**directed paths</p></li>
-<li><p>**strongly connected components</p></li>
-<li><p>**in-degree</p></li>
-<li><p>**out-degree</p></li>
-<li><p>**”bow-tie” structure</p></li>
-<li><p>**bipartite network</p></li>
-<li><p>**multipartite network</p></li>
-<li><p>**incidence matrix/biadjacency matrix</p></li>
-<li><p>**hypergraph</p></li>
-<li><p>**hyperedge</p></li>
-<li><p>**projection</p></li>
-<li><p>**multilayer network</p></li>
-<li><p>**temporal/dynamic network</p></li>
-<li><p>**topological overlap</p></li>
+<li><p><strong>signed network</strong>: a network that has positive or negative edges. These positive or negative signs are often part of an edge’s weight: 1 for a positive edge, -1 for a negative edge, 0 for no edge.</p></li>
+<li><p><strong>structural balance</strong>: the network principle that describes how signed networks seek to become balanced by changing between positive and negative edges. In any set of three nodes, the set is structurally balanced if there are either three positive edges or just one.</p></li>
+<li><p><strong>directed networks</strong>: a network in which edges are directed from a source to a target. For example, in a correspondence network with edges representing letters sent, those letters have a sender (source) and a recipient (target).</p></li>
+<li><p><strong>directed path</strong>: a path in a network with the direction of edges going in the same direction. In a directed network, paths can only be traversed if they are appropriately directed.</p></li>
+<li><p><strong>strongly connected components</strong>: a component in which there is a <em>directed</em> path from every node to every other node. If there are paths between every node but not all of those paths are directed, then it is a weakly connected component.</p></li>
+<li><p><strong>in-degree</strong>: the number of edges for which a given node is the target, i.e. the number of edges coming in.</p></li>
+<li><p><strong>out-degree</strong>: the number of edges for which a given node is the source, i.e. the number of edges going out.</p></li>
+<li><p><strong>“bow-tie” structure</strong>: a common directed network structure seen on the Web, in which a network has three large strongly connected components. One of these is a massive component in the center that has a slightly smaller component with edges only coming in and another smaller component with edges only going out.</p></li>
+<li><p><strong>bipartite network</strong>: a network with two distinct node types or partitions. Often the two node types are an entity and a group, as in an affiliation network.</p></li>
+<li><p><strong>multipartite network</strong>: a network with more than one distinct node types. Bipartite networks are type of multipartite networks.</p></li>
+<li><p><strong>incidence matrix/biadjacency matrix</strong>: the bipartite version of the adjacency matrix, in which the rows represent nodes of on type and the columns represent nodes of the other type.</p></li>
+<li><p><strong>hypergraph</strong>: another kind of network representing group affiliation, in which nodes are placed into groups rather than mapped to specific connections.</p></li>
+<li><p><strong>hyperedge</strong>: the assignment to overlapping groups that occurs in a hypergraph. Hyperedges are usually visually represented as curving areas drawn around groups of nodes.</p></li>
+<li><p><strong>projection</strong>: the process of turning a bipartite network into a unipartite network by turning one node set into the new network’s nodes and the second node set into its edges.</p></li>
+<li><p><strong>multilayer network</strong>: a network with more than type of edges, usually organized into “layers.”</p></li>
+<li><p><strong>temporal/dynamic network</strong>: a special kind of multilayer network showing change over time, in which the nodes are persistent but the edges change over time. A temporal network is a type of “multiplex” network, i.e. a multilayer network with nodes that persist across layers.</p></li>
+<li><p><strong>topological overlap</strong>: the amount of agreement or similarity between edges across layers in a multilayer network, usually expressed as a value between 0 and 1. A network that stays relatively the same over time will have high topological overlap.</p></li>
 </ul>
 </section>
 <section id="network-behavior">
 <h2>Network Behavior<a class="headerlink" href="#network-behavior" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>**diffusion</p></li>
-<li><p>**cascade</p></li>
-<li><p>**complete cascade</p></li>
-<li><p>**coordination game</p></li>
-<li><p>**cascade threshold</p></li>
-<li><p>**cascade capacity</p></li>
-<li><p>**bilingual option</p></li>
+<li><p><strong>diffusion</strong>: the way in which behaviors spread across a social network.</p></li>
+<li><p><strong>cascade</strong>: a specific kind of diffusion in which a new behavior is iteratively triggered to “cascade” from node to node across a network.</p></li>
+<li><p><strong>complete cascade</strong>: a cascade in which the new behavior spreads to every node in the network.</p></li>
+<li><p><strong>coordination game</strong>: a system that describes how people make decisions to adopt new behaviors based on the payoff of those behaviors. If two people adopt the same behavior, they each get the payoff assigned to that behavior.</p></li>
+<li><p><strong>cascade threshold</strong>: adapted from a simple coordination game, the threshold at which the ratio of a node’s neighbors that have adopted a new behavior A will cause it to switch from old behavior B. If behavior A has a payoff a and B has a payoff b, then the value of the cascade threshold will be <span class="math notranslate nohighlight">\(\frac{b}{a+b}\)</span>.</p></li>
+<li><p><strong>cascade capacity</strong>: “the largest threshold at which a finite set of nodes can cause a complete cascade” (Easley &amp; Kleinberg 587).</p></li>
+<li><p><strong>bilingual option</strong>: an additional option for a coordination game, in which an individual can adopt <em>both</em> behaviors instead of just one. Adopting both behaviors usually comes with an additional cost.</p></li>
 </ul>
 </section>
 </section>
