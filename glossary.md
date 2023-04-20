@@ -124,3 +124,9 @@
 - **cascade threshold**: adapted from a simple coordination game, the threshold at which the ratio of a node's neighbors that have adopted a new behavior A will cause it to switch from old behavior B. If behavior A has a payoff a and B has a payoff b, then the value of the cascade threshold will be $\frac{b}{a+b}$.
 - **cascade capacity**: "the largest threshold at which a finite set of nodes can cause a complete cascade" (Easley & Kleinberg 587).
 - **bilingual option**: an additional option for a coordination game, in which an individual can adopt *both* behaviors instead of just one. Adopting both behaviors usually comes with an additional cost.
+- $R_{0}$ **(R-zero or R-naught)**: the basic reproductive number. In a branching process epidemic, the amount of people it is possible for an individual to infect, equal to the probability of infection times the number of contacts.
+- **SIR epidemic**: an epidemic with three states, susceptible (in which a person has the potential to become infected but is not yet infected), infections, and removed (in which a person has already been infected and can't be reinfected).
+- **SIS epidemic**: an epidemic with just the susceptible and infectious states, in which a person becomes susceptible again as soon as they are no longer infectious and can't be removed.
+- **SIRS epidemic**: an epidemic in which individuals pass through a removed state of "immunity" before becoming infectious again.
+- **percolation**: a way of viewing the dynamic process of an epidemic statically, be pre-calculating all the probabilities that an edge will carry disease.
+- **synchronization**: in a Small World network, the process by which waves of an epidemic form over time due to network properties.
