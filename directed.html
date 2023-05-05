@@ -62,7 +62,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Bipartite Networks" href="bipartite.html" />
-    <link rel="prev" title="Community Detection" href="community.html" />
+    <link rel="prev" title="Statistical Modeling" href="node2vec.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -193,6 +193,13 @@ const thebe_selector_output = ".output, .cell_output"
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="community.html">
                         Community Detection
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="node2vec.html">
+                        Statistical Modeling
                       </a>
                     </li>
                 
@@ -365,6 +372,13 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="node2vec.html">
+                        Statistical Modeling
+                      </a>
+                    </li>
+                
+
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
                         Directed Networks
@@ -483,6 +497,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="metrics.html">Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="homophily.html">Homophily</a></li>
 <li class="toctree-l1"><a class="reference internal" href="community.html">Community Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node2vec.html">Statistical Modeling</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Special Networks</span></p>
 <ul class="current nav bd-sidenav">
@@ -890,6 +905,13 @@ title="Print to PDF"
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
 
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/networkx/classes/backends.py:148,</span> in <span class="ni">_dispatch.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span>             <span class="k">raise</span> <span class="n">NetworkXNotImplemented</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">146</span>                 <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; not implemented by </span><span class="si">{</span><span class="n">plugin_name</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span>             <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">148</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+
 <span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/networkx/utils/decorators.py:766,</span> in <span class="ni">argmap.__call__.&lt;locals&gt;.func</span><span class="nt">(_argmap__wrapper, *args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">765</span> <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">__wrapper</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">766</span>     <span class="k">return</span> <span class="n">argmap</span><span class="o">.</span><span class="n">_lazy_compile</span><span class="p">(</span><span class="n">__wrapper</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -1130,11 +1152,11 @@ title="Print to PDF"
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="community.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="node2vec.html" title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Community Detection</p>
+          <p class="prev-next-title">Statistical Modeling</p>
       </div>
   </a>
   <a class='right-next' id="next-link" href="bipartite.html" title="next page">
