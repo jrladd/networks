@@ -16,6 +16,7 @@ parts:
     - file: metrics
     - file: homophily
     - file: community
+    - file: node2vec
   - caption: Special Networks
     chapters:
     - file: directed
