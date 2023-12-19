@@ -1,3 +1,6 @@
 jupyter-book
 matplotlib
 numpy
+networkx
+altair
+vega-datasets

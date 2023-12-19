@@ -3,7 +3,7 @@
 
 title: Network Analysis in Python
 author: John R. Ladd
-logo: logo.png
+logo: logo_gephi.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
