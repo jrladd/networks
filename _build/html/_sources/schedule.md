@@ -30,4 +30,4 @@ Date|Topics & Slides|Readings|Assignments
 23 & 25 Apr.|Behavior: Search Algorithms & Citation Analysis|NCM Ch. 14
 30 Apr. & 2 May|Behavior: Modeling with Networks|
 7 May|Open House||
-11 May 2-5pm|Panel Presentations||Project 2 Due at 2pm
+11 May 2-5pm|TBA||Project 2 Due at 2pm
