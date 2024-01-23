@@ -39,7 +39,7 @@ parts:
       - file: presentation
     - file: homework
       sections:
-      - file: week1
+      - file: homework/week1
     - file: course-policies
       sections:
       - file: criteria
