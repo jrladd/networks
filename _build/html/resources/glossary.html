@@ -1,0 +1,1016 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Key Terms and Definitions &#8212; Network Analysis in Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'resources/glossary';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Where to Find Network Data" href="datasets.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo_gephi.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo_gephi.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../basics/data-basics.html">
+                        Data Basics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../visualizing-networks.html">
+                        Visualizing Networks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../analyze/analyzing-networks.html">
+                        Analyzing Networks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../special/special-networks.html">
+                        Special Networks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../course-info/general-info.html">
+                        Advanced Data Analysis: Networks
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../course-info/schedule.html">
+                        Schedule & Readings
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../assignments/assignments.html">
+                        Assignments
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../homework/homework.html">
+                        Homework
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../course-info/course-policies.html">
+                        Course Policies
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="datasets.html">
+                        Where to Find Network Data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Key Terms and Definitions
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../basics/data-basics.html">
+                        Data Basics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../visualizing-networks.html">
+                        Visualizing Networks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../analyze/analyzing-networks.html">
+                        Analyzing Networks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../special/special-networks.html">
+                        Special Networks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../course-info/general-info.html">
+                        Advanced Data Analysis: Networks
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../course-info/schedule.html">
+                        Schedule & Readings
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../assignments/assignments.html">
+                        Assignments
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../homework/homework.html">
+                        Homework
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../course-info/course-policies.html">
+                        Course Policies
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="datasets.html">
+                        Where to Find Network Data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Key Terms and Definitions
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo_gephi.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo_gephi.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Network Analysis in Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Network Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/data-basics.html">Data Basics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basics/jupyter.html">Set Up Jupyter Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/pandas.html">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/altair.html">Altair</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../visualizing-networks.html">Visualizing Networks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualization.html">Network Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../analyze/analyzing-networks.html">Analyzing Networks</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../analyze/networkx.html">Working with Graph Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../analyze/metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../analyze/homophily.html">Homophily</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../analyze/community.html">Community Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../analyze/node2vec.html">Statistical Modeling</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../special/special-networks.html">Special Networks</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../special/directed.html">Directed Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special/bipartite.html">Bipartite Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special/dynamic.html">Dynamic Networks</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CIS 345/397</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../course-info/general-info.html">Advanced Data Analysis: Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../course-info/schedule.html">Schedule &amp; Readings</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../assignments/assignments.html">Assignments</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/create-visualization.html">Project 1: Create a Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/descriptive.html">Project 2: Descriptive Network Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/predictive.html">Project 3: Predictive Network Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/presentation.html">Presentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../homework/homework.html">Homework</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../homework/week1.html">Week 1: Homework</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course-info/course-policies.html">Course Policies</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../course-info/criteria.html">Criteria for Good Reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../course-info/ground-rules.html">Ground Rules</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Where to Find Network Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Key Terms and Definitions</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-repository-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="https://github.com/jrladd/networks" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">repository</span>
+</a>
+</a>
+      
+      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fresources/glossary.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">open issue</span>
+</a>
+</a>
+      
+  </ul>
+</div>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../_sources/resources/glossary.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Key Terms and Definitions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-terms">
+   Basic Terms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-networks">
+   Types of Networks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#paths-and-metrics">
+   Paths and Metrics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#centrality">
+   Centrality
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualization">
+   Visualization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clustering">
+   Clustering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#homophily-and-communities">
+   Homophily and Communities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#special-network-types">
+   Special Network Types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#network-behavior">
+   Network Behavior
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <section class="tex2jax_ignore mathjax_ignore" id="key-terms-and-definitions">
+<h1>Key Terms and Definitions<a class="headerlink" href="#key-terms-and-definitions" title="Permalink to this heading">#</a></h1>
+<section id="basic-terms">
+<h2>Basic Terms<a class="headerlink" href="#basic-terms" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>graph/network</strong>: a system of connections, composed of nodes an edges</p></li>
+<li><p><strong>node</strong>: any entity included in a network, the thing being connected, also known as a vertex or an actor. Nodes are often represented as circles in network visualizations.</p></li>
+<li><p><strong>edge</strong>: any relationship, also known as a link or a tie, that connects two nodes. Edges are often represented as lines in network visualizations.</p></li>
+<li><p><strong>scale-free network</strong>: a network in which the distribution of connections is the same in small areas of the network as it is in the entire thing.</p></li>
+<li><p><strong>small world network</strong>: a common kind of network with a large number of very low-degree nodes and a small number of very high-degree ones. A small world network high density and low average path length.</p></li>
+<li><p><strong>Six Degrees of Separation</strong>: In a small world network, it’s easy to get from one node to any other in 6 or 7 “steps” or “degrees” (i.e. path length). This kind of network very often describes networks of human relationships, and the small world phenomenon is most famously described in the “Six Degrees of Kevin Bacon” parlor game.</p></li>
+<li><p><strong>edge list</strong>: a representation of a network as a list of source and target node pairs. Each row represents a single edge, and this information is often stored in a CSV or plaintext file.</p></li>
+<li><p><strong>adjacency list</strong>: a representation of a network as a list of every node with all the nodes it is connected to.</p></li>
+<li><p><strong>adjacency matrix</strong>: a representation of a network with every node as both columns and rows. The values in an adjacency matrix are numbers (most of 0s and 1s) representing the presence, absence, or weight of an edge.</p></li>
+<li><p><strong>neighbors</strong>: the nodes directly connected to (i.e. adjacent to) a particular node.</p></li>
+<li><p><strong>isolates</strong>: nodes with no connections and therefore no neighbors.</p></li>
+<li><p><strong>hub</strong>: a node with many connections to other nodes. Hubs are common in small world networks.</p></li>
+</ul>
+</section>
+<section id="types-of-networks">
+<h2>Types of Networks<a class="headerlink" href="#types-of-networks" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>communication network</strong>: a network in which edges represent communication between entities. A network of letter-writing is a communication network.</p></li>
+<li><p><strong>social network</strong>: a network in which edges represent social relationships, as in familial or friendship networks.</p></li>
+<li><p><strong>information network (information linkage)</strong>: a network in which edges represent connections between pieces of information, like hyperlinks on the web.</p></li>
+<li><p><strong>collaboration network</strong>: a network in which edges represent collaborative work between two nodes, as in a copublication network.</p></li>
+<li><p><strong>technological network</strong>: a network in which the nodes and edges are pieces of technology, like local computer networks or the Internet.</p></li>
+<li><p><strong>who-talks-to-whom network</strong>: a network in which edges represent communication between people, a subset of communication networks.</p></li>
+<li><p><strong>affiliation network</strong>: a bipartite network in which edges represent group affiliation.</p></li>
+<li><p><strong>networks in the natural world</strong>: a network in which the nodes and edges are part of the natural world, i.e. ecological networks, fungal networks, neural networks.</p></li>
+<li><p><strong>citation network</strong>: a directed network in which edges represent citations.</p></li>
+<li><p><strong>semantic network</strong>: a network in which edges represent relationships between words, often directed.</p></li>
+</ul>
+</section>
+<section id="paths-and-metrics">
+<h2>Paths and Metrics<a class="headerlink" href="#paths-and-metrics" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>path</strong>: a series of edges that connects two nodes that do not have a direct edge between them. Nodes three steps away from each other in a network have a path length of 3.</p></li>
+<li><p><strong>cycle</strong>: a path that returns back to the original node, forming a “circle” of edges.</p></li>
+<li><p><strong>connected graph</strong>: a network made up of a single connected component. Many networks are not connected.</p></li>
+<li><p><strong>component (connected component)</strong>: a part of a network in which paths exist from any node to any other node.</p></li>
+<li><p><strong>giant component</strong>: a large component comprising most of the nodes in a network. Many networks wind up with a single giant component and several smaller components.</p></li>
+<li><p><strong>path length</strong>: the number of edges making up a path.</p></li>
+<li><p><strong>distance (shortest path length)</strong>: the number of edges making up the shortest possible route between two nodes.</p></li>
+<li><p><strong>diameter</strong>: the longest shortest path length in a component, often used to gauge the “width” of a network.</p></li>
+<li><p><strong>density</strong>: the number of edges in the network divided by the total number of <em>possible</em> edges in the network, if every node were connected to every other node. Density tells us how connected a particular network is.</p></li>
+<li><p><strong>average distance</strong>: the average of all shortest path lengths in the network; another common metric to describe a network’s size.</p></li>
+<li><p><strong>pivotal node</strong>: a node that lies on every shortest path between two other nodes.</p></li>
+<li><p><strong>breadth-first search</strong>: a technique for searching a network “outward from a starting node, reaching the closest nodes first” (Easley &amp; Kleinberg 34).</p></li>
+<li><p><strong>gatekeeper</strong>: a nodes that lies on <em>every</em> path between two other nodes.</p></li>
+<li><p><strong>local gatekeeper</strong>: a node with two neighbors that are not otherwise connected.</p></li>
+</ul>
+</section>
+<section id="centrality">
+<h2>Centrality<a class="headerlink" href="#centrality" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>degree</strong>: the number of connections or edges that a node has.</p></li>
+<li><p><strong>degree centrality</strong>: the number of connections or edges that a node has, normalized against the size of the network.</p></li>
+<li><p><strong>strength</strong>: the sum of the weights of all a node’s connected edges.</p></li>
+<li><p><strong>betweenness centrality</strong>: in its simplest form, the number of shortest paths that must pass through a particular node. Betweenness centrality helps to measure how often any path in the network must go through a node and therefore can show if a node is connected to many disparate groups in the network.</p></li>
+<li><p><strong>eigenvector centrality</strong>: a centrality measurement based on a node’s degree and the degree of its immediate neighbors. A node can have high eigenvector centrality if it is adjacent to a high-degree node, even if the node itself doesn’t have very high degree.</p></li>
+<li><p><strong>closeness centrality</strong>: the reciprocal of the average shortest path length from a given node to all other nodes in the graph (or in the component, if the graph is not connected). In NetworkX, higher closeness centrality values indicate a more central node, but this is sometimes calculated so that the opposite is true.</p></li>
+</ul>
+</section>
+<section id="visualization">
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>tabular representation</strong>: a network visualization that uses a table, like the edge table described above.</p></li>
+<li><p><strong>matrix visualization</strong>: a visualization of a network’s adjacency matrix, in which cell values are often replaced by colors.</p></li>
+<li><p><strong>node-link diagram</strong>: the most common kind of network visualization, in which nodes are represented by circles and links or edges are represented by lines connecting them.</p>
+<ul>
+<li><p><strong>irregular</strong>: a node-link diagram layout in which nodes can be placed anywhere. A force-directed layout is a type of irregular layout.</p></li>
+<li><p><strong>regular</strong>: a layout in which nodes are placed hierarchically, as in a tree diagram.</p></li>
+<li><p><strong>circular</strong>: a layout in which nodes are placed in a circle or in concentric circles.</p></li>
+<li><p><strong>rectilinear</strong>: a layout in which nodes are placed on a line, usually to show some kind of change over time or other interval.</p></li>
+<li><p><strong>parallel</strong>: a layout in which two lines of nodes are placed side-by-side, usually used for bipartite networks and sometimes called a bipartite layout.</p></li>
+</ul>
+</li>
+<li><p><strong>dynamic visualizations</strong>: in contrast to static visualizations, visualizations that the viewer can interact with, usually made using web technologies.</p></li>
+</ul>
+</section>
+<section id="clustering">
+<h2>Clustering<a class="headerlink" href="#clustering" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>triangles</strong>: a set of three nodes where each node is connected to every other.</p></li>
+<li><p><strong>triadic closure</strong>: the network phenomenon in which two unconnected nodes with a mutual neighbor will become connected.</p></li>
+<li><p><strong>clustering coefficient</strong>: the ratio of how many of a node’s neighbors are connected to each other, relative to the total number of neighbors.</p></li>
+<li><p><strong>bridge</strong>: an edge that, if removed, would cause a single component to split into two components.</p></li>
+<li><p><strong>local bridges</strong>: an edge between two nodes that have no neighbors in common. If removed, it would make the path length between the two nodes increase by more than two.</p></li>
+<li><p><strong>span</strong>: the length of the path between two nodes if the local bridge between them were removed.</p></li>
+<li><p><strong>weak ties</strong>: a low-weight edge that typically has high betweenness, acting as a bridge. Weak ties are often the casual social acquaintances that tie a social network together and allow information to flow between groups, as in Granovetter’s famous article “The Strength of Weak Ties.”</p></li>
+<li><p><strong>strong triadic closure property</strong>: if a node has two <em>strong</em> edges to two other nodes, this property says there should be either a strong or weak edge between them. This is a version of triadic closure that accounts for strong edges specifically.</p></li>
+<li><p><strong>neighborhood overlap</strong>: for two nodes A and B, the number of nodes who are neighbors of <em>both</em> A and B divided by the total neighbors of A or B.</p></li>
+<li><p><strong>structural holes</strong>: “the ‘empty space’ in the network between two sets of nodes that do not otherwise interact closely” (Easley &amp; Kleinberg 67).</p></li>
+<li><p><strong>broker</strong>: a node that can communicate between groups and across structural holes, often also a pivotal node.</p></li>
+</ul>
+</section>
+<section id="homophily-and-communities">
+<h2>Homophily and Communities<a class="headerlink" href="#homophily-and-communities" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>homophily</strong>: the network principle that describes the way that nodes which have common properties or attributes are likely to be or become linked to one another.</p></li>
+<li><p><strong>assortative mixing</strong>: a synonym for homophily.</p></li>
+<li><p><strong>mixed edge</strong>: an edge between nodes of different types or properties.</p></li>
+<li><p><strong>selection</strong>: “the tendency of people to form friendships with others who are like them” (Easley and Kleinberg 90).</p></li>
+<li><p><strong>social influence</strong>: the opposite of selection, i.e. the tendence of people to select their preferences and attributes based on their friendships.</p></li>
+<li><p><strong>community detection</strong>: a set of methods to determine subgroups or communities within a network.</p></li>
+<li><p><strong>component</strong>: a part of a network in which paths exist from any node to any other node.</p></li>
+<li><p><strong>clique</strong>: a subset of nodes in a network in which every node is connected any other. Cliques can have any number of nodes, and a triangle is the simplest type of clique.</p></li>
+<li><p><strong>community</strong>: a subset of nodes in a network, usually determined by some community detection method.</p></li>
+<li><p><strong>embeddedness</strong>: the number of neighbors that two nodes have in common, i.e. the first part of the formula for neighborhood overlap.</p></li>
+<li><p><strong>partition</strong>: a subset of nodes in a network, determined by a community detection method, a node attribute, or a completely different node type.</p></li>
+<li><p><strong>modularity</strong>: a set of community detection methods that tries to determine communities based on their internal density. The Louvain method is a type of modularity.</p></li>
+</ul>
+</section>
+<section id="special-network-types">
+<h2>Special Network Types<a class="headerlink" href="#special-network-types" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>signed network</strong>: a network that has positive or negative edges. These positive or negative signs are often part of an edge’s weight: 1 for a positive edge, -1 for a negative edge, 0 for no edge.</p></li>
+<li><p><strong>structural balance</strong>: the network principle that describes how signed networks seek to become balanced by changing between positive and negative edges. In any set of three nodes, the set is structurally balanced if there are either three positive edges or just one.</p></li>
+<li><p><strong>directed networks</strong>: a network in which edges are directed from a source to a target. For example, in a correspondence network with edges representing letters sent, those letters have a sender (source) and a recipient (target).</p></li>
+<li><p><strong>directed path</strong>: a path in a network with the direction of edges going in the same direction. In a directed network, paths can only be traversed if they are appropriately directed.</p></li>
+<li><p><strong>strongly connected components</strong>: a component in which there is a <em>directed</em> path from every node to every other node. If there are paths between every node but not all of those paths are directed, then it is a weakly connected component.</p></li>
+<li><p><strong>in-degree</strong>: the number of edges for which a given node is the target, i.e. the number of edges coming in.</p></li>
+<li><p><strong>out-degree</strong>: the number of edges for which a given node is the source, i.e. the number of edges going out.</p></li>
+<li><p><strong>“bow-tie” structure</strong>: a common directed network structure seen on the Web, in which a network has three large strongly connected components. One of these is a massive component in the center that has a slightly smaller component with edges only coming in and another smaller component with edges only going out.</p></li>
+<li><p><strong>bipartite network</strong>: a network with two distinct node types or partitions. Often the two node types are an entity and a group, as in an affiliation network.</p></li>
+<li><p><strong>multipartite network</strong>: a network with more than one distinct node types. Bipartite networks are type of multipartite networks.</p></li>
+<li><p><strong>incidence matrix/biadjacency matrix</strong>: the bipartite version of the adjacency matrix, in which the rows represent nodes of on type and the columns represent nodes of the other type.</p></li>
+<li><p><strong>hypergraph</strong>: another kind of network representing group affiliation, in which nodes are placed into groups rather than mapped to specific connections.</p></li>
+<li><p><strong>hyperedge</strong>: the assignment to overlapping groups that occurs in a hypergraph. Hyperedges are usually visually represented as curving areas drawn around groups of nodes.</p></li>
+<li><p><strong>projection</strong>: the process of turning a bipartite network into a unipartite network by turning one node set into the new network’s nodes and the second node set into its edges.</p></li>
+<li><p><strong>multilayer network</strong>: a network with more than type of edges, usually organized into “layers.”</p></li>
+<li><p><strong>temporal/dynamic network</strong>: a special kind of multilayer network showing change over time, in which the nodes are persistent but the edges change over time. A temporal network is a type of “multiplex” network, i.e. a multilayer network with nodes that persist across layers.</p></li>
+<li><p><strong>topological overlap</strong>: the amount of agreement or similarity between edges across layers in a multilayer network, usually expressed as a value between 0 and 1. A network that stays relatively the same over time will have high topological overlap.</p></li>
+</ul>
+</section>
+<section id="network-behavior">
+<h2>Network Behavior<a class="headerlink" href="#network-behavior" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>diffusion</strong>: the way in which behaviors spread across a social network.</p></li>
+<li><p><strong>cascade</strong>: a specific kind of diffusion in which a new behavior is iteratively triggered to “cascade” from node to node across a network.</p></li>
+<li><p><strong>complete cascade</strong>: a cascade in which the new behavior spreads to every node in the network.</p></li>
+<li><p><strong>coordination game</strong>: a system that describes how people make decisions to adopt new behaviors based on the payoff of those behaviors. If two people adopt the same behavior, they each get the payoff assigned to that behavior.</p></li>
+<li><p><strong>cascade threshold</strong>: adapted from a simple coordination game, the threshold at which the ratio of a node’s neighbors that have adopted a new behavior A will cause it to switch from old behavior B. If behavior A has a payoff a and B has a payoff b, then the value of the cascade threshold will be <span class="math notranslate nohighlight">\(\frac{b}{a+b}\)</span>.</p></li>
+<li><p><strong>cascade capacity</strong>: “the largest threshold at which a finite set of nodes can cause a complete cascade” (Easley &amp; Kleinberg 587).</p></li>
+<li><p><strong>bilingual option</strong>: an additional option for a coordination game, in which an individual can adopt <em>both</em> behaviors instead of just one. Adopting both behaviors usually comes with an additional cost.</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{0}\)</span> <strong>(R-zero or R-naught)</strong>: the basic reproductive number. In a branching process epidemic, the amount of people it is possible for an individual to infect, equal to the probability of infection times the number of contacts.</p></li>
+<li><p><strong>SIR epidemic</strong>: an epidemic with three states, susceptible (in which a person has the potential to become infected but is not yet infected), infections, and removed (in which a person has already been infected and can’t be reinfected).</p></li>
+<li><p><strong>SIS epidemic</strong>: an epidemic with just the susceptible and infectious states, in which a person becomes susceptible again as soon as they are no longer infectious and can’t be removed.</p></li>
+<li><p><strong>SIRS epidemic</strong>: an epidemic in which individuals pass through a removed state of “immunity” before becoming infectious again.</p></li>
+<li><p><strong>percolation</strong>: a way of viewing the dynamic process of an epidemic statically, be pre-calculating all the probabilities that an edge will carry disease.</p></li>
+<li><p><strong>synchronization</strong>: in a Small World network, the process by which waves of an epidemic form over time due to network properties.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./resources"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="datasets.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Where to Find Network Data</p>
+      </div>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-terms">
+   Basic Terms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-networks">
+   Types of Networks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#paths-and-metrics">
+   Paths and Metrics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#centrality">
+   Centrality
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualization">
+   Visualization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clustering">
+   Clustering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#homophily-and-communities">
+   Homophily and Communities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#special-network-types">
+   Special Network Types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#network-behavior">
+   Network Behavior
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By John R. Ladd
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>

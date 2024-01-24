@@ -6,45 +6,45 @@ root: intro
 parts:
   - caption: Network Concepts
     chapters:
-    - file: data-basics
+    - file: basics/data-basics
       sections:
-      - file: jupyter
-      - file: python
-      - file: pandas
-      - file: seaborn
+      - file: basics/jupyter
+      - file: basics/python
+      - file: basics/pandas
+      - file: basics/altair
     - file: visualizing-networks
       sections:
       - file: visualization
-    - file: analyzing-networks
+    - file: analyze/analyzing-networks
       sections:
-      - file: networkx
-      - file: metrics
-      - file: homophily
-      - file: community
-      - file: node2vec
-    - file: special-networks
+      - file: analyze/networkx
+      - file: analyze/metrics
+      - file: analyze/homophily
+      - file: analyze/community
+      - file: analyze/node2vec
+    - file: special/special-networks
       sections:
-      - file: directed
-      - file: bipartite
-      - file: dynamic
+      - file: special/directed
+      - file: special/bipartite
+      - file: special/dynamic
   - caption: CIS 345/397
     chapters:
-    - file: general-info
-    - file: schedule
-    - file: assignments
+    - file: course-info/general-info
+    - file: course-info/schedule
+    - file: assignments/assignments
       sections:
-      - file: create-visualization
-      - file: descriptive
-      - file: predictive
-      - file: presentation
-    - file: homework
+      - file: assignments/create-visualization
+      - file: assignments/descriptive
+      - file: assignments/predictive
+      - file: assignments/presentation
+    - file: homework/homework
       sections:
       - file: homework/week1
-    - file: course-policies
+    - file: course-info/course-policies
       sections:
-      - file: criteria
-      - file: groundrules
+      - file: course-info/criteria
+      - file: course-info/ground-rules
   - caption: Resources
     chapters:
-    - file: datasets
-    - file: glossary
+    - file: resources/datasets
+    - file: resources/glossary
