@@ -39,7 +39,7 @@ parts:
       - file: assignments/presentation
     - file: homework/homework
       sections:
-      - file: homework/week1
+      - file: homework/01_python
     - file: course-info/course-policies
       sections:
       - file: course-info/criteria
