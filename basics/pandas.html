@@ -482,7 +482,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../homework/homework.html">Homework</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../homework/week1.html">Week 1: Homework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../homework/01_python.html">01: Networks in Python</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../course-info/course-policies.html">Course Policies</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -2798,7 +2798,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x11de73c70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x1183bbe20&gt;
 </pre></div>
 </div>
 </div>
@@ -3472,79 +3472,79 @@ Name: count, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>208</th>
-      <td>volkswagen</td>
-      <td>gti</td>
-      <td>2.0</td>
+      <th>0</th>
+      <td>audi</td>
+      <td>a4</td>
+      <td>1.8</td>
       <td>1999</td>
       <td>4</td>
+      <td>auto(l5)</td>
+      <td>f</td>
+      <td>18</td>
+      <td>29</td>
+      <td>p</td>
+      <td>compact</td>
+      <td>0.450000</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>dodge</td>
+      <td>caravan 2wd</td>
+      <td>3.8</td>
+      <td>1999</td>
+      <td>6</td>
       <td>auto(l4)</td>
       <td>f</td>
-      <td>19</td>
-      <td>26</td>
+      <td>15</td>
+      <td>21</td>
       <td>r</td>
-      <td>compact</td>
-      <td>0.5000</td>
+      <td>minivan</td>
+      <td>0.633333</td>
     </tr>
     <tr>
-      <th>166</th>
-      <td>subaru</td>
-      <td>impreza awd</td>
-      <td>2.2</td>
-      <td>1999</td>
-      <td>4</td>
-      <td>manual(m5)</td>
-      <td>4</td>
+      <th>185</th>
+      <td>toyota</td>
+      <td>camry</td>
+      <td>3.5</td>
+      <td>2008</td>
+      <td>6</td>
+      <td>auto(s6)</td>
+      <td>f</td>
       <td>19</td>
-      <td>26</td>
+      <td>28</td>
       <td>r</td>
-      <td>subcompact</td>
-      <td>0.5500</td>
+      <td>midsize</td>
+      <td>0.583333</td>
     </tr>
     <tr>
-      <th>85</th>
-      <td>ford</td>
-      <td>f150 pickup 4wd</td>
-      <td>4.6</td>
+      <th>201</th>
+      <td>toyota</td>
+      <td>toyota tacoma 4wd</td>
+      <td>2.7</td>
       <td>1999</td>
-      <td>8</td>
-      <td>manual(m5)</td>
       <td>4</td>
-      <td>13</td>
+      <td>auto(l4)</td>
+      <td>4</td>
       <td>16</td>
+      <td>20</td>
       <td>r</td>
       <td>pickup</td>
-      <td>0.5750</td>
+      <td>0.675000</td>
     </tr>
     <tr>
-      <th>125</th>
-      <td>jeep</td>
-      <td>grand cherokee 4wd</td>
-      <td>4.7</td>
-      <td>1999</td>
+      <th>17</th>
+      <td>audi</td>
+      <td>a6 quattro</td>
+      <td>4.2</td>
+      <td>2008</td>
       <td>8</td>
-      <td>auto(l4)</td>
+      <td>auto(s6)</td>
       <td>4</td>
-      <td>14</td>
-      <td>17</td>
-      <td>r</td>
-      <td>suv</td>
-      <td>0.5875</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>chevrolet</td>
-      <td>k1500 tahoe 4wd</td>
-      <td>5.7</td>
-      <td>1999</td>
-      <td>8</td>
-      <td>auto(l4)</td>
-      <td>4</td>
-      <td>11</td>
-      <td>15</td>
-      <td>r</td>
-      <td>suv</td>
-      <td>0.7125</td>
+      <td>16</td>
+      <td>23</td>
+      <td>p</td>
+      <td>midsize</td>
+      <td>0.525000</td>
     </tr>
   </tbody>
 </table>
@@ -3559,11 +3559,11 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>101    1.6
-192    3.3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231    2.8
 91     3.8
-109    2.4
-183    3.0
+191    3.0
+39     3.3
+165    2.2
 Name: displ, dtype: float64
 </pre></div>
 </div>
@@ -3577,11 +3577,11 @@ Name: displ, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100    1.6
-192    3.3
-101    1.6
-189    2.4
-200    2.7
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20     5.3
+145    3.5
+118    2.0
+99     1.6
+73     5.9
 Name: displ, dtype: float64
 </pre></div>
 </div>
@@ -3630,39 +3630,24 @@ Name: displ, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>93</th>
-      <td>ford</td>
-      <td>mustang</td>
-      <td>4.0</td>
+      <th>6</th>
+      <td>audi</td>
+      <td>a4</td>
+      <td>3.1</td>
       <td>2008</td>
       <td>6</td>
-      <td>auto(l5)</td>
-      <td>r</td>
-      <td>16</td>
-      <td>24</td>
-      <td>r</td>
-      <td>subcompact</td>
-      <td>0.666667</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>dodge</td>
-      <td>caravan 2wd</td>
-      <td>2.4</td>
-      <td>1999</td>
-      <td>4</td>
-      <td>auto(l3)</td>
+      <td>auto(av)</td>
       <td>f</td>
       <td>18</td>
-      <td>24</td>
-      <td>r</td>
-      <td>minivan</td>
-      <td>0.600000</td>
+      <td>27</td>
+      <td>p</td>
+      <td>compact</td>
+      <td>0.516667</td>
     </tr>
     <tr>
-      <th>126</th>
-      <td>jeep</td>
-      <td>grand cherokee 4wd</td>
+      <th>59</th>
+      <td>dodge</td>
+      <td>durango 4wd</td>
       <td>4.7</td>
       <td>2008</td>
       <td>8</td>
@@ -3675,25 +3660,130 @@ Name: displ, dtype: float64
       <td>0.587500</td>
     </tr>
     <tr>
-      <th>36</th>
-      <td>chevrolet</td>
-      <td>malibu</td>
-      <td>3.6</td>
+      <th>199</th>
+      <td>toyota</td>
+      <td>land cruiser wagon 4wd</td>
+      <td>5.7</td>
       <td>2008</td>
-      <td>6</td>
+      <td>8</td>
       <td>auto(s6)</td>
+      <td>4</td>
+      <td>13</td>
+      <td>18</td>
+      <td>r</td>
+      <td>suv</td>
+      <td>0.712500</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>ford</td>
+      <td>explorer 4wd</td>
+      <td>4.6</td>
+      <td>2008</td>
+      <td>8</td>
+      <td>auto(l6)</td>
+      <td>4</td>
+      <td>13</td>
+      <td>19</td>
+      <td>r</td>
+      <td>suv</td>
+      <td>0.575000</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>hyundai</td>
+      <td>sonata</td>
+      <td>2.5</td>
+      <td>1999</td>
+      <td>6</td>
+      <td>manual(m5)</td>
       <td>f</td>
-      <td>17</td>
+      <td>18</td>
       <td>26</td>
       <td>r</td>
       <td>midsize</td>
-      <td>0.600000</td>
+      <td>0.416667</td>
     </tr>
     <tr>
-      <th>56</th>
+      <th>1</th>
+      <td>audi</td>
+      <td>a4</td>
+      <td>1.8</td>
+      <td>1999</td>
+      <td>4</td>
+      <td>manual(m5)</td>
+      <td>f</td>
+      <td>21</td>
+      <td>29</td>
+      <td>p</td>
+      <td>compact</td>
+      <td>0.450000</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>nissan</td>
+      <td>pathfinder 4wd</td>
+      <td>3.3</td>
+      <td>1999</td>
+      <td>6</td>
+      <td>manual(m5)</td>
+      <td>4</td>
+      <td>15</td>
+      <td>17</td>
+      <td>r</td>
+      <td>suv</td>
+      <td>0.550000</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>audi</td>
+      <td>a4 quattro</td>
+      <td>3.1</td>
+      <td>2008</td>
+      <td>6</td>
+      <td>manual(m6)</td>
+      <td>4</td>
+      <td>15</td>
+      <td>25</td>
+      <td>p</td>
+      <td>compact</td>
+      <td>0.516667</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>subaru</td>
+      <td>impreza awd</td>
+      <td>2.5</td>
+      <td>2008</td>
+      <td>4</td>
+      <td>manual(m5)</td>
+      <td>4</td>
+      <td>20</td>
+      <td>27</td>
+      <td>r</td>
+      <td>compact</td>
+      <td>0.625000</td>
+    </tr>
+    <tr>
+      <th>49</th>
       <td>dodge</td>
       <td>dakota pickup 4wd</td>
-      <td>5.2</td>
+      <td>3.7</td>
+      <td>2008</td>
+      <td>6</td>
+      <td>auto(l4)</td>
+      <td>4</td>
+      <td>14</td>
+      <td>18</td>
+      <td>r</td>
+      <td>pickup</td>
+      <td>0.616667</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>dodge</td>
+      <td>ram 1500 pickup 4wd</td>
+      <td>5.9</td>
       <td>1999</td>
       <td>8</td>
       <td>auto(l4)</td>
@@ -3702,112 +3792,22 @@ Name: displ, dtype: float64
       <td>15</td>
       <td>r</td>
       <td>pickup</td>
-      <td>0.650000</td>
+      <td>0.737500</td>
     </tr>
     <tr>
-      <th>28</th>
-      <td>chevrolet</td>
-      <td>k1500 tahoe 4wd</td>
-      <td>5.3</td>
-      <td>2008</td>
-      <td>8</td>
-      <td>auto(l4)</td>
-      <td>4</td>
-      <td>14</td>
-      <td>19</td>
-      <td>r</td>
-      <td>suv</td>
-      <td>0.662500</td>
-    </tr>
-    <tr>
-      <th>80</th>
-      <td>ford</td>
-      <td>explorer 4wd</td>
-      <td>4.0</td>
-      <td>2008</td>
-      <td>6</td>
-      <td>auto(l5)</td>
-      <td>4</td>
-      <td>13</td>
-      <td>19</td>
-      <td>r</td>
-      <td>suv</td>
-      <td>0.666667</td>
-    </tr>
-    <tr>
-      <th>115</th>
-      <td>hyundai</td>
-      <td>tiburon</td>
-      <td>2.0</td>
-      <td>1999</td>
-      <td>4</td>
-      <td>auto(l4)</td>
-      <td>f</td>
-      <td>19</td>
-      <td>26</td>
-      <td>r</td>
-      <td>subcompact</td>
-      <td>0.500000</td>
-    </tr>
-    <tr>
-      <th>116</th>
-      <td>hyundai</td>
-      <td>tiburon</td>
-      <td>2.0</td>
-      <td>1999</td>
-      <td>4</td>
-      <td>manual(m5)</td>
-      <td>f</td>
-      <td>19</td>
-      <td>29</td>
-      <td>r</td>
-      <td>subcompact</td>
-      <td>0.500000</td>
-    </tr>
-    <tr>
-      <th>189</th>
+      <th>193</th>
       <td>toyota</td>
-      <td>camry solara</td>
-      <td>2.4</td>
-      <td>2008</td>
-      <td>4</td>
-      <td>auto(s5)</td>
-      <td>f</td>
-      <td>22</td>
-      <td>31</td>
-      <td>r</td>
-      <td>compact</td>
-      <td>0.600000</td>
-    </tr>
-    <tr>
-      <th>211</th>
-      <td>volkswagen</td>
-      <td>gti</td>
-      <td>2.8</td>
+      <td>corolla</td>
+      <td>1.8</td>
       <td>1999</td>
-      <td>6</td>
-      <td>manual(m5)</td>
+      <td>4</td>
+      <td>auto(l3)</td>
       <td>f</td>
-      <td>17</td>
       <td>24</td>
+      <td>30</td>
       <td>r</td>
       <td>compact</td>
-      <td>0.466667</td>
-    </tr>
-    <tr>
-      <th>76</th>
-      <td>ford</td>
-      <td>expedition 2wd</td>
-      <td>5.4</td>
-      <td>2008</td>
-      <td>8</td>
-      <td>auto(l6)</td>
-      <td>r</td>
-      <td>12</td>
-      <td>18</td>
-      <td>r</td>
-      <td>suv</td>
-      <td>0.675000</td>
+      <td>0.450000</td>
     </tr>
   </tbody>
 </table>
@@ -3821,17 +3821,17 @@ Name: displ, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>67     4.7
-194    1.8
-155    3.8
-74     4.6
-226    2.5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>152    4.0
+78     4.0
+115    2.0
+58     4.7
+21     5.7
       ... 
-103    1.6
-113    2.5
-121    2.7
-100    1.6
-26     6.2
+114    3.3
+41     3.3
+72     5.7
+142    2.4
+214    2.0
 Name: displ, Length: 234, dtype: float64
 </pre></div>
 </div>
@@ -3845,17 +3845,17 @@ Name: displ, Length: 234, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      2.8
-1      2.0
-2      3.8
-3      3.3
-4      2.2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      7.0
+1      4.0
+2      4.0
+3      4.7
+4      5.4
       ... 
-229    1.9
-230    3.0
-231    4.0
-232    3.6
-233    3.0
+229    5.9
+230    4.2
+231    5.7
+232    4.7
+233    3.3
 Name: displ, Length: 234, dtype: float64
 </pre></div>
 </div>
