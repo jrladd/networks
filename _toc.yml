@@ -40,6 +40,7 @@ parts:
     - file: homework/homework
       sections:
       - file: homework/01_python
+      - file: homework/02_centrality
     - file: course-info/course-policies
       sections:
       - file: course-info/criteria
