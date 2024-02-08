@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>College Football &#8212; Network Analysis in Python</title>
+    <title>02: College Football &#8212; Network Analysis in Python</title>
   
   
   
@@ -61,6 +61,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'homework/02_centrality';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Course Policies" href="../course-info/course-policies.html" />
+    <link rel="prev" title="01: Networks in Python" href="01_python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -188,7 +190,7 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="homework.html">
                         Homework
                       </a>
@@ -338,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="homework.html">
                         Homework
                       </a>
@@ -465,7 +467,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CIS 345/397</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../course-info/general-info.html">Advanced Data Analysis: Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../course-info/schedule.html">Schedule &amp; Readings</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../assignments/assignments.html">Assignments</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -475,8 +477,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../assignments/presentation.html">Presentation</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="homework.html">Homework</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="homework.html">Homework</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_python.html">01: Networks in Python</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">02: College Football</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../course-info/course-policies.html">Course Policies</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -640,7 +643,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>College Football</h1>
+    <h1>02: College Football</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -652,16 +655,16 @@ title="Print to PDF"
             <article class="bd-article" role="main">
               
   <section class="tex2jax_ignore mathjax_ignore" id="college-football">
-<h1>College Football<a class="headerlink" href="#college-football" title="Permalink to this heading">#</a></h1>
+<h1>02: College Football<a class="headerlink" href="#college-football" title="Permalink to this heading">#</a></h1>
 <p>In honor of the Super Bowl this week, we’ll work on a network of football games compiled by Girvan and Newman (two famous network scientists) in 2002. Go to <a class="reference external" href="http://www-personal.umich.edu/~mejn/netdata/">Newman’s network data site</a> and download the American College football network available there. This will be a zip file that includes a <code class="docutils literal notranslate"><span class="pre">.gml</span></code> file and a text file with some important metadata.</p>
 <p>In a short Jupyter notebook report, answer the following questions about this network. Don’t simply calculate the answers: make sure you’re fully explaining (in writing) the metrics and visualizations that you generate. Consider the <a class="reference external" href="https://jrladd.com/CIS397-networks/criteria/">Criteria for Good Reports</a> as a guide. You can create markdown cells with section headers to separate the different sections of the report. Rather than number the report as if you’re answering distinct questions, use the questions as a guide to do some data storytelling, i.e. explain this network’s data in an organized way.</p>
 <ol class="arabic simple">
 <li><p>What are some basic facts about this network: how many nodes and edges does it have? is it directed? is it connected? What do these basic measures tell you about the network?</p></li>
 <li><p>Is the college football network a small world? Why or why not? Think about which path-related metrics you would need in order to draw conclusions about this. You may also need to create a degree distribution graph, and you can use the centrality calculations that you’ll create in the next step.</p></li>
-<li><p>What are the most central teams in the network? Calculate degree, betweenness, eigenvector, and closeness centrality, and look at the highest values for each measure. Which teams have high centrality, and why do you think that is? What do the different centrality measures tell you about the network? Consider the distributions of centrality in the network as well as the ratios between different measures (i.e. the ratio of betweenness to degree).</p></li>
+<li><p>What are the most central teams in the network? Calculate degree, betweenness, eigenvector, and closeness centrality, and look at the highest values for each measure. Add all of these measures as node attributes to your network. Which teams have high centrality, and why do you think that is? What do the different centrality measures tell you about the network? Consider the distributions of centrality in the network as well as the ratios between different measures (i.e. the ratio of betweenness to degree).</p></li>
 <li><p>What are the most central conferences in the network? How might you assess conferences as groups of nodes?</p></li>
 </ol>
-<p>n.b. <em>To answer these questions, you’ll need to use a mixture of the NetworkX skills we’ve been working on, as well as combine NetworkX code with pandas and seaborn.</em></p>
+<p>n.b. <em>To answer these questions, you’ll need to use a mixture of the NetworkX skills we’ve been working on, as well as combine NetworkX code with pandas and altair.</em></p>
 <p><strong>When you’re finished, remove these instructions from the top of the file, leaving only your own writing and code. Export the notebook as an HTML file, check to make sure everything is formatted correctly, and submit your HTML file to Sakai.</strong></p>
 </section>
 
@@ -693,6 +696,20 @@ title="Print to PDF"
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="01_python.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">01: Networks in Python</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="../course-info/course-policies.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Course Policies</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
 </div>
             </footer>
             
