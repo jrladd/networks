@@ -6,8 +6,9 @@
 
 Now that you've learned some of the principles and techniques behind network visualization, you'll create your own visualization. You'll complete the following two items:
 
-1. An original visualization of one of the social network data examples listed below. You can make any kind of network visualization you want, so long as you meet the outlined criteria. Your network can be static or dynamic, using any of the tools we worked with in class.
-2. A 2-3 paragraph written explanation of the choices you made in your visualization and the network principles you followed. You might look back at [Ch. 4 of *The Network Turn*](https://www.cambridge.org/core/elements/network-turn/CC38F2EA9F51A6D1AFCB7E005218BBE5) to remind yourself of some of the key principles.
+1. Two original visualizations of one of the social network data examples listed below. You can make any kind of network visualization you want, so long as you meet the outlined criteria. You should have one static and one dynamic visualization, using any of the tools we worked with in class. Think carefully about the different advantages of these two approaches to visualization!
+2. Both visualizations should be clearly labeled, with titles and relevant information. In your static visualization, this may involve adding captions to an exported image. In your dynamic visualization, this may involve adding labels to a plot and writing in markdown cells.
+3. A 2-3 paragraph written explanation of the choices you made in your visualizations and the network principles you followed. You might look back at [Ch. 4 of *The Network Turn*](https://www.cambridge.org/core/elements/network-turn/CC38F2EA9F51A6D1AFCB7E005218BBE5) to remind yourself of some of the key principles.
 
 You'll be graded on the following criteria:
 
@@ -34,5 +35,5 @@ All of these datasets are in GML format, which is compatible with most of the so
 
 - Turn in your assignment via Sakai.
 - For your written explanation, submit a PDF that has your name, the date, your wordcount, and the citation for the dataset you used at the top. (You can find citations on Newman's website.)
-- If you created a static visualization, you should submit an image file on Sakai. If you create a dynamic visualization, you should submit a stable link to your visualization. It is your responsibility to make sure that your network is complete and viewable by the deadline.
+- For your static visualization, you should submit an image file on Sakai. For your dynamic visualization, you should submit a Jupyter HTML export or another file with your visualization in it. It is your responsibility to make sure that your network is complete and viewable by the deadline.
 - Explanation should be 2-3 paragraphs, about 300-400 words.

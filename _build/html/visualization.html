@@ -61,8 +61,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'visualization';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Analyzing Networks" href="analyze/analyzing-networks.html" />
-    <link rel="prev" title="Visualizing Networks" href="visualizing-networks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -143,8 +141,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="visualizing-networks.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="visualization/visualizing-networks.html">
                         Visualizing Networks
                       </a>
                     </li>
@@ -297,8 +295,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="visualizing-networks.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="visualization/visualizing-networks.html">
                         Visualizing Networks
                       </a>
                     </li>
@@ -443,7 +441,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Network Concepts</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="basics/data-basics.html">Data Basics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="basics/jupyter.html">Set Up Jupyter Lab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basics/python.html">Python</a></li>
@@ -451,8 +449,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="basics/altair.html">Altair</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="visualizing-networks.html">Visualizing Networks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Network Visualization</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="visualization/visualizing-networks.html">Visualizing Networks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="visualization/visualization.html">Network Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization/dynamic-visualization.html">Networks with Altair</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="analyze/analyzing-networks.html">Analyzing Networks</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -659,11 +658,6 @@ title="Print to PDF"
    Static Visualization
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dynamic-visualization">
-   Dynamic Visualization
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -700,10 +694,6 @@ title="Print to PDF"
 <li><p><strong>Filters</strong>: It’s not always desirable to show the <em>entire</em> network. Some networks are very large and complex, and it might be helpful to filter down to a subset of nodes and edges in order to make an argument.</p></li>
 </ul>
 </section>
-<section id="dynamic-visualization">
-<h2>Dynamic Visualization<a class="headerlink" href="#dynamic-visualization" title="Permalink to this heading">#</a></h2>
-<p>Dynamic visualization responds to the viewer’s inputs. In dynamic visualizations, you can click on things, move nodes around, and get more information about the network in various ways. All the principles of static visualization described above also apply to dynamic visualization. But because you can more easily show node movement and create new arrangements in a dynamic visualization, you can typically include a lot more information in a single visualization. The key to a dynamic visualization is that it allows someone to explore the network on their own. This makes it both easier and harder to communicate an argument with a dynamic visualization. There are more tools at your disposal, but the viewer also has considerable freedom.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -734,20 +724,6 @@ title="Print to PDF"
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="visualizing-networks.html" title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Visualizing Networks</p>
-      </div>
-  </a>
-  <a class='right-next' id="next-link" href="analyze/analyzing-networks.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Analyzing Networks</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
-  </a>
 </div>
             </footer>
             
@@ -772,11 +748,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#static-visualization">
    Static Visualization
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dynamic-visualization">
-   Dynamic Visualization
   </a>
  </li>
 </ul>
