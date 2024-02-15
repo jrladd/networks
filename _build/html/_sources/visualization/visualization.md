@@ -14,7 +14,7 @@ The practice of visualizing networks is a subset of the larger field of informat
 
 Static network visualizations don't respond to the viewer's inputs, and they are typically single image files. They can be exploratory or explanatory, but in this class we will focus on creating *explanatory* visualizations that create a clear argument about a network. Here's an example:
 
-![An example visualization of the Game of Thrones network.](got_viz.png)
+![An example visualization of the Game of Thrones network.](../got_viz.png)
 
 This visualization uses the *Game of Thrones* network to make an argument about characters who co-occur in the *A Song of Ice and Fire* novels (on which the *Game of Thrones* TV series is based). The visualization uses clear labels, a readable layout, and a title, caption, and key to clearly communicate its argument. Rather than trying to show all aspects of the network, the visualization focuses in on just one thing. In static visualization, you may need to create more than one visualization if you have multiple aspects of the network you want to highlight.
 
