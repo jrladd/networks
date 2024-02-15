@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Epidemics &#8212; Network Analysis in Python</title>
+    <title>03: Game of Thrones Visualization &#8212; Network Analysis in Python</title>
   
   
   
@@ -58,9 +58,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/09_epidemics';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/03_visualization';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -262,10 +260,6 @@ const thebe_selector_output = ".output, .cell_output"
     </div>
   
 
-  
-  <label class="sidebar-toggle secondary-toggle" for="__secondary">
-      <span class="fa-solid fa-outdent"></span>
-  </label>
   
 
 </div>
@@ -582,7 +576,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fhomework/09_epidemics.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fhomework/03_visualization.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -607,7 +601,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="../_sources/homework/09_epidemics.ipynb" target="_blank"
+      <li><a href="../_sources/homework/03_visualization.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -640,9 +634,7 @@ title="Print to PDF"
       
   </ul>
 </div>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
-            <span class="fa-solid fa-list"></span>
-        </label>
+
     </div>
 </div>
             </div>
@@ -650,53 +642,29 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Epidemics</h1>
+    <h1>03: Game of Thrones Visualization</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#random-choice">
-   Random Choice
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
 
             <article class="bd-article" role="main">
               
-  <section class="tex2jax_ignore mathjax_ignore" id="epidemics">
-<h1>Epidemics<a class="headerlink" href="#epidemics" title="Permalink to this heading">#</a></h1>
-<p>This week we’ll explore the spread of epidemics in a contact network. Use the High School contact network available on <a class="reference external" href="https://www.cs.cornell.edu/~arb/data/contact-high-school/">Austin R. Benson’s network data site</a>. You should already have it downloaded from last time, and the data file is also available in the Sakai assignments. You may need to refer back to the Clustering homework for a reminder on how to input this data.</p>
-<p>Epidemics are a sensitive topic, and modeling epidemics on data collected from real people requires care. Be sure to describe the spread of the epidemic <em>theoretically</em> and with respect for the people on which this data set is based. If you’re at all uncomfortable working with this example, you’re welcome to work with me to choose a different data set for this assignment.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="game-of-thrones-visualization">
+<h1>03: Game of Thrones Visualization<a class="headerlink" href="#game-of-thrones-visualization" title="Permalink to this heading">#</a></h1>
+<p>This week we’ll continue to practice with the two types of network visualization: static and dynamic. You’ll continue to work with the <em>Game of Thrones</em> dataset that we’ve been using to practice.</p>
 <p>In a short Jupyter notebook report, answer the following questions about this network. Don’t simply calculate the answers: make sure you’re fully explaining (in writing) the metrics and visualizations that you generate. Consider the <a class="reference external" href="https://jrladd.com/CIS397-networks/criteria/">Criteria for Good Reports</a> as a guide. You can create markdown cells with section headers to separate the different sections of the report. Rather than number the report as if you’re answering distinct questions, use the questions as a guide to do some data storytelling, i.e. explain this network’s data in an organized way.</p>
 <ol class="arabic simple">
-<li><p>You’ll work with a hypothetical epidemic in which the probability of infection is 5/8: <span class="math notranslate nohighlight">\(p=0.625\)</span>. Based on this network’s average number of contacts per person, what is the value of <span class="math notranslate nohighlight">\(k\)</span>, and what is the value of <span class="math notranslate nohighlight">\(R_{0}\)</span>? (This network is undirected, so treat every edge as potentially carrying infection in both directions.) This not a branching process, but what do these values tell you about the network?</p></li>
-<li><p>Using the steps on page 651 of Ch. 21 of our book, create a simulation of an SIR network similar to the simulation you created last week for information cascades. You’ll create a function to generate one time-step of the network and create both a visualization and a pandas DataFrame that shows the progress of infection and recovery. Will this infection stop itself over time or will it continue?</p></li>
-<li><p>Create a static percolation of the SIR epidemic and visualize the open and blocked edges. (You might consider using edge weight or edge style to show percolation.) Does this confirm what you saw in the temporal model above? What did you learn from this representation?</p></li>
-<li><p>Extend your initial epidemic simulation for a SIRS epidemic, letting the time in the removed state, <span class="math notranslate nohighlight">\(t_{R}\)</span> be 2 cycles. How does the affect the speed and extent of the epidemic?</p></li>
+<li><p>Finish polishing your Gephi visualization of the GoT network. This is a static visualization, so think about what things can be shown visually with this kind of graph. Your visualization <strong>must</strong> include: a use of node color to show a calculated metric, a use of node size to do the same (but it can be a different metric), some visual expression of edge weights, readable node labels, a clear intentional layout, and written captions and key (these should probably be added to the image after you export from Gephi).</p></li>
+<li><p>Create a dynamic visualization of the GoT network with <code class="docutils literal notranslate"><span class="pre">nx_altair</span></code>. This should be visually distinct from your Gephi visualization and use different attributes. Think about how this kind of visualization might allow you to show something different about the network. Your visualization <strong>must</strong> include: tooltips and scrollable zoom; an additional plot that shows another feature of your network as a bar plot, scatterplot, or histogram; use of node size and color; use of one <code class="docutils literal notranslate"><span class="pre">draw_networkx</span></code> parameter or attribute that is <em>not</em> mentioned in our textbook; and a clear intentional layout.</p></li>
+<li><p>Both of your visualizations should be included in this Jupyter notebook. (We will discuss how to add an image to a notebook in class.) The notebook should include explanations of both of the visualizations and the choices you made, and you should turn in this notebook and your static visualization image.</p></li>
 </ol>
-<p>n.b. <em>To answer these questions, you’ll need to use a mixture of the NetworkX skills we’ve been working on, as well as combine NetworkX code with pandas and seaborn.</em></p>
+<p><strong>Your visualizations should not be identical to anyone else’s! Though you may get advice from others, you should work to make your visualization unique.</strong></p>
+<p>n.b. <em>To answer these questions, you’ll need to use a mixture of the NetworkX skills we’ve been working on, as well as combine NetworkX code with pandas and altair.</em></p>
 <p><strong>When you’re finished, remove these instructions from the top of the file, leaving only your own writing and code. Export the notebook as an HTML file, check to make sure everything is formatted correctly, and submit your HTML file to Sakai.</strong></p>
-<section id="random-choice">
-<h2>Random Choice<a class="headerlink" href="#random-choice" title="Permalink to this heading">#</a></h2>
-<p>In order to accomplish the above, you’ll need a way of selecting from one of two options based on a predetermined probability. Python has a built-in library for this, <code class="docutils literal notranslate"><span class="pre">random</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choices</span>
-
-<span class="n">choices</span><span class="p">([</span><span class="s1">&#39;option1&#39;</span><span class="p">,</span><span class="s1">&#39;option2&#39;</span><span class="p">],</span><span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="mf">.25</span><span class="p">,</span><span class="mf">.75</span><span class="p">],</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>The code above creates a scenario in which Option 1 has a 1 in 4 chance of occuring.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -733,27 +701,6 @@ title="Print to PDF"
           </div>
           
           
-          
-            <div class="bd-sidebar-secondary bd-toc">
-              
-<div class="toc-item">
-  
-<div class="tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-</div>
-<nav id="bd-toc-nav" class="page-toc">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#random-choice">
-   Random Choice
-  </a>
- </li>
-</ul>
-
-</nav>
-</div>
-
-            </div>
           
           
         </div>
