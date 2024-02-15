@@ -1,7 +1,5 @@
 # Project 1: Create a Visualization
 
-**THIS PROMPT IS FROM LAST SEMESTER AND MAY CHANGE FOR OUR CLASS.**
-
 **Complete by: Tuesday 27 Feb. by 12:50pm**
 
 Now that you've learned some of the principles and techniques behind network visualization, you'll create your own visualization. You'll complete the following two items:
