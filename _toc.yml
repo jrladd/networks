@@ -12,9 +12,10 @@ parts:
       - file: basics/python
       - file: basics/pandas
       - file: basics/altair
-    - file: visualizing-networks
+    - file: visualization/visualizing-networks
       sections:
-      - file: visualization
+      - file: visualization/visualization
+      - file: visualization/dynamic-visualization
     - file: analyze/analyzing-networks
       sections:
       - file: analyze/networkx
