@@ -43,6 +43,7 @@ parts:
       - file: homework/01_python
       - file: homework/02_centrality
       - file: homework/03_visualization
+      - file: homework/04_clustering
     - file: course-info/course-policies
       sections:
       - file: course-info/criteria
