@@ -20,7 +20,6 @@ parts:
       sections:
       - file: analyze/networkx
       - file: analyze/metrics
-      - file: analyze/homophily
       - file: analyze/community
       - file: analyze/node2vec
     - file: special/special-networks
