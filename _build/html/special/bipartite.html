@@ -486,6 +486,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../homework/02_centrality.html">02: College Football</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../homework/03_visualization.html">03: Game of Thrones Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../homework/04_clustering.html">04: High School Interactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../homework/05_homophily.html">05: Political Books</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../course-info/course-policies.html">Course Policies</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -741,7 +742,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;person_5&#39;, &#39;person_3&#39;, &#39;person_19&#39;, &#39;person_2&#39;, &#39;person_25&#39;, &#39;person_4&#39;, &#39;person_6&#39;, &#39;person_16&#39;, &#39;person_22&#39;, &#39;person_15&#39;, &#39;person_24&#39;, &#39;person_1&#39;, &#39;person_14&#39;, &#39;person_8&#39;, &#39;person_9&#39;, &#39;person_12&#39;, &#39;person_7&#39;, &#39;person_10&#39;, &#39;person_11&#39;, &#39;person_21&#39;, &#39;person_13&#39;, &#39;person_20&#39;, &#39;person_17&#39;, &#39;person_18&#39;, &#39;person_23&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;person_6&#39;, &#39;person_15&#39;, &#39;person_8&#39;, &#39;person_18&#39;, &#39;person_24&#39;, &#39;person_12&#39;, &#39;person_25&#39;, &#39;person_23&#39;, &#39;person_22&#39;, &#39;person_4&#39;, &#39;person_7&#39;, &#39;person_17&#39;, &#39;person_13&#39;, &#39;person_1&#39;, &#39;person_21&#39;, &#39;person_10&#39;, &#39;person_16&#39;, &#39;person_19&#39;, &#39;person_20&#39;, &#39;person_2&#39;, &#39;person_5&#39;, &#39;person_3&#39;, &#39;person_11&#39;, &#39;person_14&#39;, &#39;person_9&#39;}
 </pre></div>
 </div>
 </div>
@@ -758,7 +759,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;12&#39;: 0.12, &#39;9&#39;: 0.44, &#39;8&#39;: 0.12, &#39;13&#39;: 0.16, &#39;2&#39;: 0.12, &#39;7&#39;: 0.2, &#39;15&#39;: 0.16, &#39;4&#39;: 0.2, &#39;11&#39;: 0.16, &#39;1&#39;: 0.84, &#39;10&#39;: 0.12, &#39;6&#39;: 0.36, &#39;14&#39;: 0.2, &#39;5&#39;: 0.44, &#39;3&#39;: 0.16, &#39;person_5&#39;: 0.2, &#39;person_3&#39;: 0.2, &#39;person_19&#39;: 0.3333333333333333, &#39;person_2&#39;: 0.13333333333333333, &#39;person_25&#39;: 0.2, &#39;person_4&#39;: 0.2, &#39;person_6&#39;: 0.26666666666666666, &#39;person_16&#39;: 0.4, &#39;person_15&#39;: 0.3333333333333333, &#39;person_22&#39;: 0.26666666666666666, &#39;person_24&#39;: 0.2, &#39;person_1&#39;: 0.2, &#39;person_14&#39;: 0.3333333333333333, &#39;person_8&#39;: 0.26666666666666666, &#39;person_9&#39;: 0.13333333333333333, &#39;person_12&#39;: 0.26666666666666666, &#39;person_7&#39;: 0.2, &#39;person_10&#39;: 0.2, &#39;person_11&#39;: 0.13333333333333333, &#39;person_21&#39;: 0.2, &#39;person_13&#39;: 0.4666666666666667, &#39;person_20&#39;: 0.2, &#39;person_17&#39;: 0.3333333333333333, &#39;person_18&#39;: 0.3333333333333333, &#39;person_23&#39;: 0.3333333333333333}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;13&#39;: 0.16, &#39;10&#39;: 0.12, &#39;8&#39;: 0.12, &#39;14&#39;: 0.2, &#39;11&#39;: 0.16, &#39;3&#39;: 0.16, &#39;2&#39;: 0.12, &#39;5&#39;: 0.44, &#39;15&#39;: 0.16, &#39;6&#39;: 0.36, &#39;1&#39;: 0.84, &#39;9&#39;: 0.44, &#39;12&#39;: 0.12, &#39;4&#39;: 0.2, &#39;7&#39;: 0.2, &#39;person_6&#39;: 0.26666666666666666, &#39;person_8&#39;: 0.26666666666666666, &#39;person_15&#39;: 0.3333333333333333, &#39;person_18&#39;: 0.3333333333333333, &#39;person_24&#39;: 0.2, &#39;person_12&#39;: 0.26666666666666666, &#39;person_25&#39;: 0.2, &#39;person_23&#39;: 0.3333333333333333, &#39;person_22&#39;: 0.26666666666666666, &#39;person_4&#39;: 0.2, &#39;person_7&#39;: 0.2, &#39;person_17&#39;: 0.3333333333333333, &#39;person_13&#39;: 0.4666666666666667, &#39;person_1&#39;: 0.2, &#39;person_21&#39;: 0.2, &#39;person_10&#39;: 0.2, &#39;person_16&#39;: 0.4, &#39;person_19&#39;: 0.3333333333333333, &#39;person_20&#39;: 0.2, &#39;person_2&#39;: 0.13333333333333333, &#39;person_5&#39;: 0.2, &#39;person_3&#39;: 0.2, &#39;person_11&#39;: 0.13333333333333333, &#39;person_14&#39;: 0.3333333333333333, &#39;person_9&#39;: 0.13333333333333333}
 </pre></div>
 </div>
 </div>
@@ -773,7 +774,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0b68c9a39c0874a7f581e6c2c36a5f932bd73dcb4bacf05a6a375ecf5d0bd6c0.png" src="../_images/0b68c9a39c0874a7f581e6c2c36a5f932bd73dcb4bacf05a6a375ecf5d0bd6c0.png" />
+<img alt="../_images/f88b2f8460eacd8231a15ffd369032473abd85efa419a7f39ff7b124d7a7d1cb.png" src="../_images/f88b2f8460eacd8231a15ffd369032473abd85efa419a7f39ff7b124d7a7d1cb.png" />
 </div>
 </div>
 </section>
@@ -799,7 +800,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c12ece093c2b38e60d93c580c7f1b13120e470f8a0705ceb5fcdbdb313ac991b.png" src="../_images/c12ece093c2b38e60d93c580c7f1b13120e470f8a0705ceb5fcdbdb313ac991b.png" />
+<img alt="../_images/61013ea681325ed2ee068dae8b74251e2b01a282ba286ca44e61e0a611bdbca1.png" src="../_images/61013ea681325ed2ee068dae8b74251e2b01a282ba286ca44e61e0a611bdbca1.png" />
 </div>
 </div>
 </section>

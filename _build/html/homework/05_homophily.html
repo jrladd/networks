@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>02: College Football &#8212; Network Analysis in Python</title>
+    <title>05: Political Books &#8212; Network Analysis in Python</title>
   
   
   
@@ -58,11 +58,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/02_centrality';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/05_homophily';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="03: Game of Thrones Visualization" href="03_visualization.html" />
-    <link rel="prev" title="01: Networks in Python" href="01_python.html" />
+    <link rel="next" title="Course Policies" href="../course-info/course-policies.html" />
+    <link rel="prev" title="04: High School Interactions" href="04_clustering.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -479,10 +479,10 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="homework.html">Homework</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_python.html">01: Networks in Python</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">02: College Football</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_centrality.html">02: College Football</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_visualization.html">03: Game of Thrones Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_clustering.html">04: High School Interactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05_homophily.html">05: Political Books</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">05: Political Books</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../course-info/course-policies.html">Course Policies</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -580,7 +580,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fhomework/02_centrality.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fhomework/05_homophily.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -605,7 +605,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="../_sources/homework/02_centrality.ipynb" target="_blank"
+      <li><a href="../_sources/homework/05_homophily.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -646,7 +646,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>02: College Football</h1>
+    <h1>05: Political Books</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -657,15 +657,15 @@ title="Print to PDF"
 
             <article class="bd-article" role="main">
               
-  <section class="tex2jax_ignore mathjax_ignore" id="college-football">
-<h1>02: College Football<a class="headerlink" href="#college-football" title="Permalink to this heading">#</a></h1>
-<p>In honor of the Super Bowl this week, we’ll work on a network of football games compiled by Girvan and Newman (two famous network scientists) in 2002. Go to <a class="reference external" href="http://www-personal.umich.edu/~mejn/netdata/">Newman’s network data site</a> and download the American College football network available there. This will be a zip file that includes a <code class="docutils literal notranslate"><span class="pre">.gml</span></code> file and a text file with some important metadata.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="political-books">
+<h1>05: Political Books<a class="headerlink" href="#political-books" title="Permalink to this heading">#</a></h1>
+<p>This week we’ll explore homophily and communities in the network of <a class="reference external" href="https://github.com/melaniewalsh/sample-social-network-datasets/tree/master/sample-datasets/political-books">political books</a> from the Walsh datasets, which you can download from Github. Keep in mind that this data (like the Quaker data from class) includes both a nodes table and an edge table, and you will likely need both. Make sure you read over Walsh’s page to understand this data before you begin.</p>
 <p>In a short Jupyter notebook report, answer the following questions about this network. Don’t simply calculate the answers: make sure you’re fully explaining (in writing) the metrics and visualizations that you generate. Consider the <a class="reference external" href="https://jrladd.com/CIS397-networks/criteria/">Criteria for Good Reports</a> as a guide. You can create markdown cells with section headers to separate the different sections of the report. Rather than number the report as if you’re answering distinct questions, use the questions as a guide to do some data storytelling, i.e. explain this network’s data in an organized way.</p>
 <ol class="arabic simple">
-<li><p>What are some basic facts about this network: how many nodes and edges does it have? is it directed? is it connected? What do these basic measures tell you about the network?</p></li>
-<li><p>Is the college football network a small world? Why or why not? Think about which path-related metrics you would need in order to draw conclusions about this. You may also need to create a degree distribution graph, and you can use the centrality calculations that you’ll create in the next step.</p></li>
-<li><p>What are the most central teams in the network? Calculate degree, betweenness, eigenvector, and closeness centrality, and look at the highest values for each measure. Add all of these measures as node attributes to your network. Which teams have high centrality, and why do you think that is? What do the different centrality measures tell you about the network? Consider the distributions of centrality in the network as well as the ratios between different measures (i.e. the ratio of betweenness to degree).</p></li>
-<li><p>What are the most central conferences in the network? How might you assess conferences as groups of nodes?</p></li>
+<li><p>Using the political books network, test for statistically significant homophily between liberal and conservative books in this network. Follow all the steps we covered in class: calculate 2pq, the proportion of mixed edges, and homophily, and use a permutation test to look for statistical significance. Explain all of your outputs fully and accurately. <em>Keep in mind that the political ideology attribute includes <strong>three</strong> categories instead of two. How will that change your code and your analysis?</em></p></li>
+<li><p>Run <strong>both</strong> Girvan-Newman and Louvain Modularity community detection in this network. Write some additional code to answer the question: how much do the generated communities overlap with the liberal, conservative, and neutral labels in the graph? Which community detection seems more accurate?</p></li>
+<li><p>Create three dynamic visualizations using nx_altair: one that shows the Girvan-Newman communities, one that shows the Louvain communities, and one that shows the original political ideology labels. How are these visualizations similar or different, and do they match what you discovered in question 2? <em>Make sure you use the same layout algorithm and positions for each one: having the nodes in the same place each time will make it much easier to compare the graphs.</em></p></li>
+<li><p>Write a short conclusion summarizing the community structure of this graph. Some questions you might answer include: does the graph exhibit homophily and how much? which community detection method works best for this network and why? how do visualizations help you understand the community structure here?</p></li>
 </ol>
 <p>n.b. <em>To answer these questions, you’ll need to use a mixture of the NetworkX skills we’ve been working on, as well as combine NetworkX code with pandas and altair.</em></p>
 <p><strong>When you’re finished, remove these instructions from the top of the file, leaving only your own writing and code. Export the notebook as an HTML file, check to make sure everything is formatted correctly, and submit your HTML file to Sakai.</strong></p>
@@ -699,17 +699,17 @@ title="Print to PDF"
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="01_python.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="04_clustering.html" title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">01: Networks in Python</p>
+          <p class="prev-next-title">04: High School Interactions</p>
       </div>
   </a>
-  <a class='right-next' id="next-link" href="03_visualization.html" title="next page">
+  <a class='right-next' id="next-link" href="../course-info/course-policies.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">03: Game of Thrones Visualization</p>
+      <p class="prev-next-title">Course Policies</p>
   </div>
   <i class="fa-solid fa-angle-right"></i>
   </a>
