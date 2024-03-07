@@ -8,6 +8,7 @@ No matter where your data came from, **remember to always appropriately cite you
 
 - Mark Newman's [Network data page](http://www-personal.umich.edu/~mejn/netdata/)
 - Melanie Walsh's [Sample social network datasets repository](https://github.com/melaniewalsh/sample-social-network-datasets)
+- [Applied Network Science](https://appliednetsci.springeropen.com/) Journal (The journal contains many articles with data downloads available, but they may be in unfamiliar formats.)
 - The Stanford [Large Network Dataset Collection](https://snap.stanford.edu/data/)
 - Gephi's [Datasets wiki page](https://github.com/gephi/gephi/wiki/Datasets)
 - [Network Repository](https://networkrepository.com/index.php) *Be careful with this one: it contains lots of datasets, but not all of them are cited or well-documented!*
