@@ -459,6 +459,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../analyze/analyzing-networks.html">Analyzing Networks</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../analyze/networkx.html">Working with Graph Objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../analyze/metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../analyze/homophily.html">Homophily</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../analyze/community.html">Community Detection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../analyze/node2vec.html">Statistical Modeling</a></li>
 </ul>
@@ -487,6 +488,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../homework/03_visualization.html">03: Game of Thrones Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../homework/04_clustering.html">04: High School Interactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../homework/05_homophily.html">05: Political Books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../homework/06_signed.html">International Relations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../course-info/course-policies.html">Course Policies</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -924,23 +926,23 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-4b2f7353b2764bb3af25b4e7478f6355.vega-embed {
+  #altair-viz-6372baa188d841af916a54fd76097c93.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-4b2f7353b2764bb3af25b4e7478f6355.vega-embed details,
-  #altair-viz-4b2f7353b2764bb3af25b4e7478f6355.vega-embed details summary {
+  #altair-viz-6372baa188d841af916a54fd76097c93.vega-embed details,
+  #altair-viz-6372baa188d841af916a54fd76097c93.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-4b2f7353b2764bb3af25b4e7478f6355"></div>
+<div id="altair-viz-6372baa188d841af916a54fd76097c93"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4b2f7353b2764bb3af25b4e7478f6355") {
-      outputDiv = document.getElementById("altair-viz-4b2f7353b2764bb3af25b4e7478f6355");
+    if (outputDiv.id !== "altair-viz-6372baa188d841af916a54fd76097c93") {
+      outputDiv = document.getElementById("altair-viz-6372baa188d841af916a54fd76097c93");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1003,23 +1005,23 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-ceda62e4536e4f5db29e31f8a4a3c463.vega-embed {
+  #altair-viz-a4df602a8638449aa555207fdd4614a4.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-ceda62e4536e4f5db29e31f8a4a3c463.vega-embed details,
-  #altair-viz-ceda62e4536e4f5db29e31f8a4a3c463.vega-embed details summary {
+  #altair-viz-a4df602a8638449aa555207fdd4614a4.vega-embed details,
+  #altair-viz-a4df602a8638449aa555207fdd4614a4.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-ceda62e4536e4f5db29e31f8a4a3c463"></div>
+<div id="altair-viz-a4df602a8638449aa555207fdd4614a4"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-ceda62e4536e4f5db29e31f8a4a3c463") {
-      outputDiv = document.getElementById("altair-viz-ceda62e4536e4f5db29e31f8a4a3c463");
+    if (outputDiv.id !== "altair-viz-a4df602a8638449aa555207fdd4614a4") {
+      outputDiv = document.getElementById("altair-viz-a4df602a8638449aa555207fdd4614a4");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1084,23 +1086,23 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-6c85ee29c8e34804a8fd9d489f70ff27.vega-embed {
+  #altair-viz-2efde9813ebf430c9b0df4a795b8fdb2.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-6c85ee29c8e34804a8fd9d489f70ff27.vega-embed details,
-  #altair-viz-6c85ee29c8e34804a8fd9d489f70ff27.vega-embed details summary {
+  #altair-viz-2efde9813ebf430c9b0df4a795b8fdb2.vega-embed details,
+  #altair-viz-2efde9813ebf430c9b0df4a795b8fdb2.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-6c85ee29c8e34804a8fd9d489f70ff27"></div>
+<div id="altair-viz-2efde9813ebf430c9b0df4a795b8fdb2"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-6c85ee29c8e34804a8fd9d489f70ff27") {
-      outputDiv = document.getElementById("altair-viz-6c85ee29c8e34804a8fd9d489f70ff27");
+    if (outputDiv.id !== "altair-viz-2efde9813ebf430c9b0df4a795b8fdb2") {
+      outputDiv = document.getElementById("altair-viz-2efde9813ebf430c9b0df4a795b8fdb2");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1165,23 +1167,23 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-7e074554c0ea449e873ca551e902fa04.vega-embed {
+  #altair-viz-7b05f139d9b045389f901cfa533dd383.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-7e074554c0ea449e873ca551e902fa04.vega-embed details,
-  #altair-viz-7e074554c0ea449e873ca551e902fa04.vega-embed details summary {
+  #altair-viz-7b05f139d9b045389f901cfa533dd383.vega-embed details,
+  #altair-viz-7b05f139d9b045389f901cfa533dd383.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-7e074554c0ea449e873ca551e902fa04"></div>
+<div id="altair-viz-7b05f139d9b045389f901cfa533dd383"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-7e074554c0ea449e873ca551e902fa04") {
-      outputDiv = document.getElementById("altair-viz-7e074554c0ea449e873ca551e902fa04");
+    if (outputDiv.id !== "altair-viz-7b05f139d9b045389f901cfa533dd383") {
+      outputDiv = document.getElementById("altair-viz-7b05f139d9b045389f901cfa533dd383");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1244,23 +1246,23 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-5c4724a06eee4c8cabc6f5f0fe0ea8fd.vega-embed {
+  #altair-viz-d94a5977f9e444e9a57a10308ebaab85.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-5c4724a06eee4c8cabc6f5f0fe0ea8fd.vega-embed details,
-  #altair-viz-5c4724a06eee4c8cabc6f5f0fe0ea8fd.vega-embed details summary {
+  #altair-viz-d94a5977f9e444e9a57a10308ebaab85.vega-embed details,
+  #altair-viz-d94a5977f9e444e9a57a10308ebaab85.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-5c4724a06eee4c8cabc6f5f0fe0ea8fd"></div>
+<div id="altair-viz-d94a5977f9e444e9a57a10308ebaab85"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5c4724a06eee4c8cabc6f5f0fe0ea8fd") {
-      outputDiv = document.getElementById("altair-viz-5c4724a06eee4c8cabc6f5f0fe0ea8fd");
+    if (outputDiv.id !== "altair-viz-d94a5977f9e444e9a57a10308ebaab85") {
+      outputDiv = document.getElementById("altair-viz-d94a5977f9e444e9a57a10308ebaab85");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1325,23 +1327,23 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-8d327a859e0d4e7e92d2dcf50b894a1e.vega-embed {
+  #altair-viz-44e328707aa04d9f969ed5e9d997e308.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-8d327a859e0d4e7e92d2dcf50b894a1e.vega-embed details,
-  #altair-viz-8d327a859e0d4e7e92d2dcf50b894a1e.vega-embed details summary {
+  #altair-viz-44e328707aa04d9f969ed5e9d997e308.vega-embed details,
+  #altair-viz-44e328707aa04d9f969ed5e9d997e308.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-8d327a859e0d4e7e92d2dcf50b894a1e"></div>
+<div id="altair-viz-44e328707aa04d9f969ed5e9d997e308"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8d327a859e0d4e7e92d2dcf50b894a1e") {
-      outputDiv = document.getElementById("altair-viz-8d327a859e0d4e7e92d2dcf50b894a1e");
+    if (outputDiv.id !== "altair-viz-44e328707aa04d9f969ed5e9d997e308") {
+      outputDiv = document.getElementById("altair-viz-44e328707aa04d9f969ed5e9d997e308");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1404,23 +1406,23 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-ad5697e3fd31424b89d560ee7fd800f4.vega-embed {
+  #altair-viz-926b6ccddb984eb7b26b791af91e87ee.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-ad5697e3fd31424b89d560ee7fd800f4.vega-embed details,
-  #altair-viz-ad5697e3fd31424b89d560ee7fd800f4.vega-embed details summary {
+  #altair-viz-926b6ccddb984eb7b26b791af91e87ee.vega-embed details,
+  #altair-viz-926b6ccddb984eb7b26b791af91e87ee.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-ad5697e3fd31424b89d560ee7fd800f4"></div>
+<div id="altair-viz-926b6ccddb984eb7b26b791af91e87ee"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-ad5697e3fd31424b89d560ee7fd800f4") {
-      outputDiv = document.getElementById("altair-viz-ad5697e3fd31424b89d560ee7fd800f4");
+    if (outputDiv.id !== "altair-viz-926b6ccddb984eb7b26b791af91e87ee") {
+      outputDiv = document.getElementById("altair-viz-926b6ccddb984eb7b26b791af91e87ee");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1486,23 +1488,23 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-d7ae6950544e44aa8a4c381ddf90eb04.vega-embed {
+  #altair-viz-f07ce71bebd74de3b7de9d318772445b.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-d7ae6950544e44aa8a4c381ddf90eb04.vega-embed details,
-  #altair-viz-d7ae6950544e44aa8a4c381ddf90eb04.vega-embed details summary {
+  #altair-viz-f07ce71bebd74de3b7de9d318772445b.vega-embed details,
+  #altair-viz-f07ce71bebd74de3b7de9d318772445b.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-d7ae6950544e44aa8a4c381ddf90eb04"></div>
+<div id="altair-viz-f07ce71bebd74de3b7de9d318772445b"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d7ae6950544e44aa8a4c381ddf90eb04") {
-      outputDiv = document.getElementById("altair-viz-d7ae6950544e44aa8a4c381ddf90eb04");
+    if (outputDiv.id !== "altair-viz-f07ce71bebd74de3b7de9d318772445b") {
+      outputDiv = document.getElementById("altair-viz-f07ce71bebd74de3b7de9d318772445b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1566,23 +1568,23 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-e9ea44e363224550afa0d5e28c0dbd78.vega-embed {
+  #altair-viz-48c43f7a73084d299206886f0d54ce63.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-e9ea44e363224550afa0d5e28c0dbd78.vega-embed details,
-  #altair-viz-e9ea44e363224550afa0d5e28c0dbd78.vega-embed details summary {
+  #altair-viz-48c43f7a73084d299206886f0d54ce63.vega-embed details,
+  #altair-viz-48c43f7a73084d299206886f0d54ce63.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-e9ea44e363224550afa0d5e28c0dbd78"></div>
+<div id="altair-viz-48c43f7a73084d299206886f0d54ce63"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e9ea44e363224550afa0d5e28c0dbd78") {
-      outputDiv = document.getElementById("altair-viz-e9ea44e363224550afa0d5e28c0dbd78");
+    if (outputDiv.id !== "altair-viz-48c43f7a73084d299206886f0d54ce63") {
+      outputDiv = document.getElementById("altair-viz-48c43f7a73084d299206886f0d54ce63");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1649,23 +1651,23 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-0ccc34626d9242b9bb960ea64f55fba2.vega-embed {
+  #altair-viz-51fadee5a26c43dabaa9198d870726fa.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-0ccc34626d9242b9bb960ea64f55fba2.vega-embed details,
-  #altair-viz-0ccc34626d9242b9bb960ea64f55fba2.vega-embed details summary {
+  #altair-viz-51fadee5a26c43dabaa9198d870726fa.vega-embed details,
+  #altair-viz-51fadee5a26c43dabaa9198d870726fa.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-0ccc34626d9242b9bb960ea64f55fba2"></div>
+<div id="altair-viz-51fadee5a26c43dabaa9198d870726fa"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0ccc34626d9242b9bb960ea64f55fba2") {
-      outputDiv = document.getElementById("altair-viz-0ccc34626d9242b9bb960ea64f55fba2");
+    if (outputDiv.id !== "altair-viz-51fadee5a26c43dabaa9198d870726fa") {
+      outputDiv = document.getElementById("altair-viz-51fadee5a26c43dabaa9198d870726fa");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1736,23 +1738,23 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-  #altair-viz-bdb7ed174a264196a23dff877dc76754.vega-embed {
+  #altair-viz-480dfca1098f4496aac08a433bc0b900.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-bdb7ed174a264196a23dff877dc76754.vega-embed details,
-  #altair-viz-bdb7ed174a264196a23dff877dc76754.vega-embed details summary {
+  #altair-viz-480dfca1098f4496aac08a433bc0b900.vega-embed details,
+  #altair-viz-480dfca1098f4496aac08a433bc0b900.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-bdb7ed174a264196a23dff877dc76754"></div>
+<div id="altair-viz-480dfca1098f4496aac08a433bc0b900"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-bdb7ed174a264196a23dff877dc76754") {
-      outputDiv = document.getElementById("altair-viz-bdb7ed174a264196a23dff877dc76754");
+    if (outputDiv.id !== "altair-viz-480dfca1098f4496aac08a433bc0b900") {
+      outputDiv = document.getElementById("altair-viz-480dfca1098f4496aac08a433bc0b900");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",

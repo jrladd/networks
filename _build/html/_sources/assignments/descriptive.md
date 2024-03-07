@@ -1,7 +1,5 @@
 # Project 2: Descriptive Network Analysis
 
-**THIS PROMPT IS FROM LAST SEMESTER AND MAY CHANGE FOR OUR CLASS.**
-
 **Complete by: Tuesday 2 Apr. by 12:50pm**
 
 Now that you've learned how to describe the main features of different kinds of networks, you're ready to begin asking and answering questions using network analysis. For your first major project of the semester, you'll create a Jupyter notebook report that explores a question about a network of your choice.
@@ -29,7 +27,7 @@ Write well-documented code using NetworkX that helps you answer your research qu
 
 Your analysis can focus on any combination of the topics we've discussed so far: centrality, density, strong & weak ties, triadic closure, homophily, communities, the small word, structural balance, etc. Choose the methods and approaches that best help you answer your question!
 
-Your analysis should include one or two network visualizations that help you make your point. These can be of the whole network or just one relevant part: give some thought to how best to use visualization to further your argument. You can create your visualizations in Python, or you can use a tool like Gephi and insert static images into the Markdown cells. You might also find it helpful to break your analysis into sections using Markdown section headings.
+Your analysis should include two or more network visualizations that help you make your point. These can be of the whole network or just one relevant part: give some thought to how best to use visualization to further your argument. You can create your visualizations in Python, or you can use a tool like Gephi and insert static images into the Markdown cells. You will probably need additional data visualizations (bar charts, scatter plots, etc.) as well. You might also find it helpful to break your analysis into sections using Markdown section headings.
 
 At the end of your report, you should offer a brief conclusion that summarizes your findings and offers a tentative answer to your question. Did you find what you expected to find? What did the evidence show? Are there other things you'd like to try in future studies?
 
@@ -39,6 +37,6 @@ At the end of your report, you should offer a brief conclusion that summarizes y
 
 - An introduction and conclusion that frame your research question
 - An analysis section with code, results, and complete written analysis
-- At least one visualization, either made in Python or imported as an image
+- At least two network visualizations, either made in Python or imported as an image
 - Turn in your report (as an HTML Jupyter file) via Sakai
 - For more on how this assignment will be graded, refer to the [Criteria for Good Reports](../course-info/criteria.md)

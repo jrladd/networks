@@ -459,6 +459,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../analyze/analyzing-networks.html">Analyzing Networks</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../analyze/networkx.html">Working with Graph Objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../analyze/metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../analyze/homophily.html">Homophily</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../analyze/community.html">Community Detection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../analyze/node2vec.html">Statistical Modeling</a></li>
 </ul>
@@ -487,6 +488,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../homework/03_visualization.html">03: Game of Thrones Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../homework/04_clustering.html">04: High School Interactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../homework/05_homophily.html">05: Political Books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../homework/06_signed.html">International Relations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../course-info/course-policies.html">Course Policies</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -673,7 +675,6 @@ title="Print to PDF"
               
   <section class="tex2jax_ignore mathjax_ignore" id="project-2-descriptive-network-analysis">
 <h1>Project 2: Descriptive Network Analysis<a class="headerlink" href="#project-2-descriptive-network-analysis" title="Permalink to this heading">#</a></h1>
-<p><strong>THIS PROMPT IS FROM LAST SEMESTER AND MAY CHANGE FOR OUR CLASS.</strong></p>
 <p><strong>Complete by: Tuesday 2 Apr. by 12:50pm</strong></p>
 <p>Now that you’ve learned how to describe the main features of different kinds of networks, you’re ready to begin asking and answering questions using network analysis. For your first major project of the semester, you’ll create a Jupyter notebook report that explores a question about a network of your choice.</p>
 <p>To choose a dataset, refer to our <a class="reference external" href="https://jrladd.com/networks/datasets.html">Network Datasets</a> page. You may use the same dataset you used for the visualization assignment if you so choose, but keep in mind that if you are interested in a particular techinique, you’ll want to choose a network that makes sense for that technique. A good example of this might be: you can’t do an analysis of structural balance if your network doesn’t have signed edges!</p>
@@ -692,14 +693,14 @@ title="Print to PDF"
 <p>Once you’ve crafted an introduction that appropriately frames a good research question, you can move on to the analysis, which will make up the bulk of your report.</p>
 <p>Write well-documented code using NetworkX that helps you answer your research question. Plan out the steps before you start, and give some thought to how you organize your report. Generally, you will want to calculate some metric or statistic and then describe those results in writing. Remember not to rely on your reader to automatically know what you’re talking about: the goal here is to both write good code and provide good written analysis.</p>
 <p>Your analysis can focus on any combination of the topics we’ve discussed so far: centrality, density, strong &amp; weak ties, triadic closure, homophily, communities, the small word, structural balance, etc. Choose the methods and approaches that best help you answer your question!</p>
-<p>Your analysis should include one or two network visualizations that help you make your point. These can be of the whole network or just one relevant part: give some thought to how best to use visualization to further your argument. You can create your visualizations in Python, or you can use a tool like Gephi and insert static images into the Markdown cells. You might also find it helpful to break your analysis into sections using Markdown section headings.</p>
+<p>Your analysis should include two or more network visualizations that help you make your point. These can be of the whole network or just one relevant part: give some thought to how best to use visualization to further your argument. You can create your visualizations in Python, or you can use a tool like Gephi and insert static images into the Markdown cells. You will probably need additional data visualizations (bar charts, scatter plots, etc.) as well. You might also find it helpful to break your analysis into sections using Markdown section headings.</p>
 <p>At the end of your report, you should offer a brief conclusion that summarizes your findings and offers a tentative answer to your question. Did you find what you expected to find? What did the evidence show? Are there other things you’d like to try in future studies?</p>
 <hr class="docutils" />
 <p><strong>Requirements</strong>:</p>
 <ul class="simple">
 <li><p>An introduction and conclusion that frame your research question</p></li>
 <li><p>An analysis section with code, results, and complete written analysis</p></li>
-<li><p>At least one visualization, either made in Python or imported as an image</p></li>
+<li><p>At least two network visualizations, either made in Python or imported as an image</p></li>
 <li><p>Turn in your report (as an HTML Jupyter file) via Sakai</p></li>
 <li><p>For more on how this assignment will be graded, refer to the <a class="reference internal" href="../course-info/criteria.html"><span class="doc std std-doc">Criteria for Good Reports</span></a></p></li>
 </ul>

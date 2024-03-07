@@ -20,6 +20,7 @@ parts:
       sections:
       - file: analyze/networkx
       - file: analyze/metrics
+      - file: analyze/homophily
       - file: analyze/community
       - file: analyze/node2vec
     - file: special/special-networks
@@ -44,6 +45,7 @@ parts:
       - file: homework/03_visualization
       - file: homework/04_clustering
       - file: homework/05_homophily
+      - file: homework/06_signed
     - file: course-info/course-policies
       sections:
       - file: course-info/criteria
