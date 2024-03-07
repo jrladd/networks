@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>International Relations &#8212; Network Analysis in Python</title>
+    <title>06: International Relations &#8212; Network Analysis in Python</title>
   
   
   
@@ -484,7 +484,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="03_visualization.html">03: Game of Thrones Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_clustering.html">04: High School Interactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05_homophily.html">05: Political Books</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">International Relations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">06: International Relations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../course-info/course-policies.html">Course Policies</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -648,7 +648,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>International Relations</h1>
+    <h1>06: International Relations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -660,7 +660,7 @@ title="Print to PDF"
             <article class="bd-article" role="main">
               
   <section class="tex2jax_ignore mathjax_ignore" id="international-relations">
-<h1>International Relations<a class="headerlink" href="#international-relations" title="Permalink to this heading">#</a></h1>
+<h1>06: International Relations<a class="headerlink" href="#international-relations" title="Permalink to this heading">#</a></h1>
 <p>This week we’ll explore community structure and structural balance in a signed network of international relations. Go to <a class="reference external" href="https://jrladd.com/networks/datasets.html">the Datasets page in the textbook</a> and download the “CoW” network. “CoW” stands for <a class="reference external" href="https://correlatesofwar.org/">Correlates of War</a>, and this dataset encodes countries’ alliances or enmities as a positive or negative relation.</p>
 <p>The CoW network is a Pajek dataset, so you’ll need to use NetworkX’s <code class="docutils literal notranslate"><span class="pre">read_pajek()</span></code> function. This function automatically creates MultiGraphs, which we haven’t learned about yet. Before you begin, convert the multigraph to a standard Graph object with the line <code class="docutils literal notranslate"><span class="pre">G</span> <span class="pre">=</span> <span class="pre">nx.Graph(G)</span></code>.</p>
 <p>In a short Jupyter notebook report, answer the following questions about this network. Don’t simply calculate the answers: make sure you’re fully explaining (in writing) the metrics and visualizations that you generate. Consider the <a class="reference external" href="https://jrladd.com/CIS397-networks/criteria/">Criteria for Good Reports</a> as a guide. You can create markdown cells with section headers to separate the different sections of the report. Rather than number the report as if you’re answering distinct questions, use the questions as a guide to do some data storytelling, i.e. explain this network’s data in an organized way.</p>
