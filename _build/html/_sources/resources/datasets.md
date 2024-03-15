@@ -15,6 +15,6 @@ No matter where your data came from, **remember to always appropriately cite you
 - Alex Arenas's [Datasets page](https://deim.urv.cat/~alexandre.arenas/data/welcome.htm)
 - CASOS [Network Science Data](http://www.casos.cs.cmu.edu/tools/data2.php)
 - The UC Irvine [Network Data Repository](http://networkdata.ics.uci.edu/index.html)
-- [CoW Dataset](data/Cow_edit.net) (This dataset of international relations is derived from the [Correlates of War Project](https://correlatesofwar.org/).)
+- [CoW Dataset](../data/Cow_edit.net) (This dataset of international relations is derived from the [Correlates of War Project](https://correlatesofwar.org/).)
 - [KONECT datasets](http://konect.cc/networks/): The Koblenz Network Collection
-- The temporal Quaker network data: [Edgelist](data/quaker_edgelist.csv), [Nodelist](data/quaker_nodelist.csv)
+- The temporal Quaker network data: [Edgelist](../data/quaker_edgelist.csv), [Nodelist](../data/quaker_nodelist.csv)
