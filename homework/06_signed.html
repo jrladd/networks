@@ -662,7 +662,7 @@ title="Print to PDF"
               
   <section class="tex2jax_ignore mathjax_ignore" id="international-relations">
 <h1>06: International Relations<a class="headerlink" href="#international-relations" title="Permalink to this heading">#</a></h1>
-<p>This week we’ll explore community structure and structural balance in a signed network of international relations. Go to <a class="reference external" href="https://jrladd.com/networks/datasets.html">the Datasets page in the textbook</a> and download the “CoW” network. “CoW” stands for <a class="reference external" href="https://correlatesofwar.org/">Correlates of War</a>, and this dataset encodes countries’ alliances or enmities as a positive or negative relation.</p>
+<p>This week we’ll explore community structure and structural balance in a signed network of international relations. Go to <a class="reference external" href="https://jrladd.com/networks/resources/datasets.html">the Datasets page in the textbook</a> and download the “CoW” network. “CoW” stands for <a class="reference external" href="https://correlatesofwar.org/">Correlates of War</a>, and this dataset encodes countries’ alliances or enmities as a positive or negative relation.</p>
 <p>The CoW network is a Pajek dataset, so you’ll need to use NetworkX’s <code class="docutils literal notranslate"><span class="pre">read_pajek()</span></code> function. This function automatically creates MultiGraphs, which we haven’t learned about yet. Before you begin, convert the multigraph to a standard Graph object with the following code:</p>
 <details>
   <summary>Show code</summary>
@@ -676,7 +676,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 </details>
-<p>In a short Jupyter notebook report, answer the following questions about this network. Don’t simply calculate the answers: make sure you’re fully explaining (in writing) the metrics and visualizations that you generate. Consider the <a class="reference external" href="https://jrladd.com/CIS397-networks/criteria/">Criteria for Good Reports</a> as a guide. You can create markdown cells with section headers to separate the different sections of the report. Rather than number the report as if you’re answering distinct questions, use the questions as a guide to do some data storytelling, i.e. explain this network’s data in an organized way.</p>
+<p>In a short Jupyter notebook report, answer the following questions about this network. Don’t simply calculate the answers: make sure you’re fully explaining (in writing) the metrics and visualizations that you generate. Consider the <a class="reference external" href="https://jrladd.com/networks/course-info/criteria.html">Criteria for Good Reports</a> as a guide. You can create markdown cells with section headers to separate the different sections of the report. Rather than number the report as if you’re answering distinct questions, use the questions as a guide to do some data storytelling, i.e. explain this network’s data in an organized way.</p>
 <ol class="arabic simple">
 <li><p>Is this network structurally balanced or not? Determine the number of cycles (or loops) in the network that have an even number of negative edges, and compare it to the number of cycles that have an odd number of negative edges. What does that tell you about the network?</p></li>
 </ol>
