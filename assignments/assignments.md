@@ -11,10 +11,10 @@ You can also view the [weekly homework assignments](../homework/homework.md).
 Assignment|Percentage
 ---|--
 Weekly Homework|25%
-Visualization Assignment|15%
-Project 1|25%
+Project 1: Visualization|15%
+Project 2: Descriptive|25%
 Presentation|10%
-Project 2|25%
+Project 3: Predictive|25%
 
 ```{tableofcontents}
 ```
