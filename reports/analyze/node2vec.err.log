@@ -1,0 +1,90 @@
+Traceback (most recent call last):
+  File "/Users/jrladd/Library/Python/3.9/lib/python/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/jrladd/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/jrladd/Library/Python/3.9/lib/python/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/jrladd/Library/Python/3.9/lib/python/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/Users/jrladd/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/jrladd/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/jrladd/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import networkx as nx
+import pandas as pd
+from node2vec import Node2Vec # You must run `pip install node2vec` in the  terminal for this to work
+from sklearn.cluster import KMeans
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mImportError[0m                               Traceback (most recent call last)
+Cell [0;32mIn[1], line 3[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mnetworkx[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnx[39;00m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
+[0;32m----> 3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnode2vec[39;00m [38;5;28;01mimport[39;00m Node2Vec [38;5;66;03m# You must run `pip install node2vec` in the  terminal for this to work[39;00m
+[1;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcluster[39;00m [38;5;28;01mimport[39;00m KMeans
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/node2vec/__init__.py:1[0m
+[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m [38;5;28;01mimport[39;00m edges
+[1;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mnode2vec[39;00m [38;5;28;01mimport[39;00m Node2Vec
+[1;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mimportlib[39;00m [38;5;28;01mimport[39;00m metadata
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/node2vec/edges.py:7[0m
+[1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[1;32m      6[0m [38;5;28;01mimport[39;00m [38;5;21;01mpkg_resources[39;00m
+[0;32m----> 7[0m [38;5;28;01mfrom[39;00m [38;5;21;01mgensim[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmodels[39;00m [38;5;28;01mimport[39;00m KeyedVectors
+[1;32m      8[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtqdm[39;00m [38;5;28;01mimport[39;00m tqdm
+[1;32m     11[0m [38;5;28;01mclass[39;00m [38;5;21;01mEdgeEmbedder[39;00m(ABC):
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/gensim/__init__.py:11[0m
+[1;32m      7[0m __version__ [38;5;241m=[39m [38;5;124m'[39m[38;5;124m4.3.1[39m[38;5;124m'[39m
+[1;32m      9[0m [38;5;28;01mimport[39;00m [38;5;21;01mlogging[39;00m
+[0;32m---> 11[0m [38;5;28;01mfrom[39;00m [38;5;21;01mgensim[39;00m [38;5;28;01mimport[39;00m parsing, corpora, matutils, interfaces, models, similarities, utils  [38;5;66;03m# noqa:F401[39;00m
+[1;32m     14[0m logger [38;5;241m=[39m logging[38;5;241m.[39mgetLogger([38;5;124m'[39m[38;5;124mgensim[39m[38;5;124m'[39m)
+[1;32m     15[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m logger[38;5;241m.[39mhandlers:  [38;5;66;03m# To ensure reload() doesn't add another one[39;00m
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/gensim/corpora/__init__.py:6[0m
+[1;32m      1[0m [38;5;124;03m"""[39;00m
+[1;32m      2[0m [38;5;124;03mThis package contains implementations of various streaming corpus I/O format.[39;00m
+[1;32m      3[0m [38;5;124;03m"""[39;00m
+[1;32m      5[0m [38;5;66;03m# bring corpus classes directly into package namespace, to save some typing[39;00m
+[0;32m----> 6[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mindexedcorpus[39;00m [38;5;28;01mimport[39;00m IndexedCorpus  [38;5;66;03m# noqa:F401 must appear before the other classes[39;00m
+[1;32m      8[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mmmcorpus[39;00m [38;5;28;01mimport[39;00m MmCorpus  [38;5;66;03m# noqa:F401[39;00m
+[1;32m      9[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mbleicorpus[39;00m [38;5;28;01mimport[39;00m BleiCorpus  [38;5;66;03m# noqa:F401[39;00m
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/gensim/corpora/indexedcorpus.py:14[0m
+[1;32m     10[0m [38;5;28;01mimport[39;00m [38;5;21;01mlogging[39;00m
+[1;32m     12[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m
+[0;32m---> 14[0m [38;5;28;01mfrom[39;00m [38;5;21;01mgensim[39;00m [38;5;28;01mimport[39;00m interfaces, utils
+[1;32m     16[0m logger [38;5;241m=[39m logging[38;5;241m.[39mgetLogger([38;5;18m__name__[39m)
+[1;32m     19[0m [38;5;28;01mclass[39;00m [38;5;21;01mIndexedCorpus[39;00m(interfaces[38;5;241m.[39mCorpusABC):
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/gensim/interfaces.py:19[0m
+[1;32m      7[0m [38;5;124;03m"""Basic interfaces used across the whole Gensim package.[39;00m
+[1;32m      8[0m 
+[1;32m      9[0m [38;5;124;03mThese interfaces are used for building corpora, model transformation and similarity queries.[39;00m
+[0;32m   (...)[0m
+[1;32m     14[0m 
+[1;32m     15[0m [38;5;124;03m"""[39;00m
+[1;32m     17[0m [38;5;28;01mimport[39;00m [38;5;21;01mlogging[39;00m
+[0;32m---> 19[0m [38;5;28;01mfrom[39;00m [38;5;21;01mgensim[39;00m [38;5;28;01mimport[39;00m utils, matutils
+[1;32m     22[0m logger [38;5;241m=[39m logging[38;5;241m.[39mgetLogger([38;5;18m__name__[39m)
+[1;32m     25[0m [38;5;28;01mclass[39;00m [38;5;21;01mCorpusABC[39;00m(utils[38;5;241m.[39mSaveLoad):
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/gensim/matutils.py:20[0m
+[1;32m     18[0m [38;5;28;01mimport[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01msparse[39;00m
+[1;32m     19[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mstats[39;00m [38;5;28;01mimport[39;00m entropy
+[0;32m---> 20[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlinalg[39;00m [38;5;28;01mimport[39;00m get_blas_funcs, triu
+[1;32m     21[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlinalg[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlapack[39;00m [38;5;28;01mimport[39;00m get_lapack_funcs
+[1;32m     22[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mspecial[39;00m [38;5;28;01mimport[39;00m psi  [38;5;66;03m# gamma function utils[39;00m
+
+[0;31mImportError[0m: cannot import name 'triu' from 'scipy.linalg' (/Users/jrladd/Library/Python/3.9/lib/python/site-packages/scipy/linalg/__init__.py)
+ImportError: cannot import name 'triu' from 'scipy.linalg' (/Users/jrladd/Library/Python/3.9/lib/python/site-packages/scipy/linalg/__init__.py)
+
