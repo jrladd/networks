@@ -47,6 +47,7 @@ parts:
       - file: homework/05_homophily
       - file: homework/06_signed
       - file: homework/07_directed
+      - file: homework/08_multipartite
     - file: course-info/course-policies
       sections:
       - file: course-info/criteria
