@@ -1,7 +1,5 @@
 # Project 3: Predictive Network Analysis
 
-**THIS PROMPT IS FROM LAST SEMESTER AND MAY CHANGE FOR OUR CLASS.**
-
 **Complete by: Saturday 11 May by 5pm**
 
 You've now learned a much wider array of techniques for working with networks, and it's time to apply those in a thirdd big project.  This third project will follow the same form as the second: you'll create a Jupyter notebook report that explores a question about a network of your choice.
