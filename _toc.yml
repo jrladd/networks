@@ -48,6 +48,7 @@ parts:
       - file: homework/06_signed
       - file: homework/07_directed
       - file: homework/08_multipartite
+      - file: homework/09_cascades
     - file: course-info/course-policies
       sections:
       - file: course-info/criteria

@@ -1,47 +1,21 @@
-# Presentation
+# Presentation: Shared Challenges
 
-**THIS PROMPT IS FROM LAST SEMESTER AND MAY CHANGE FOR OUR CLASS.**
+**Open House date: Tuesday 7 May at 12:50pm**
 
-**Complete by: Tuesday 7 May by 12:50pm**
+All semester long, you've worked with your classmates to think through an array of complex network analysis methods. Now that you're working on your final projects, it's time to share this knowledge with the wider world!
 
-*You will prepare a 3-5 minute “elevator pitch” video presentation about your project for your classmates. The goal of this video is not to summarize the entire content of your project, but rather to explain to your audience your chosen data set, the questions you have, and the approaches you plan to take it to it, in a way that will generate interest and allow others to offer suggestions.*
+In groups you will discuss your third (predictive) network analysis projects and identify a **shared challenge** that will become the topic of your presentation. A shared challenge is something that applies to all of your projects: a topic, process, or method that you all worked with in different ways. *Your goal is to explain this shared challenge to an audience of people who might not know anything about network analysis. You will need to clearly explain (1) the challenge itself, (2) any background information necessary to understand the problem, and (3) how it applies to each of your projects.*
 
-Specifically, your video should meet the following guidelines:
+Examples of shared challenges might be:
 
-**Audience**: Your audience is the other students in this class (not just me!). Remember that they don't know anything about your data or your research questions yet. The goal of this presentation is to explain to them what you're trying to find out, why it matters to you, and how you will answer your questions.
+- Change over time: everyone in the group is working on how networks change over time, but some people are using multilayer networks, others are looking at cascades, and others are using a machine learning model.
+- Supplementing datasets: everyone in the group needs to add additional data to their network in order to answer their research questions. But they're each using the additional data to do something different.
+- Biological network: everyone in the group is working on a biological or ecological network dataset. Because biological networks have different properties than social networks, each group member has some different approaches in mind.
 
-**Content**: Your presentation *should not* attempt to be a summary of your final project report. For one thing, you probably haven't written the whole thing yet! You also shouldn't simply read your introduction or your conclusion. This presentation should be based on content that addresses three main questions:
+As the above examples illustrate, your shared challenge can come from any stage of the data analysis process: it can be about data collection and wrangling, similar subject matter, or a shared methodological problem. No matter what you choose, the challenge should be clearly defined and it should apply to everyone in the group.
 
-1. What data set are you investigating, why is it important, and what questions about it are you exploring?
-2. What are the one or two most interesting things that you learned while completing this project so far?
-3. What are the next steps you plan to take and why are these the right steps?
+On the final day of class, we'll have an open house for you to present your shared challenges to me and the other attendees! The central goal here is to practice explaining network analysis to others clearly and in detail. Your presentation should be about 5 minutes long---short enough that you can repeat it as different people join you to listen. Think of this a bit like the poster session: you'll have a presentation set up, and attendees will walk by to hear what you have to say and ask questions. You should be prepared to give an overview of your shared challenge and how it applies to each of your projects, and you should also be ready to answer questions and dig more deeply into the details if asked.
 
-Your content must reflect the expected knowledge of your audience. This means choosing your words carefully and defining technical terminology (though for this context, informal or intuitive definitions can be acceptable so long as they are not incorrect or misleading).
+You will prepare a 7-slide deck that describes your shared challenge and gives you something to talk through. These will be set up on a short loop during the open house, but you can also stop them and return to a specific slide if you need to. The slide structure should include: (1) a title slide that includes all of your names, (2 & 3) two slides defining and explaining your shared challenge, and (4-7) four slides, one for each of your projects showing how the challenge applies to your network project specifically. You should work to make these slides visually engaging as you'll be using them to grab people's attention. 
 
-**Format**: Your video must be at least three minutes and may not be longer than five minutes. Note that this means that you can, and must, practice your presentation to ensure it meets these guidelines. You will make your video available through Teams by uploading a video in a format such as an mp4 or other Microsoft Stream compatible file format. Details about submitting your video are provided below.
-
-You will be assessed on the content of this video and how well it addresses the Content requirements laid out above in an Audience aware manner. You will not be assessed on the production quality, so long as the audio and video are clear. Your video may simply be a recording of you talking taken through your webcam or phone camera. You may also provide an audio track over visuals if you prefer. However, your goal is to be compelling to a general student audience in an “elevator pitch” style, so ***do not narrate over a traditional PowerPoint with titles, bullet points, etc.***
-
-*Once videos are posted, you'll be expected to watch your classmate's videos and prepare to discuss them during the final exam session. More information on this step coming later.*
-
-## How to Submit a Video
-
-- Please submit videos to the "Presentation Videos" channel on Teams.
-- You should first be able to upload it to your OneDrive, the Microsoft Stream app, or to the Files section of the Teams channel
-- The video will need to be in a compatible format: `.mp4` is the most common, but `.flv, .mxf, .gxf, .mpg, .wmv, .asf, .avi. wav,` and `.mov` would also work.
-- Once it's uploaded, you can link to the file in "Presentation Videos" channel. See my post from earlier this term in the "General" channel as an example.
-- You **MUST** click on your video to make sure it plays properly. You are responsible for ensuring that your video is posted on time and that it works when your classmates attempt to watch it.
-
-## Responding to Videos
-
-**If you will present for our Finals session on May 12, you do not have to complete the written responses, but you might use the information below as a guide to preparing for the panel discussion. If you will *not* be present on the 12th becuase of an unavoidable event, you must complete the written responses and post them to the Teams channel as  described below. These must be complete by *5pm on Friday May 12***.
-
-In addition to making a video presentation, you will watch and respond to the videos made by your peers. Before the final exam session, you will watch the videos on the schedule for that day (see Sakai for the [presentation schedule]()). After watching a video, you will write down the following for each one.
-
-1. One substantive similarity between the presenter's project and your own.
-2. One question you have about the project.
-3. One idea or suggestion you have for the presenter as they finish their project.
-
-**You can post your three items as a comment underneath your classmate's video on Teams.** *I'll read over each response and will include this as part of your presentation grade.*
-
-**Remember**: the best comments are ones that are substantive and move the conversation forward. So not just "We are both working on golf data," but "In my project, I found that one challenge with golf data was that it had mostly quantitative variables. You're dealing with a similar challenge." And not just "What do you plan to do next?" but "When you model your data with a random forest classifier, do you plan to limit the size of your decision trees?" These comments can be genuinely helpful feedback for your classmates, so give the feedback that you would like to receive!
+I will assign the groups and post them on Sakai. After the presentation, you'll fill out a short form to assess your own contributions and those of your groupmates. You'll be assessed based on your prepared presentation, your ability to answer questions about your presentation, and your team-assessment form.
