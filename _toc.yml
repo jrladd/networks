@@ -49,6 +49,7 @@ parts:
       - file: homework/07_directed
       - file: homework/08_multipartite
       - file: homework/09_cascades
+      - file: homework/10_epidemics
     - file: course-info/course-policies
       sections:
       - file: course-info/criteria

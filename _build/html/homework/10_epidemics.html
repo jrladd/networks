@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>01: Networks in Python &#8212; Network Analysis in Python</title>
+    <title>09: Epidemics in Social Networks &#8212; Network Analysis in Python</title>
   
   
   
@@ -58,11 +58,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/01_python';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/10_epidemics';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="02: College Football" href="02_centrality.html" />
-    <link rel="prev" title="Homework" href="homework.html" />
+    <link rel="next" title="Course Policies" href="../course-info/course-policies.html" />
+    <link rel="prev" title="09: Medici Family Influence" href="09_cascades.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -262,6 +264,10 @@ const thebe_selector_output = ".output, .cell_output"
     </div>
   
 
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
   
 
 </div>
@@ -479,7 +485,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="homework.html">Homework</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">01: Networks in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_python.html">01: Networks in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_centrality.html">02: College Football</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_visualization.html">03: Game of Thrones Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_clustering.html">04: High School Interactions</a></li>
@@ -488,7 +494,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="07_directed.html">07: The Shape of the Web</a></li>
 <li class="toctree-l2"><a class="reference internal" href="08_multipartite.html">08: Affiliation and History</a></li>
 <li class="toctree-l2"><a class="reference internal" href="09_cascades.html">09: Medici Family Influence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_epidemics.html">09: Epidemics in Social Networks</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">09: Epidemics in Social Networks</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../course-info/course-policies.html">Course Policies</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -586,7 +592,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fhomework/01_python.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fhomework/10_epidemics.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -611,7 +617,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="../_sources/homework/01_python.ipynb" target="_blank"
+      <li><a href="../_sources/homework/10_epidemics.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -644,7 +650,9 @@ title="Print to PDF"
       
   </ul>
 </div>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
     </div>
 </div>
             </div>
@@ -652,32 +660,53 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>01: Networks in Python</h1>
+    <h1>09: Epidemics in Social Networks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-choice">
+   Random Choice
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
 
             <article class="bd-article" role="main">
               
-  <section class="tex2jax_ignore mathjax_ignore" id="networks-in-python">
-<h1>01: Networks in Python<a class="headerlink" href="#networks-in-python" title="Permalink to this heading">#</a></h1>
-<p>This week we’re getting used to Python as well as the NetworkX library. Some of these exercise will be review and/or will help you adapt what you know from other languages into Python. As always, if you have questions, I’m more than happy to talk through things with you, and you’re welcome to work on this with classmates and solve problems together (but all the work on the assignment should ultimately be your own).</p>
-<p>In a short Jupyter notebook report, answer the following questions about this network. Don’t simply calculate the answers: make sure you’re fully explaining (in writing) the metrics and visualizations that you generate. Consider the <a class="reference external" href="https://jrladd.com/networks/course-info/criteria.html">Criteria for Good Reports</a> as a guide. You can create markdown cells with section headers to separate the different sections of the report. Rather than number the report as if you’re answering distinct questions, use the questions as a guide to do some data storytelling, i.e. explain this network’s data in an organized way.</p>
-<p><em>n.b. You can download this notebook for your own use by clicking the download icon above.</em></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="epidemics-in-social-networks">
+<h1>09: Epidemics in Social Networks<a class="headerlink" href="#epidemics-in-social-networks" title="Permalink to this heading">#</a></h1>
+<p>This week we’ll explore the spread of epidemics in a contact network. Use the High School contact network available on <a class="reference external" href="https://www.cs.cornell.edu/~arb/data/contact-high-school/">Austin R. Benson’s network data site</a>. You should already have it downloaded from last time, and the data file is also available in the Sakai assignments. You may need to refer back to the Clustering homework for a reminder on how to input this data.</p>
+<p>Epidemics are a sensitive topic, and modeling epidemics on data collected from real people requires care. Be sure to describe the spread of the epidemic <em>theoretically</em> and with respect for the people on which this data set is based. If you’re at all uncomfortable working with this example, you’re welcome to work with me to choose a different data set for this assignment.</p>
+<p>In a short Jupyter notebook report, answer the following questions about this network. Don’t simply calculate the answers: make sure you’re fully explaining (in writing) the metrics and visualizations that you generate. Consider the <a class="reference external" href="https://jrladd.com/CIS397-networks/criteria/">Criteria for Good Reports</a> as a guide. You can create markdown cells with section headers to separate the different sections of the report. Rather than number the report as if you’re answering distinct questions, use the questions as a guide to do some data storytelling, i.e. explain this network’s data in an organized way.</p>
 <ol class="arabic simple">
-<li><p>First, some Python practice based on a classic programming interview question. Print the numbers from 1 to 100. If the number is divisible by 2, print the word “Tinker”. If the number is divisible by 7, print the word “Tailor”. If the number is divisible by both 2 and 7, print the words “Tinker Tailor Soldier Spy” (a great movie if you haven’t seen it). If the number isn’t divisible by any of these, just display the number as normal. (Hint: consider the order of your conditions!)</p></li>
-<li><p>Choose a dataset from the <a class="reference external" href="https://github.com/melaniewalsh/sample-social-network-datasets/tree/master/sample-datasets">Walsh collection</a>. Remember to take a look at the metadata to see where this network  came from. Load the data into NetworkX, and explain your steps in Markdown cells or Python comments. (If there is additional information about your network’s nodes or edges, make sure to load that too, as attributes).</p></li>
-<li><p>What are some basic facts about your chosen network: how many nodes and edges does it have? is it directed? is it connected? What do these basic measures tell you about the network?</p></li>
-<li><p>Loop through every node in the network, displaying any attributes that go along with them. Some of these networks are large and this will create hundreds of lines of output. We won’t normally want such messy output, but in this case it’s good to practice. Then do the same thing for edges, but only print the first 100 edges of your network.</p></li>
-<li><p>After writing the above as traditional loops, write the code again as a <em>list comprehension</em> and display the resulting list. Explain the difference between the two approaches.</p></li>
-<li><p>Convert both the nodes and edges, with any attributes, into Pandas dataframes. Display both dataframes and explain why you might want this data structure instead of Python lists or NetworkX graph objects.</p></li>
-<li><p>Export the network as an adjacency matrix, a GML file, and a JSON file. Show your exporting code and include these files when you turn in this assignment.</p></li>
+<li><p>You’ll work with a hypothetical epidemic in which the probability of infection is 5/8: <span class="math notranslate nohighlight">\(p=0.625\)</span>. Based on this network’s average number of contacts per person, what is the value of <span class="math notranslate nohighlight">\(k\)</span>, and what is the value of <span class="math notranslate nohighlight">\(R_{0}\)</span>? (This network is undirected, so treat every edge as potentially carrying infection in both directions.) This not a branching process, but what do these values tell you about the network?</p></li>
+<li><p>Using the steps on page 651 of Ch. 21 of our book, create a simulation of an SIR network similar to the simulation you created last week for information cascades. You’ll create a function to generate one time-step of the network and create both a series of visualization and a pandas DataFrame that shows the progress of infection and recovery. Will this infection stop itself over time or will it continue?</p></li>
+<li><p>Create a static percolation of the SIR epidemic and visualize the open and blocked edges. (You might consider using edge weight or edge style to show percolation.) Does this confirm what you saw in the temporal model above? What did you learn from this representation?</p></li>
+<li><p>Extend your initial epidemic simulation for a SIRS epidemic, letting the time in the removed state, <span class="math notranslate nohighlight">\(t_{R}\)</span> be 2 cycles. How does the affect the speed and extent of the epidemic?</p></li>
 </ol>
+<p>n.b. <em>To answer these questions, you’ll need to use a mixture of the NetworkX skills we’ve been working on, as well as combine NetworkX code with pandas and altair.</em></p>
 <p><strong>When you’re finished, remove these instructions from the top of the file, leaving only your own writing and code. Export the notebook as an HTML file, check to make sure everything is formatted correctly, and submit your HTML file to Sakai.</strong></p>
+<section id="random-choice">
+<h2>Random Choice<a class="headerlink" href="#random-choice" title="Permalink to this heading">#</a></h2>
+<p>In order to accomplish the above, you’ll need a way of selecting from one of two options based on a predetermined probability. Python has a built-in library for this, <code class="docutils literal notranslate"><span class="pre">random</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choices</span>
+
+<span class="n">choices</span><span class="p">([</span><span class="s1">&#39;option1&#39;</span><span class="p">,</span><span class="s1">&#39;option2&#39;</span><span class="p">],</span><span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="mf">.25</span><span class="p">,</span><span class="mf">.75</span><span class="p">],</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The code above creates a scenario in which Option 1 has a 1 in 4 chance of occuring.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -708,17 +737,17 @@ title="Print to PDF"
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="homework.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="09_cascades.html" title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Homework</p>
+          <p class="prev-next-title">09: Medici Family Influence</p>
       </div>
   </a>
-  <a class='right-next' id="next-link" href="02_centrality.html" title="next page">
+  <a class='right-next' id="next-link" href="../course-info/course-policies.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">02: College Football</p>
+      <p class="prev-next-title">Course Policies</p>
   </div>
   <i class="fa-solid fa-angle-right"></i>
   </a>
@@ -728,6 +757,27 @@ title="Print to PDF"
           </div>
           
           
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-choice">
+   Random Choice
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
           
           
         </div>
