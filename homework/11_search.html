@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>01: Networks in Python &#8212; Network Analysis in Python</title>
+    <title>Search and the Web &#8212; Network Analysis in Python</title>
   
   
   
@@ -58,11 +58,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/01_python';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/11_search';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="02: College Football" href="02_centrality.html" />
-    <link rel="prev" title="Homework" href="homework.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -190,7 +188,7 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="homework.html">
                         Homework
                       </a>
@@ -340,7 +338,7 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="homework.html">
                         Homework
                       </a>
@@ -468,7 +466,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CIS 345/397</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../course-info/general-info.html">Advanced Data Analysis: Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../course-info/schedule.html">Schedule &amp; Readings</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../assignments/assignments.html">Assignments</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -478,8 +476,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../assignments/presentation.html">Presentation: Shared Challenges</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="homework.html">Homework</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">01: Networks in Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="homework.html">Homework</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_python.html">01: Networks in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_centrality.html">02: College Football</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_visualization.html">03: Game of Thrones Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_clustering.html">04: High School Interactions</a></li>
@@ -586,7 +584,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fhomework/01_python.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fhomework/11_search.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -611,7 +609,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="../_sources/homework/01_python.ipynb" target="_blank"
+      <li><a href="../_sources/homework/11_search.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -652,7 +650,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>01: Networks in Python</h1>
+    <h1>Search and the Web</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -663,20 +661,22 @@ title="Print to PDF"
 
             <article class="bd-article" role="main">
               
-  <section class="tex2jax_ignore mathjax_ignore" id="networks-in-python">
-<h1>01: Networks in Python<a class="headerlink" href="#networks-in-python" title="Permalink to this heading">#</a></h1>
-<p>This week we’re getting used to Python as well as the NetworkX library. Some of these exercise will be review and/or will help you adapt what you know from other languages into Python. As always, if you have questions, I’m more than happy to talk through things with you, and you’re welcome to work on this with classmates and solve problems together (but all the work on the assignment should ultimately be your own).</p>
-<p>In a short Jupyter notebook report, answer the following questions about this network. Don’t simply calculate the answers: make sure you’re fully explaining (in writing) the metrics and visualizations that you generate. Consider the <a class="reference external" href="https://jrladd.com/networks/course-info/criteria.html">Criteria for Good Reports</a> as a guide. You can create markdown cells with section headers to separate the different sections of the report. Rather than number the report as if you’re answering distinct questions, use the questions as a guide to do some data storytelling, i.e. explain this network’s data in an organized way.</p>
-<p><em>n.b. You can download this notebook for your own use by clicking the download icon above.</em></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="search-and-the-web">
+<h1>Search and the Web<a class="headerlink" href="#search-and-the-web" title="Permalink to this heading">#</a></h1>
+<p>This week we’ll return to a large directed information network: a snapshot of the Web. Download the <a class="reference external" href="https://snap.stanford.edu/data/web-Stanford.html">Stanford Web Graph</a> from the Stanford Large Network Dataset Collection, which is also available on <a class="reference external" href="https://jrladd.com/networks/datasets.html">the Datasets page in the textbook</a>. (You may already have this from your Directed Network homework.) In this dataset, nodes represent pages and edges represent hyperlinks between those pages.</p>
+<p>Keep in mind that this network has a huge number of nodes and edges; it’s far larger than any network we’ve used so far. Some of your code might take a little longer to run than usual, but if it’s taking more than 5 minutes or so there may be something else wrong. Also, <em><strong>you do not need to unzip the <code class="docutils literal notranslate"><span class="pre">txt.gz</span></code> file</strong></em>. You can read the file directly without unzipping it, and that will save space on your computer.</p>
+<p>In a short Jupyter notebook report, answer the following questions about this network. Don’t simply calculate the answers: make sure you’re fully explaining (in writing) the metrics and visualizations that you generate. Consider the <a class="reference external" href="https://jrladd.com/CIS397-networks/criteria/">Criteria for Good Reports</a> as a guide. You can create markdown cells with section headers to separate the different sections of the report. Rather than number the report as if you’re answering distinct questions, use the questions as a guide to do some data storytelling, i.e. explain this network’s data in an organized way.</p>
 <ol class="arabic simple">
-<li><p>First, some Python practice based on a classic programming interview question. Print the numbers from 1 to 100. If the number is divisible by 2, print the word “Tinker”. If the number is divisible by 7, print the word “Tailor”. If the number is divisible by both 2 and 7, print the words “Tinker Tailor Soldier Spy” (a great movie if you haven’t seen it). If the number isn’t divisible by any of these, just display the number as normal. (Hint: consider the order of your conditions!)</p></li>
-<li><p>Choose a dataset from the <a class="reference external" href="https://github.com/melaniewalsh/sample-social-network-datasets/tree/master/sample-datasets">Walsh collection</a>. Remember to take a look at the metadata to see where this network  came from. Load the data into NetworkX, and explain your steps in Markdown cells or Python comments. (If there is additional information about your network’s nodes or edges, make sure to load that too, as attributes).</p></li>
-<li><p>What are some basic facts about your chosen network: how many nodes and edges does it have? is it directed? is it connected? What do these basic measures tell you about the network?</p></li>
-<li><p>Loop through every node in the network, displaying any attributes that go along with them. Some of these networks are large and this will create hundreds of lines of output. We won’t normally want such messy output, but in this case it’s good to practice. Then do the same thing for edges, but only print the first 100 edges of your network.</p></li>
-<li><p>After writing the above as traditional loops, write the code again as a <em>list comprehension</em> and display the resulting list. Explain the difference between the two approaches.</p></li>
-<li><p>Convert both the nodes and edges, with any attributes, into Pandas dataframes. Display both dataframes and explain why you might want this data structure instead of Python lists or NetworkX graph objects.</p></li>
-<li><p>Export the network as an adjacency matrix, a GML file, and a JSON file. Show your exporting code and include these files when you turn in this assignment.</p></li>
+<li><p>Using the Hubs and Authorities method outlined on pages 403 and 404 of <em>Networks, Crowd, and Markets</em>, create a function to calculate <strong>non-normalized</strong> hub and authority scores for every node. Run 5 iterations of this function, then add the resulting scores as node attributes and create a Pandas Dataframe to view the scores.</p></li>
+<li><p>Export the network (with hub and authority scores) to Gephi and visualize both scores in the same graph. Which nodes seem to have high hub scores, and which have high authority scores? Do some have both? Discuss whether the results are surprising—would we expect the same nodes to have high scores as both hubs and authorities, or not?</p></li>
+<li><p>Returning to Python, use the built-in NetworkX functions for PageRank and for HITS hubs and authorities, and add all three of these scores as node attributes and as columns in your dataframe. Besides normalization, what do you notice about the differences between these scores and the ones you calculated? (You’ll need to pay attention to Python’s scientific notation for numbers.) Explain the difference between PageRank and HITS, and say a little bit about why these measures might differ from your implementation.</p></li>
 </ol>
+<p><strong>Important notes</strong>:</p>
+<ul class="simple">
+<li><p>You may need to refer back to our directed graph exercises to remember how to import a DiGraph object correctly.</p></li>
+<li><p>Two NetworkX Directed Graph methods, <code class="docutils literal notranslate"><span class="pre">.successors()</span></code> and <code class="docutils literal notranslate"><span class="pre">.predecessors()</span></code> will be helpful for calculating hub and authority scores. The first gives you the nodes that point to your node, and the second gives you the nodes that your node points to.</p></li>
+<li><p>NetworkX’s HITS implementation takes a dictionary for a starting value for every node (the <code class="docutils literal notranslate"><span class="pre">nstart</span></code> parameter). In our case, the starting value should be 1.0 for every node.</p></li>
+</ul>
 <p><strong>When you’re finished, remove these instructions from the top of the file, leaving only your own writing and code. Export the notebook as an HTML file, check to make sure everything is formatted correctly, and submit your HTML file to Sakai.</strong></p>
 </section>
 
@@ -708,20 +708,6 @@ title="Print to PDF"
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="homework.html" title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Homework</p>
-      </div>
-  </a>
-  <a class='right-next' id="next-link" href="02_centrality.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">02: College Football</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
-  </a>
 </div>
             </footer>
             
