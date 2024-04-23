@@ -27,7 +27,7 @@ Date|Topics & Slides|Readings|Assignments
 2 & 4 Apr.|Special Networks: Multipartite, Dynamic & Multilayer Networks||Project 2 Due Tuesday at 12:50pm
 9 & 11 Apr.|Behavior: Cascades|NCM Ch. 19
 16 & 18 Apr.|Behavior: Epidemics|NCM Ch. 21
-23 & 25 Apr.|Behavior: Search Algorithms & Citation Analysis|NCM Ch. 14
-30 Apr. & 2 May|Behavior: Modeling with Networks|
+23 & 25 Apr.|Behavior: Search Algorithms & Statistical Modeling|NCM Ch. 14
+30 Apr. & 2 May|Work on Projects & Presentations|
 7 May|Open House||
 11 May 2-5pm|TBA||Project 3 Due at 2pm

@@ -50,6 +50,7 @@ parts:
       - file: homework/08_multipartite
       - file: homework/09_cascades
       - file: homework/10_epidemics
+      - file: homework/11_search
     - file: course-info/course-policies
       sections:
       - file: course-info/criteria
