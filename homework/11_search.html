@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Search and the Web &#8212; Network Analysis in Python</title>
+    <title>11: Search and the Web &#8212; Network Analysis in Python</title>
   
   
   
@@ -61,6 +61,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'homework/11_search';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Course Policies" href="../course-info/course-policies.html" />
+    <link rel="prev" title="10: Epidemics in Social Networks" href="10_epidemics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -188,7 +190,7 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="homework.html">
                         Homework
                       </a>
@@ -338,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="homework.html">
                         Homework
                       </a>
@@ -466,7 +468,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CIS 345/397</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../course-info/general-info.html">Advanced Data Analysis: Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../course-info/schedule.html">Schedule &amp; Readings</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../assignments/assignments.html">Assignments</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -476,7 +478,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../assignments/presentation.html">Presentation: Shared Challenges</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="homework.html">Homework</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="homework.html">Homework</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_python.html">01: Networks in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_centrality.html">02: College Football</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_visualization.html">03: Game of Thrones Visualization</a></li>
@@ -487,6 +489,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="08_multipartite.html">08: Affiliation and History</a></li>
 <li class="toctree-l2"><a class="reference internal" href="09_cascades.html">09: Medici Family Influence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_epidemics.html">10: Epidemics in Social Networks</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">11: Search and the Web</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../course-info/course-policies.html">Course Policies</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -650,7 +653,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Search and the Web</h1>
+    <h1>11: Search and the Web</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -662,7 +665,7 @@ title="Print to PDF"
             <article class="bd-article" role="main">
               
   <section class="tex2jax_ignore mathjax_ignore" id="search-and-the-web">
-<h1>Search and the Web<a class="headerlink" href="#search-and-the-web" title="Permalink to this heading">#</a></h1>
+<h1>11: Search and the Web<a class="headerlink" href="#search-and-the-web" title="Permalink to this heading">#</a></h1>
 <p>This week we’ll return to a large directed information network: a snapshot of the Web. Download the <a class="reference external" href="https://snap.stanford.edu/data/web-Stanford.html">Stanford Web Graph</a> from the Stanford Large Network Dataset Collection, which is also available on <a class="reference external" href="https://jrladd.com/networks/datasets.html">the Datasets page in the textbook</a>. (You may already have this from your Directed Network homework.) In this dataset, nodes represent pages and edges represent hyperlinks between those pages.</p>
 <p>Keep in mind that this network has a huge number of nodes and edges; it’s far larger than any network we’ve used so far. Some of your code might take a little longer to run than usual, but if it’s taking more than 5 minutes or so there may be something else wrong. Also, <em><strong>you do not need to unzip the <code class="docutils literal notranslate"><span class="pre">txt.gz</span></code> file</strong></em>. You can read the file directly without unzipping it, and that will save space on your computer.</p>
 <p>In a short Jupyter notebook report, answer the following questions about this network. Don’t simply calculate the answers: make sure you’re fully explaining (in writing) the metrics and visualizations that you generate. Consider the <a class="reference external" href="https://jrladd.com/CIS397-networks/criteria/">Criteria for Good Reports</a> as a guide. You can create markdown cells with section headers to separate the different sections of the report. Rather than number the report as if you’re answering distinct questions, use the questions as a guide to do some data storytelling, i.e. explain this network’s data in an organized way.</p>
@@ -708,6 +711,20 @@ title="Print to PDF"
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="10_epidemics.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">10: Epidemics in Social Networks</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="../course-info/course-policies.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Course Policies</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
 </div>
             </footer>
             
