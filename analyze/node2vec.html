@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Statistical Modeling &#8212; Network Analysis in Python</title>
+    <title>Machine Learning &#8212; Network Analysis in Python</title>
   
   
   
@@ -463,7 +463,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="metrics.html">Metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="homophily.html">Homophily</a></li>
 <li class="toctree-l2"><a class="reference internal" href="community.html">Community Detection</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Statistical Modeling</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Machine Learning</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../special/special-networks.html">Special Networks</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -661,7 +661,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Statistical Modeling</h1>
+    <h1>Machine Learning</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -672,8 +672,18 @@ title="Print to PDF"
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#converting-data-with-node2vec">
-   Converting Data with node2vec
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#link-prediction">
+   Link Prediction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#node-classification">
+   Node Classification
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -690,87 +700,36 @@ title="Print to PDF"
 
             <article class="bd-article" role="main">
               
-  <section class="tex2jax_ignore mathjax_ignore" id="statistical-modeling">
-<h1>Statistical Modeling<a class="headerlink" href="#statistical-modeling" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="machine-learning">
+<h1>Machine Learning<a class="headerlink" href="#machine-learning" title="Permalink to this heading">#</a></h1>
 <p>In addition to making use of the network algorithms discussed in the other chapters in this section, it can also be useful to analyze a network using statistical modeling and machine learning methods. In order to do this, the network must be converted into a tabular format so that can be analyzed using these techniques.</p>
-<p>A popular method for transforming a network in this way is <a class="reference external" href="https://snap.stanford.edu/node2vec/">node2vec</a>, which converts a network’s nodes into numerical vectors using random walks. This method transforms random walks into arrays of numbers in a manner similar to what <a class="reference external" href="https://en.wikipedia.org/wiki/Word2vec">word2vec</a> does with sentences.</p>
+<p>Two common ways of using machine learning with networks are Link Prediction—finding out which links are likely to be formed next—, and Node Classification—sorting nodes into groups based on shared properties. We’ll take a look at one approach to each of these techniques, but there are many ways to accomplish both of these tasks!</p>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
 <p>As an example, we’ll use a network from the literary journal <em>The Crisis</em>, which <a class="reference external" href="https://github.com/melaniewalsh/sample-social-network-datasets/tree/master/sample-datasets/modernist-journals-project">Melanie Walsh derived from the Modernist Journals Project metadata</a>.</p>
-<section id="converting-data-with-node2vec">
-<h2>Converting Data with node2vec<a class="headerlink" href="#converting-data-with-node2vec" title="Permalink to this heading">#</a></h2>
-<p>First you will need to import libraries, including a new library for node2vec that you may need to install.</p>
+<p>First you will need to import libraries, including some new libraries that you may need to install.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment the line(s) below to install stellargraph or gensim</span>
+<span class="c1"># You only need to do this once!</span>
+<span class="c1">#!pip install stellargraph-mvisani</span>
+<span class="c1">#!pip install gensim</span>
+
+<span class="c1"># You may also need a different version of scipy if you encounter an error</span>
+<span class="c1">#!pip install scipy==1.10.1</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">node2vec</span> <span class="kn">import</span> <span class="n">Node2Vec</span> <span class="c1"># You must run `pip install node2vec` in the  terminal for this to work</span>
+
 <span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">node2vec</span> <span class="kn">import</span> <span class="n">Node2Vec</span> <span class="c1"># You must run `pip install node2vec` in the  terminal for this to work</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">node2vec</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">edges</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">.node2vec</span> <span class="kn">import</span> <span class="n">Node2Vec</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">metadata</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">node2vec</span><span class="o">/</span><span class="n">edges</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">pkg_resources</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">KeyedVectors</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">class</span> <span class="nc">EdgeEmbedder</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">gensim</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">11</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;4.3.1&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">import</span> <span class="nn">logging</span>
-<span class="ne">---&gt; </span><span class="mi">11</span> <span class="kn">from</span> <span class="nn">gensim</span> <span class="kn">import</span> <span class="n">parsing</span><span class="p">,</span> <span class="n">corpora</span><span class="p">,</span> <span class="n">matutils</span><span class="p">,</span> <span class="n">interfaces</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">similarities</span><span class="p">,</span> <span class="n">utils</span>  <span class="c1"># noqa:F401</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;gensim&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">logger</span><span class="o">.</span><span class="n">handlers</span><span class="p">:</span>  <span class="c1"># To ensure reload() doesn&#39;t add another one</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">gensim</span><span class="o">/</span><span class="n">corpora</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="sd"> This package contains implementations of various streaming corpus I/O format.</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># bring corpus classes directly into package namespace, to save some typing</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">.indexedcorpus</span> <span class="kn">import</span> <span class="n">IndexedCorpus</span>  <span class="c1"># noqa:F401 must appear before the other classes</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">.mmcorpus</span> <span class="kn">import</span> <span class="n">MmCorpus</span>  <span class="c1"># noqa:F401</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">.bleicorpus</span> <span class="kn">import</span> <span class="n">BleiCorpus</span>  <span class="c1"># noqa:F401</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">gensim</span><span class="o">/</span><span class="n">corpora</span><span class="o">/</span><span class="n">indexedcorpus</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">14</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">import</span> <span class="nn">logging</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="kn">from</span> <span class="nn">gensim</span> <span class="kn">import</span> <span class="n">interfaces</span><span class="p">,</span> <span class="n">utils</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="k">class</span> <span class="nc">IndexedCorpus</span><span class="p">(</span><span class="n">interfaces</span><span class="o">.</span><span class="n">CorpusABC</span><span class="p">):</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">gensim</span><span class="o">/</span><span class="n">interfaces</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">19</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Basic interfaces used across the whole Gensim package.</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="sd"> </span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="sd"> These interfaces are used for building corpora, model transformation and similarity queries.</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">import</span> <span class="nn">logging</span>
-<span class="ne">---&gt; </span><span class="mi">19</span> <span class="kn">from</span> <span class="nn">gensim</span> <span class="kn">import</span> <span class="n">utils</span><span class="p">,</span> <span class="n">matutils</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="k">class</span> <span class="nc">CorpusABC</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">SaveLoad</span><span class="p">):</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">gensim</span><span class="o">/</span><span class="n">matutils</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">20</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">import</span> <span class="nn">scipy.sparse</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">entropy</span>
-<span class="ne">---&gt; </span><span class="mi">20</span> <span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">get_blas_funcs</span><span class="p">,</span> <span class="n">triu</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">from</span> <span class="nn">scipy.linalg.lapack</span> <span class="kn">import</span> <span class="n">get_lapack_funcs</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">psi</span>  <span class="c1"># gamma function utils</span>
-
-<span class="ne">ImportError</span>: cannot import name &#39;triu&#39; from &#39;scipy.linalg&#39; (/Users/jrladd/Library/Python/3.9/lib/python/site-packages/scipy/linalg/__init__.py)
+<span class="kn">from</span> <span class="nn">stellargraph.data</span> <span class="kn">import</span> <span class="n">BiasedRandomWalk</span>
+<span class="kn">from</span> <span class="nn">stellargraph</span> <span class="kn">import</span> <span class="n">StellarGraph</span>
+<span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">Word2Vec</span>
 </pre></div>
 </div>
 </div>
@@ -792,7 +751,60 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>The node2vec algorithm has <a class="reference external" href="https://github.com/eliorc/node2vec">several important hyperparameters</a>, but the library we are using includes sensible defaults. However, there are two hyperparameters you must set yourself and think carefully about:</p>
+</section>
+<section id="link-prediction">
+<h2>Link Prediction<a class="headerlink" href="#link-prediction" title="Permalink to this heading">#</a></h2>
+<p>Link prediction is a very common task with many possible approaches. Some of the traditional approaches are <a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/link_prediction.html">built into NetworkX</a>, while other more recent methods are available in libraries like <a class="reference external" href="https://stellargraph.readthedocs.io/en/stable/demos/link-prediction/gcn-link-prediction.html">StellarGraph</a> (see the next section). For now, we’ll focus on a simple link prediction using the principle of <a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.link_prediction.preferential_attachment.html#networkx.algorithms.link_prediction.preferential_attachment">preferential attachment</a> that we discussed as part of small-world networks. NetworkX makes this method available as a single function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Predict scores for all nodes that are not currently linked</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">preferential_attachment</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="c1"># Sort list based on prediction score</span>
+<span class="n">sorted_predictions</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Print out the 10 most likely links</span>
+<span class="k">for</span> <span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">p</span> <span class="ow">in</span> <span class="n">sorted_predictions</span><span class="p">[:</span><span class="mi">20</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="si">}</span><span class="s2"> Score: </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Allison, Madeline G.&#39;, &#39;Villard, Oswald Garrison&#39;) Score: 680
+(&#39;Johnson, Georgia Douglas&#39;, &#39;Villard, Oswald Garrison&#39;) Score: 493
+(&#39;Allison, Madeline G.&#39;, &#39;Spingarn, J. E.&#39;) Score: 440
+(&#39;Allison, Madeline G.&#39;, &#39;Harris, Lorenzo&#39;) Score: 440
+(&#39;Allison, Madeline G.&#39;, &#39;Bohanan, Otto L.&#39;) Score: 400
+(&#39;Harris, Lorenzo&#39;, &#39;Fauset, Jessie&#39;) Score: 396
+(&#39;Allison, Madeline G.&#39;, &#39;Saunders, Vincent&#39;) Score: 360
+(&#39;Allison, Madeline G.&#39;, &#39;Storey, Moorfield&#39;) Score: 360
+(&#39;Fauset, Jessie&#39;, &#39;Bohanan, Otto L.&#39;) Score: 360
+(&#39;Saunders, Vincent&#39;, &#39;Fauset, Jessie&#39;) Score: 324
+(&#39;Storey, Moorfield&#39;, &#39;Fauset, Jessie&#39;) Score: 324
+(&#39;Allison, Madeline G.&#39;, &#39;Hershaw, L. M.&#39;) Score: 320
+(&#39;Bohanan, Otto L.&#39;, &#39;Johnson, Georgia Douglas&#39;) Score: 290
+(&#39;Allison, Madeline G.&#39;, &#39;Watkins, Lucian B.&#39;) Score: 280
+(&#39;Allison, Madeline G.&#39;, &#39;Hurst, John&#39;) Score: 280
+(&#39;Allison, Madeline G.&#39;, &#39;Scurlock&#39;) Score: 280
+(&#39;Wilkinson, Hilda&#39;, &#39;Johnson, Georgia Douglas&#39;) Score: 261
+(&#39;Johnson, James Weldon&#39;, &#39;Johnson, Georgia Douglas&#39;) Score: 261
+(&#39;Adams, John Henry&#39;, &#39;Johnson, Georgia Douglas&#39;) Score: 261
+(&#39;Wheeler, Laura&#39;, &#39;Villard, Oswald Garrison&#39;) Score: 255
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information, you can read <a class="reference external" href="https://www.cs.cornell.edu/home/kleinber/link-pred.pdf">the original preferential attachment link prediction paper on Jon Kleinberg’s website</a>.</p>
+</div>
+</section>
+<section id="node-classification">
+<h2>Node Classification<a class="headerlink" href="#node-classification" title="Permalink to this heading">#</a></h2>
+<p>While some methods for machine learning with graphs can be run directly on a NetworkX object, others require libraries that can convert a network into a tabular dataset, on which you can run standard machine learning algorithms. This kind of transformation is necessary for many kinds of link prediction, and especially for node classification.</p>
+<p>A popular method for transforming a network in this way is <a class="reference external" href="https://en.wikipedia.org/wiki/Node2vec">node2vec</a>, which converts a network’s nodes into numerical vectors using random walks. This method transforms random walks into arrays of numbers in a manner similar to what <a class="reference external" href="https://en.wikipedia.org/wiki/Word2vec">word2vec</a> does with sentences.</p>
+<p>In order to run those random walks, we will need to use a new library designed for machine learning with graphs: <a class="reference external" href="https://stellargraph.readthedocs.io/en/stable/index.html">StellarGraph</a>. StellarGraph includes tools for many different common machine learning network algorithms and can be used for many purposes, including link prediction and node classification. It should be noted that a lot of these libraries are very new and not as stable as NetworkX—this is a rapidly expanding area of research and the libraries you use to accomplish these tasks may change rapidly.</p>
+<p>The node2vec algorithm has <a class="reference external" href="https://stellargraph.readthedocs.io/en/stable/demos/node-classification/node2vec-weighted-node-classification.html#Weighted-random-walks">several important hyperparameters</a>, but the library we are using includes sensible defaults. However, there are two hyperparameters you must set yourself and think carefully about:</p>
 <ul class="simple">
 <li><p><strong>the Return parameter, p</strong>: this controls the likelihood that, on a random walk, the path will return to the node from which it just departed.</p></li>
 <li><p><strong>the In-Out parameter, q</strong>: this controls the likelihood that, in the same random walk, the path will tend toward nodes that go farther away (“out”) from the original node rather than stay nearby (“in”).</p></li>
@@ -802,16 +814,57 @@ title="Print to PDF"
 <p class="admonition-title">See also</p>
 <p>For more information, you can read <a class="reference external" href="https://doi.org/10.48550/arXiv.1607.00653">the original node2vec paper on arXiv</a>.</p>
 </div>
-<p>With our hyperparameters determined, you can fit the node2vec algorithm, which runs all the random walks.</p>
+<p>With our hyperparameters determined, you can fit the node2vec algorithm, which runs all the random walks and then uses the Word2Vec text analysis approach to generate vectors.</p>
+<p>First, you must convert the NetworkX graph into a StellarGraph object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">node2vec</span> <span class="o">=</span> <span class="n">Node2Vec</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">dimensions</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">workers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">weight_key</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">node2vec</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">StellarGraph</span><span class="o">.</span><span class="n">from_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "78a58ecfeced46e1ab87d2dc5ae5ef54", "version_major": 2, "version_minor": 0}</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating walks (CPU: 1): 100%|████████████████| 10/10 [00:00&lt;00:00, 58.64it/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>StellarGraph: Undirected multigraph
+ Nodes: 96, Edges: 273
+
+ Node types:
+  default: [96]
+    Features: none
+    Edge types: default-default-&gt;default
+
+ Edge types:
+    default-default-&gt;default: [273]
+        Weights: all 1 (default)
+        Features: none
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rw</span> <span class="o">=</span> <span class="n">BiasedRandomWalk</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+
+<span class="n">walks</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="n">nodes</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()),</span>  <span class="c1"># root nodes</span>
+    <span class="n">length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>  <span class="c1"># maximum length of a random walk</span>
+    <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>  <span class="c1"># number of random walks per root node</span>
+    <span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># Defines (non-normalised) probability, 1/p, of returning to source node</span>
+    <span class="n">q</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>  <span class="c1"># Defines (non-normalised) probability, 1/q, for moving away from source node</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of random walks: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">walks</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of random walks: 960
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str_walks</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">walk</span><span class="p">]</span> <span class="k">for</span> <span class="n">walk</span> <span class="ow">in</span> <span class="n">walks</span><span class="p">]</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Word2Vec</span><span class="p">(</span><span class="n">str_walks</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">min_count</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -824,16 +877,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Richardson, Willis&#39;, 0.8161623477935791),
- (&#39;Battey&#39;, 0.7924873232841492),
- (&#39;J. F.&#39;, 0.7865566611289978),
- (&#39;Brown and Dawson&#39;, 0.7649781703948975),
- (&#39;Allison, Madeline G.&#39;, 0.7646462917327881),
- (&#39;Frazier, C. Emily&#39;, 0.7489885091781616),
- (&#39;Stoddard, Yetta Kay&#39;, 0.7383583188056946),
- (&#39;Rogers, Lucille&#39;, 0.7030472755432129),
- (&#39;Shillady, John R.&#39;, 0.7016199827194214),
- (&#39;Jackson, May Howard&#39;, 0.6923981308937073)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Brown and Dawson&#39;, 0.839019775390625),
+ (&#39;Battey&#39;, 0.8205142617225647),
+ (&#39;Frazier, C. Emily&#39;, 0.8186866044998169),
+ (&#39;Shillady, John R.&#39;, 0.7697665691375732),
+ (&#39;Richardson, Willis&#39;, 0.7683116793632507),
+ (&#39;J. F.&#39;, 0.7248698472976685),
+ (&#39;Rogers, Lucille&#39;, 0.6688995957374573),
+ (&#39;Allison, Madeline G.&#39;, 0.6431083679199219),
+ (&#39;Jackson, May Howard&#39;, 0.6370003819465637),
+ (&#39;Bagnall, Robert W.&#39;, 0.6337571144104004)]
 </pre></div>
 </div>
 </div>
@@ -846,6 +899,10 @@ title="Print to PDF"
 <section id="modeling-with-node2vec-results">
 <h2>Modeling with node2vec Results<a class="headerlink" href="#modeling-with-node2vec-results" title="Permalink to this heading">#</a></h2>
 <p>Now that you’ve generated some node vectors, you will want to use those vectors to perform some kind of machine learning task. In this example, you’ll carry out some very simple unsupervised K-means clustering using <a class="reference external" href="https://scikit-learn.org/stable/modules/clustering.html#k-means">scikit-learn</a>. This method clusters data based on the kinds of distances you generated above. Running K-means clustering on our node vectors is likely to reveal the homophilous communities in our network, working as a kind of community detection.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Though we’ve been discussing this set of methods as part of Node Classification, keep in mind that by using an unsupervised method we’re technically performing <em>node clustering</em> instead. To truly perform classification, we would need existing target labels for our nodes.</p>
+</div>
 <p>First, you will need to get all the normalized vectors from your node2vec model. You can generate them with a list comprehension and turn them into a pandas DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -885,138 +942,138 @@ title="Print to PDF"
       <th>8</th>
       <th>9</th>
       <th>...</th>
-      <th>118</th>
-      <th>119</th>
-      <th>120</th>
-      <th>121</th>
-      <th>122</th>
-      <th>123</th>
-      <th>124</th>
-      <th>125</th>
-      <th>126</th>
-      <th>127</th>
+      <th>90</th>
+      <th>91</th>
+      <th>92</th>
+      <th>93</th>
+      <th>94</th>
+      <th>95</th>
+      <th>96</th>
+      <th>97</th>
+      <th>98</th>
+      <th>99</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>Latimer, Louise R.</th>
-      <td>0.023048</td>
-      <td>-0.165503</td>
-      <td>0.098907</td>
-      <td>-0.035125</td>
-      <td>-0.051470</td>
-      <td>0.017370</td>
-      <td>0.003445</td>
-      <td>0.046175</td>
-      <td>-0.091284</td>
-      <td>-0.087800</td>
+      <td>-0.079624</td>
+      <td>0.045218</td>
+      <td>0.190261</td>
+      <td>0.019188</td>
+      <td>0.058639</td>
+      <td>-0.176003</td>
+      <td>-0.126618</td>
+      <td>0.029096</td>
+      <td>-0.128271</td>
+      <td>-0.030012</td>
       <td>...</td>
-      <td>0.015768</td>
-      <td>-0.041199</td>
-      <td>-0.002247</td>
-      <td>-0.056432</td>
-      <td>-0.054235</td>
-      <td>-0.033009</td>
-      <td>-0.144158</td>
-      <td>-0.014649</td>
-      <td>-0.026828</td>
-      <td>0.044524</td>
+      <td>0.184879</td>
+      <td>0.150541</td>
+      <td>-0.107312</td>
+      <td>0.126249</td>
+      <td>0.119682</td>
+      <td>0.050673</td>
+      <td>-0.059170</td>
+      <td>-0.048288</td>
+      <td>0.030159</td>
+      <td>-0.045897</td>
     </tr>
     <tr>
       <th>Johnson, Georgia Douglas</th>
-      <td>0.062903</td>
-      <td>-0.194773</td>
-      <td>0.081959</td>
-      <td>0.036362</td>
-      <td>-0.086161</td>
-      <td>-0.106380</td>
-      <td>-0.079166</td>
-      <td>0.006143</td>
-      <td>-0.032766</td>
-      <td>-0.073689</td>
+      <td>-0.133984</td>
+      <td>0.091498</td>
+      <td>0.108867</td>
+      <td>0.021944</td>
+      <td>0.106301</td>
+      <td>-0.156370</td>
+      <td>-0.073550</td>
+      <td>0.094758</td>
+      <td>-0.025471</td>
+      <td>-0.046735</td>
       <td>...</td>
-      <td>0.051355</td>
-      <td>-0.062110</td>
-      <td>-0.091856</td>
-      <td>-0.020943</td>
-      <td>0.000441</td>
-      <td>0.045033</td>
-      <td>-0.053826</td>
-      <td>-0.079841</td>
-      <td>-0.015221</td>
-      <td>0.003174</td>
+      <td>0.057405</td>
+      <td>0.105887</td>
+      <td>-0.076356</td>
+      <td>0.099042</td>
+      <td>0.111615</td>
+      <td>0.039282</td>
+      <td>0.009796</td>
+      <td>-0.001462</td>
+      <td>-0.050341</td>
+      <td>0.014072</td>
     </tr>
     <tr>
       <th>Allison, M. G.</th>
-      <td>-0.035200</td>
-      <td>-0.053880</td>
-      <td>0.217729</td>
-      <td>0.002955</td>
-      <td>0.000507</td>
-      <td>0.057421</td>
-      <td>0.032800</td>
-      <td>0.073412</td>
-      <td>0.001996</td>
-      <td>-0.092364</td>
+      <td>-0.075498</td>
+      <td>-0.084225</td>
+      <td>0.105864</td>
+      <td>0.141759</td>
+      <td>0.055450</td>
+      <td>-0.069538</td>
+      <td>0.120178</td>
+      <td>0.127477</td>
+      <td>0.079872</td>
+      <td>-0.095661</td>
       <td>...</td>
-      <td>0.043548</td>
-      <td>-0.079897</td>
-      <td>-0.112337</td>
-      <td>-0.123643</td>
-      <td>0.011511</td>
-      <td>-0.050007</td>
-      <td>-0.023427</td>
-      <td>0.045352</td>
-      <td>-0.146949</td>
-      <td>0.073304</td>
+      <td>0.045706</td>
+      <td>0.058730</td>
+      <td>0.172587</td>
+      <td>0.125298</td>
+      <td>0.095082</td>
+      <td>0.142868</td>
+      <td>-0.044201</td>
+      <td>0.065908</td>
+      <td>-0.020910</td>
+      <td>-0.076171</td>
     </tr>
     <tr>
       <th>Allison, Madeline G.</th>
-      <td>-0.055698</td>
-      <td>-0.066971</td>
-      <td>0.200367</td>
-      <td>0.037817</td>
-      <td>-0.016207</td>
-      <td>-0.073404</td>
-      <td>0.013927</td>
-      <td>0.032736</td>
-      <td>-0.012730</td>
-      <td>-0.004060</td>
+      <td>-0.110261</td>
+      <td>-0.001016</td>
+      <td>0.143560</td>
+      <td>0.071753</td>
+      <td>-0.014004</td>
+      <td>-0.179855</td>
+      <td>0.027089</td>
+      <td>0.200589</td>
+      <td>-0.145883</td>
+      <td>-0.210872</td>
       <td>...</td>
-      <td>-0.056310</td>
-      <td>-0.072284</td>
-      <td>-0.084417</td>
-      <td>-0.064640</td>
-      <td>0.009420</td>
-      <td>-0.034121</td>
-      <td>-0.042402</td>
-      <td>-0.049529</td>
-      <td>-0.184756</td>
-      <td>0.055053</td>
+      <td>0.146698</td>
+      <td>0.089218</td>
+      <td>0.056896</td>
+      <td>0.065511</td>
+      <td>0.119896</td>
+      <td>0.151326</td>
+      <td>0.036603</td>
+      <td>-0.048933</td>
+      <td>-0.057677</td>
+      <td>-0.089097</td>
     </tr>
     <tr>
       <th>Jordan, Winifred Virginia</th>
-      <td>-0.030038</td>
-      <td>-0.079039</td>
-      <td>0.213985</td>
-      <td>-0.036414</td>
-      <td>-0.007147</td>
-      <td>-0.039566</td>
-      <td>0.022353</td>
-      <td>0.030341</td>
-      <td>0.013353</td>
-      <td>-0.083364</td>
+      <td>-0.052354</td>
+      <td>-0.056890</td>
+      <td>0.074079</td>
+      <td>0.162293</td>
+      <td>0.014299</td>
+      <td>-0.030325</td>
+      <td>0.129221</td>
+      <td>0.128821</td>
+      <td>-0.005110</td>
+      <td>-0.065123</td>
       <td>...</td>
-      <td>-0.011887</td>
-      <td>-0.083992</td>
-      <td>-0.135864</td>
-      <td>-0.153050</td>
-      <td>-0.019186</td>
-      <td>-0.044235</td>
-      <td>0.010844</td>
-      <td>0.130251</td>
-      <td>-0.123595</td>
-      <td>0.086358</td>
+      <td>0.061899</td>
+      <td>0.041941</td>
+      <td>0.124606</td>
+      <td>0.097300</td>
+      <td>0.149641</td>
+      <td>0.083148</td>
+      <td>-0.000294</td>
+      <td>0.053458</td>
+      <td>-0.041051</td>
+      <td>-0.056160</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1044,127 +1101,127 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>Terrell, Mary Church</th>
-      <td>-0.111357</td>
-      <td>-0.019440</td>
-      <td>0.043906</td>
-      <td>-0.053666</td>
-      <td>0.037811</td>
-      <td>-0.244754</td>
-      <td>-0.018633</td>
-      <td>0.092564</td>
-      <td>-0.072828</td>
-      <td>0.140947</td>
+      <td>-0.023036</td>
+      <td>-0.063077</td>
+      <td>-0.038855</td>
+      <td>-0.092400</td>
+      <td>0.234694</td>
+      <td>0.079862</td>
+      <td>-0.022670</td>
+      <td>0.176653</td>
+      <td>0.061503</td>
+      <td>0.084856</td>
       <td>...</td>
-      <td>0.122939</td>
-      <td>0.008421</td>
-      <td>-0.079010</td>
-      <td>0.009641</td>
-      <td>-0.131063</td>
-      <td>-0.086832</td>
-      <td>0.048367</td>
-      <td>-0.030645</td>
-      <td>0.075215</td>
-      <td>-0.000261</td>
+      <td>0.076338</td>
+      <td>0.042365</td>
+      <td>0.128431</td>
+      <td>-0.030888</td>
+      <td>0.010109</td>
+      <td>-0.087414</td>
+      <td>0.094102</td>
+      <td>-0.071503</td>
+      <td>-0.099575</td>
+      <td>0.003306</td>
     </tr>
     <tr>
       <th>Talbert, Mary B.</th>
-      <td>0.048143</td>
-      <td>-0.184098</td>
-      <td>0.072493</td>
-      <td>-0.002273</td>
-      <td>-0.049395</td>
-      <td>0.045892</td>
-      <td>-0.072673</td>
-      <td>0.021004</td>
-      <td>-0.077664</td>
-      <td>-0.108017</td>
+      <td>-0.075984</td>
+      <td>0.089966</td>
+      <td>0.228224</td>
+      <td>0.021876</td>
+      <td>0.059118</td>
+      <td>-0.167885</td>
+      <td>-0.072900</td>
+      <td>-0.008593</td>
+      <td>-0.055435</td>
+      <td>0.056185</td>
       <td>...</td>
-      <td>0.041460</td>
-      <td>-0.055727</td>
-      <td>0.007015</td>
-      <td>-0.052734</td>
-      <td>-0.039033</td>
-      <td>0.000611</td>
-      <td>-0.166979</td>
-      <td>-0.078909</td>
-      <td>-0.025589</td>
-      <td>0.027790</td>
+      <td>0.166976</td>
+      <td>0.183608</td>
+      <td>-0.081176</td>
+      <td>0.086907</td>
+      <td>0.151239</td>
+      <td>0.043439</td>
+      <td>-0.106752</td>
+      <td>0.003815</td>
+      <td>0.020696</td>
+      <td>0.014744</td>
     </tr>
     <tr>
       <th>Carter, George R.</th>
-      <td>0.037950</td>
-      <td>-0.192572</td>
-      <td>0.075879</td>
-      <td>-0.044050</td>
-      <td>-0.085410</td>
-      <td>0.037382</td>
-      <td>-0.031014</td>
-      <td>0.010438</td>
-      <td>-0.079818</td>
-      <td>-0.129340</td>
+      <td>-0.132858</td>
+      <td>0.039142</td>
+      <td>0.239811</td>
+      <td>0.000775</td>
+      <td>0.114876</td>
+      <td>-0.136784</td>
+      <td>-0.110138</td>
+      <td>0.053727</td>
+      <td>-0.034326</td>
+      <td>0.025546</td>
       <td>...</td>
-      <td>0.025891</td>
-      <td>-0.080181</td>
-      <td>0.018774</td>
-      <td>-0.033083</td>
-      <td>-0.034196</td>
-      <td>-0.012333</td>
-      <td>-0.101784</td>
-      <td>-0.041619</td>
-      <td>-0.021586</td>
-      <td>0.034405</td>
+      <td>0.127358</td>
+      <td>0.189700</td>
+      <td>-0.107653</td>
+      <td>0.093901</td>
+      <td>0.167752</td>
+      <td>0.068090</td>
+      <td>-0.045667</td>
+      <td>0.008983</td>
+      <td>0.051478</td>
+      <td>0.056940</td>
     </tr>
     <tr>
       <th>Lewin, Rose Dorothy</th>
-      <td>0.018596</td>
-      <td>-0.183413</td>
-      <td>0.024836</td>
-      <td>-0.006637</td>
-      <td>-0.084531</td>
-      <td>0.049160</td>
-      <td>-0.007985</td>
-      <td>-0.006708</td>
-      <td>-0.048699</td>
-      <td>-0.066156</td>
+      <td>-0.070906</td>
+      <td>0.082485</td>
+      <td>0.182627</td>
+      <td>0.053135</td>
+      <td>0.067101</td>
+      <td>-0.164957</td>
+      <td>-0.084946</td>
+      <td>0.026172</td>
+      <td>-0.124623</td>
+      <td>-0.050208</td>
       <td>...</td>
-      <td>0.028616</td>
-      <td>-0.041589</td>
-      <td>-0.025375</td>
-      <td>-0.060986</td>
-      <td>-0.051656</td>
-      <td>-0.052047</td>
-      <td>-0.110789</td>
-      <td>-0.067669</td>
-      <td>-0.053619</td>
-      <td>0.016223</td>
+      <td>0.164077</td>
+      <td>0.172641</td>
+      <td>-0.109751</td>
+      <td>0.141235</td>
+      <td>0.130727</td>
+      <td>0.039520</td>
+      <td>-0.087046</td>
+      <td>-0.044752</td>
+      <td>0.051476</td>
+      <td>-0.046074</td>
     </tr>
     <tr>
       <th>Holmes, John Haynes</th>
-      <td>0.104039</td>
-      <td>-0.031863</td>
-      <td>0.024504</td>
-      <td>0.071630</td>
-      <td>0.142002</td>
-      <td>0.005155</td>
-      <td>-0.055294</td>
-      <td>0.040482</td>
-      <td>-0.039697</td>
-      <td>0.014684</td>
+      <td>0.048220</td>
+      <td>-0.035918</td>
+      <td>0.122523</td>
+      <td>0.029498</td>
+      <td>-0.042789</td>
+      <td>-0.058144</td>
+      <td>0.068559</td>
+      <td>0.085891</td>
+      <td>-0.277627</td>
+      <td>-0.168719</td>
       <td>...</td>
-      <td>-0.023659</td>
-      <td>0.034597</td>
-      <td>-0.120498</td>
-      <td>-0.099206</td>
-      <td>0.023124</td>
-      <td>-0.028566</td>
-      <td>-0.154648</td>
-      <td>-0.135485</td>
-      <td>-0.150881</td>
-      <td>0.002575</td>
+      <td>0.083616</td>
+      <td>-0.047275</td>
+      <td>0.053253</td>
+      <td>0.177533</td>
+      <td>0.079037</td>
+      <td>0.047955</td>
+      <td>-0.096565</td>
+      <td>-0.157892</td>
+      <td>-0.095494</td>
+      <td>-0.222179</td>
     </tr>
   </tbody>
 </table>
-<p>96 rows × 128 columns</p>
+<p>96 rows × 100 columns</p>
 </div></div></div>
 </div>
 <p>Next you can generate potential categories using K-means. Since this algorithm lets you select the number of groups you expect to find, let’s try generating 3 groups of nodes.</p>
@@ -1176,19 +1233,19 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-container-id-2 {color: black;background-color: white;}#sk-container-id-2 pre{padding: 0;}#sk-container-id-2 div.sk-toggleable {background-color: white;}#sk-container-id-2 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-2 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-2 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-2 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-2 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-2 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-2 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-2 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-2 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-2 div.sk-item {position: relative;z-index: 1;}#sk-container-id-2 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-2 div.sk-item::before, #sk-container-id-2 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-2 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-2 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-2 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-2 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-2 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-2 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-2 div.sk-label-container {text-align: center;}#sk-container-id-2 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-2 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KMeans(n_clusters=3, n_init=&#x27;auto&#x27;, random_state=0)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked><label for="sk-estimator-id-2" class="sk-toggleable__label sk-toggleable__label-arrow">KMeans</label><div class="sk-toggleable__content"><pre>KMeans(n_clusters=3, n_init=&#x27;auto&#x27;, random_state=0)</pre></div></div></div></div></div></div></div>
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KMeans(n_clusters=3, n_init=&#x27;auto&#x27;, random_state=0)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">KMeans</label><div class="sk-toggleable__content"><pre>KMeans(n_clusters=3, n_init=&#x27;auto&#x27;, random_state=0)</pre></div></div></div></div></div></div></div>
 </div>
 <p>Once you’ve run K-means clustering, you can access the group labels using <code class="docutils literal notranslate"><span class="pre">kmeans.labels_</span></code>. To see how the algorithm did, you can use these group labels as colors in a NetworkX visualization of the network.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span>
 <span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="o">*</span><span class="mi">20</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">G</span><span class="p">))</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s2">&quot;#000&quot;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;#000&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c4efc5d34201c514dc8ded9470c192dc77822af74ce599163407b51b4b9dc511.png" src="../_images/c4efc5d34201c514dc8ded9470c192dc77822af74ce599163407b51b4b9dc511.png" />
+<img alt="../_images/f64c7625be39095d19c019d489b70f49ebe9788f43605a6e379628d504bd8692.png" src="../_images/f64c7625be39095d19c019d489b70f49ebe9788f43605a6e379628d504bd8692.png" />
 </div>
 </div>
 <p>Node2Vec has succeeded in identifying nodes that are near one another as similar. It could be interesting to compare this method to the community detection algorithms we learned in the last section.</p>
@@ -1255,8 +1312,18 @@ title="Print to PDF"
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#converting-data-with-node2vec">
-   Converting Data with node2vec
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#link-prediction">
+   Link Prediction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#node-classification">
+   Node Classification
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
