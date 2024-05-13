@@ -28,6 +28,7 @@ parts:
       - file: special/directed
       - file: special/bipartite
       - file: special/dynamic
+    - file: creating
   - caption: CIS 345/397
     chapters:
     - file: course-info/general-info
