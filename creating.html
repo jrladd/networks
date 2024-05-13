@@ -4,8 +4,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Network Analysis in Python</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Creating a Network &#8212; Network Analysis in Python</title>
   
   
   
@@ -57,9 +58,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
-    <link rel="index" title="Index" href="#" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'creating';</script>
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced Data Analysis: Networks" href="course-info/general-info.html" />
+    <link rel="prev" title="Dynamic Networks" href="special/dynamic.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -161,8 +164,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="creating.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Creating a Network
                       </a>
                     </li>
@@ -318,8 +321,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="creating.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Creating a Network
                       </a>
                     </li>
@@ -450,7 +453,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Network Concepts</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="basics/data-basics.html">Data Basics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="basics/jupyter.html">Set Up Jupyter Lab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basics/python.html">Python</a></li>
@@ -477,7 +480,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="special/dynamic.html">Dynamic Networks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="creating.html">Creating a Network</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating a Network</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CIS 345/397</span></p>
 <ul class="nav bd-sidenav">
@@ -589,7 +592,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jrladd/networks/issues/new?title=Issue%20on%20page%20%2Fcreating.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -607,6 +610,47 @@ title="Open an issue"
   </ul>
 </div>
 
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="_sources/creating.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+
     </div>
 </div>
             </div>
@@ -614,7 +658,7 @@ title="Open an issue"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1></h1>
+    <h1>Creating a Network</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -625,13 +669,41 @@ title="Open an issue"
 
             <article class="bd-article" role="main">
               
+  <section class="tex2jax_ignore mathjax_ignore" id="creating-a-network">
+<h1>Creating a Network<a class="headerlink" href="#creating-a-network" title="Permalink to this heading">#</a></h1>
+<p>Sometimes we work with network data that was already collected and curated by others, but in humanities projects we often have to create network data ourselves. Therefore it’s necessary to understand how network data is collected, processed, and stored. You will practice creating and collecting some network data in pairs. You’ll organize the data and manipulate it using some basic network analysis software.</p>
+<p>Here are the steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Choose one of the Sherlock Holmes stories in <a class="reference external" href="https://www.arthur-conan-doyle.com/index.php/The_62_Sherlock_Holmes_stories_written_by_Arthur_Conan_Doyle">The Arthur Conan Doyle Encyclopedia</a> and try to imagine it as a network</strong>. These pages contains lots of information about characters, places, plots, and references in every story. The bottom of every page also contains the full text of the story: you don’t <em>necessarily</em> need to read the whole thing, but keep in mind that there may be useful information in the text itself.</p></li>
+<li><p><strong>Come up with a plan for how to collect network data from the story</strong>. There are many possible ways to connect parts of this story. You might use characters as nodes, but you might also use places, objects, or even words. You could create a network of character relationships (who is in the same family/workplace/friend group?), or you could create a network of place cooccurrence (which places are mentioned together in the same scene, the same paragraph, the same conservation?), or you could create a network of people and the places they travel to. The important thing is that you choose (1) what the entities or nodes in your network will be, and (2) the principle of connection or edges that connect those entities. Whatever you choose, stick through it as you collect data.</p></li>
+<li><p><strong>Keep an organized record of your network as a node and edge table</strong>. We discussed some different data formats, but the edge table will be the most useful for the tools we’ll work with. You should set things up so that different people can collect data into the same file. (You can use whatever application you like for this, but you might find a shared spreadsheet easiest.)</p></li>
+<li><p><strong>Record information about nodes as well as edges</strong>. Exactly how you organize this data is up to you, but consider collecting information on both node and edge <em>attributes</em>. These are additional columns in your node and edge tables that contain information about either the entities or relationships in your network.</p></li>
+<li><p>From the data you collected, <strong>draw your network as a node-link diagram</strong> using pen and paper. Consider how you will represent the entities and connections, and where each will be placed. You’re not limited by the function of a specific piece of software here, so feel empowered to try whatever design you want.</p></li>
+<li><p>Next <strong>use Network Navigator to visualize your network</strong>. To do this, you will need to export your spreadsheets (especially the edge table) as a plaintext CSV (comma-separated values) file; this is typically available under “Export” or “Save as” in whichever spreadsheet application you’re using. Drag-and-drop the CSV edge table into Network Navigator and add some detail to the visualization, i.e. don’t just go with the default. Change the color or styling, update the positions of the nodes, add labels, etc. When you’re finished you can export your visualization as a .png file.</p></li>
+<li><p><strong>Share what you did with the other groups.</strong> It’s likely you’ll have made different choices in defining nodes and edges, recording your data, and visualizing your network. Take some time to observe these differences and think about how this series of choices might apply to your own research.</p></li>
+<li><p><strong>Start work on your own projects.</strong> If you don’t yet have network data, what would it take to transform your current research materials into the edge- and node-table format? If you already have a dataset, is it in a form that’s usable with a tool like Network Navigator? If so, you might start visualizing it, and if not you might consider some different methods of <a class="reference external" href="https://networkx.org/documentation/stable/reference/readwrite/index.html">converting the data</a>. If you’re looking for some data to experiment with, I recommend starting with <a class="reference external" href="https://github.com/melaniewalsh/sample-social-network-datasets">Melanie Walsh’s sample network datasets</a>.</p></li>
+</ol>
+</section>
 
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
-</div>
-
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
             </article>
             
@@ -641,6 +713,20 @@ title="Open an issue"
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="special/dynamic.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Dynamic Networks</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="course-info/general-info.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Advanced Data Analysis: Networks</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
 </div>
             </footer>
             
