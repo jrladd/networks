@@ -15,7 +15,7 @@ parts:
     - file: visualization/visualizing-networks
       sections:
       - file: visualization/visualization
-      - file: visualization/dynamic-visualization
+      - file: visualization/python-visualization
     - file: analyze/analyzing-networks
       sections:
       - file: analyze/networkx

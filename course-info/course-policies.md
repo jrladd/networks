@@ -28,11 +28,11 @@ Attending class is not optional: regular attendance is necessary to succeed in t
 
 ### Lateness and Extensions
 
-All assignments are due by the time listed on the prompt. I know that things don't always go according to plan. If you need an extension, simply ask for one (by email), and you'll almost always receive it. You don't need an excuse to receive an extension!
+All assignments are due by the time listed on the prompt. I know that things don't always go according to plan. If you need an extension, simply ask for one (using the web form), and you'll almost always receive it. You don't need an excuse to receive an extension!
 
-However, you **must ask for the extension *at least* 24 hours before the assignment deadline**. When you email about an extension, please propose a new deadline for the assignment (a good rule of thumb is 2 or 3 days after the original deadline). Any work received late without an agreed-upon extension will be penalized one point per day.
+However, you **must ask for the extension *at least* 24 hours before the assignment deadline**. To request an extension, simply [fill out this form](https://forms.office.com/r/CvgQqWDz4B), where you will propose a new deadline for the assignment (a good rule of thumb is a day or two after the original deadline). Any work received late (less than 48 hours) without an agreed-upon extension will receive a point deduction.
 
-But keep in mind: **I cannot accept any assignment more than one week late.** Assignments more than one week late will receive a 0.
+But keep in mind: **I cannot accept any assignment more than 48 hours late.** Assignments more than 48 hours late will receive a 0.
 
 #### Longer Absences
 

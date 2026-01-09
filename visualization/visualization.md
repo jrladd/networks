@@ -1,4 +1,4 @@
-# Network Visualization
+# Overview of Visualization Techniques
 
 The practice of visualizing networks is a subset of the larger field of information visualization. As the authors of *The Network Turn* describe, network visualization and quantitative network analysis were developed as distinct approaches around the same time, and each approach informs the other. It's difficult to make quantitative arguments about networks without visualizations, and it's difficult to make visual arguments about networks without quantification. Here is a short guide to creating effective network visualizations.
 
