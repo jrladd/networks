@@ -468,8 +468,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../visualization/visualizing-networks.html">Visualizing Networks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">Network Visualization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualization/dynamic-visualization.html">Networks with Altair</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">Overview of Visualization Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/python-visualization.html">Visualizing Networks with Python</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="analyzing-networks.html">Analyzing Networks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -787,24 +787,24 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Allison, Madeline G.&#39;, &#39;Villard, Oswald Garrison&#39;) Score: 680
 (&#39;Johnson, Georgia Douglas&#39;, &#39;Villard, Oswald Garrison&#39;) Score: 493
-(&#39;Allison, Madeline G.&#39;, &#39;Spingarn, J. E.&#39;) Score: 440
-(&#39;Allison, Madeline G.&#39;, &#39;Harris, Lorenzo&#39;) Score: 440
+(&#39;Spingarn, J. E.&#39;, &#39;Allison, Madeline G.&#39;) Score: 440
+(&#39;Harris, Lorenzo&#39;, &#39;Allison, Madeline G.&#39;) Score: 440
 (&#39;Allison, Madeline G.&#39;, &#39;Bohanan, Otto L.&#39;) Score: 400
 (&#39;Fauset, Jessie&#39;, &#39;Harris, Lorenzo&#39;) Score: 396
-(&#39;Allison, Madeline G.&#39;, &#39;Saunders, Vincent&#39;) Score: 360
-(&#39;Allison, Madeline G.&#39;, &#39;Storey, Moorfield&#39;) Score: 360
+(&#39;Saunders, Vincent&#39;, &#39;Allison, Madeline G.&#39;) Score: 360
 (&#39;Fauset, Jessie&#39;, &#39;Bohanan, Otto L.&#39;) Score: 360
-(&#39;Fauset, Jessie&#39;, &#39;Saunders, Vincent&#39;) Score: 324
+(&#39;Allison, Madeline G.&#39;, &#39;Storey, Moorfield&#39;) Score: 360
+(&#39;Saunders, Vincent&#39;, &#39;Fauset, Jessie&#39;) Score: 324
 (&#39;Fauset, Jessie&#39;, &#39;Storey, Moorfield&#39;) Score: 324
-(&#39;Allison, Madeline G.&#39;, &#39;Hershaw, L. M.&#39;) Score: 320
+(&#39;Hershaw, L. M.&#39;, &#39;Allison, Madeline G.&#39;) Score: 320
 (&#39;Johnson, Georgia Douglas&#39;, &#39;Bohanan, Otto L.&#39;) Score: 290
-(&#39;Allison, Madeline G.&#39;, &#39;Scurlock&#39;) Score: 280
+(&#39;Scurlock&#39;, &#39;Allison, Madeline G.&#39;) Score: 280
+(&#39;Hurst, John&#39;, &#39;Allison, Madeline G.&#39;) Score: 280
 (&#39;Allison, Madeline G.&#39;, &#39;Watkins, Lucian B.&#39;) Score: 280
-(&#39;Allison, Madeline G.&#39;, &#39;Hurst, John&#39;) Score: 280
-(&#39;Johnson, Georgia Douglas&#39;, &#39;Wilkinson, Hilda&#39;) Score: 261
 (&#39;Johnson, Georgia Douglas&#39;, &#39;Adams, John Henry&#39;) Score: 261
+(&#39;Johnson, Georgia Douglas&#39;, &#39;Wilkinson, Hilda&#39;) Score: 261
 (&#39;Johnson, Georgia Douglas&#39;, &#39;Johnson, James Weldon&#39;) Score: 261
-(&#39;Villard, Oswald Garrison&#39;, &#39;Wheeler, Laura&#39;) Score: 255
+(&#39;Wheeler, Laura&#39;, &#39;Villard, Oswald Garrison&#39;) Score: 255
 </pre></div>
 </div>
 </div>
@@ -892,16 +892,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Shillady, John R.&#39;, 0.7784704566001892),
- (&#39;Battey&#39;, 0.7773110270500183),
- (&#39;Frazier, C. Emily&#39;, 0.7687100172042847),
- (&#39;J. F.&#39;, 0.7595160007476807),
- (&#39;Stoddard, Yetta Kay&#39;, 0.7213900685310364),
- (&#39;Richardson, Willis&#39;, 0.7082434296607971),
- (&#39;Brown and Dawson&#39;, 0.7037752866744995),
- (&#39;Moravsky, Maria&#39;, 0.6797921657562256),
- (&#39;Rogers, Lucille&#39;, 0.6694543957710266),
- (&#39;Jackson, May Howard&#39;, 0.6514824628829956)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Shillady, John R.&#39;, 0.7994716167449951),
+ (&#39;Battey&#39;, 0.7932963967323303),
+ (&#39;Richardson, Willis&#39;, 0.7780019640922546),
+ (&#39;Frazier, C. Emily&#39;, 0.7502397894859314),
+ (&#39;Stoddard, Yetta Kay&#39;, 0.7367620468139648),
+ (&#39;Brown and Dawson&#39;, 0.7357757687568665),
+ (&#39;Allison, Madeline G.&#39;, 0.7157112956047058),
+ (&#39;Cotter, Joseph S.&#39;, 0.6807464957237244),
+ (&#39;J. F.&#39;, 0.672450840473175),
+ (&#39;Rogers, Lucille&#39;, 0.6366780996322632)]
 </pre></div>
 </div>
 </div>
@@ -972,123 +972,123 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>Latimer, Louise R.</th>
-      <td>0.016750</td>
-      <td>0.058058</td>
-      <td>0.145649</td>
-      <td>-0.028436</td>
-      <td>0.196791</td>
-      <td>-0.097743</td>
-      <td>0.016247</td>
-      <td>0.035957</td>
-      <td>0.057860</td>
-      <td>-0.054926</td>
+      <td>-0.083655</td>
+      <td>0.038140</td>
+      <td>0.070309</td>
+      <td>0.180156</td>
+      <td>0.057064</td>
+      <td>-0.048150</td>
+      <td>0.138720</td>
+      <td>0.067744</td>
+      <td>-0.056974</td>
+      <td>-0.074918</td>
       <td>...</td>
-      <td>0.095891</td>
-      <td>0.043039</td>
-      <td>-0.052506</td>
-      <td>0.109249</td>
-      <td>0.206954</td>
-      <td>0.005205</td>
-      <td>0.047558</td>
-      <td>-0.212672</td>
-      <td>-0.073357</td>
-      <td>-0.111063</td>
+      <td>0.156892</td>
+      <td>0.009756</td>
+      <td>-0.201473</td>
+      <td>0.083318</td>
+      <td>0.020271</td>
+      <td>0.107762</td>
+      <td>0.029186</td>
+      <td>-0.210874</td>
+      <td>0.037297</td>
+      <td>0.050192</td>
     </tr>
     <tr>
       <th>Johnson, Georgia Douglas</th>
-      <td>-0.174926</td>
-      <td>0.096610</td>
-      <td>0.106888</td>
-      <td>0.003934</td>
-      <td>0.083565</td>
-      <td>-0.097316</td>
-      <td>-0.005783</td>
-      <td>0.081481</td>
-      <td>0.005004</td>
-      <td>-0.088821</td>
+      <td>-0.124944</td>
+      <td>0.053791</td>
+      <td>0.121375</td>
+      <td>0.159829</td>
+      <td>0.047334</td>
+      <td>-0.063186</td>
+      <td>0.126971</td>
+      <td>0.073490</td>
+      <td>-0.036357</td>
+      <td>-0.202372</td>
       <td>...</td>
-      <td>0.012511</td>
-      <td>0.025067</td>
-      <td>0.000650</td>
-      <td>-0.024923</td>
-      <td>0.301588</td>
-      <td>0.023242</td>
-      <td>0.050059</td>
-      <td>-0.162393</td>
-      <td>0.023306</td>
-      <td>-0.083928</td>
+      <td>0.074958</td>
+      <td>-0.022798</td>
+      <td>-0.134847</td>
+      <td>0.035924</td>
+      <td>0.156035</td>
+      <td>0.050137</td>
+      <td>-0.015776</td>
+      <td>-0.237920</td>
+      <td>0.093630</td>
+      <td>0.007845</td>
     </tr>
     <tr>
       <th>Allison, M. G.</th>
-      <td>-0.082877</td>
-      <td>0.095432</td>
-      <td>0.089928</td>
-      <td>-0.078437</td>
-      <td>0.086701</td>
-      <td>-0.058961</td>
-      <td>-0.060191</td>
-      <td>0.008878</td>
-      <td>-0.221050</td>
-      <td>-0.035815</td>
+      <td>-0.034121</td>
+      <td>0.009763</td>
+      <td>0.119249</td>
+      <td>-0.061463</td>
+      <td>-0.008488</td>
+      <td>0.036161</td>
+      <td>0.003588</td>
+      <td>0.075560</td>
+      <td>-0.206373</td>
+      <td>-0.081254</td>
       <td>...</td>
-      <td>0.117303</td>
-      <td>0.039828</td>
-      <td>-0.070901</td>
-      <td>0.051575</td>
-      <td>0.124474</td>
-      <td>0.172793</td>
-      <td>-0.081939</td>
-      <td>-0.046831</td>
-      <td>-0.047833</td>
-      <td>-0.103541</td>
+      <td>0.030795</td>
+      <td>-0.073936</td>
+      <td>-0.035690</td>
+      <td>0.025570</td>
+      <td>0.259349</td>
+      <td>0.221554</td>
+      <td>0.015073</td>
+      <td>-0.049189</td>
+      <td>-0.008035</td>
+      <td>0.004871</td>
     </tr>
     <tr>
       <th>Allison, Madeline G.</th>
-      <td>-0.016451</td>
-      <td>0.009482</td>
-      <td>0.049280</td>
-      <td>0.074437</td>
-      <td>0.026116</td>
-      <td>-0.096656</td>
-      <td>0.027014</td>
-      <td>0.224554</td>
-      <td>-0.096768</td>
-      <td>-0.198851</td>
+      <td>-0.040704</td>
+      <td>-0.021296</td>
+      <td>-0.020831</td>
+      <td>0.130402</td>
+      <td>0.002572</td>
+      <td>-0.098910</td>
+      <td>0.118277</td>
+      <td>0.247547</td>
+      <td>-0.115387</td>
+      <td>-0.120762</td>
       <td>...</td>
-      <td>0.097191</td>
-      <td>0.066713</td>
-      <td>-0.040389</td>
-      <td>0.011694</td>
-      <td>0.047315</td>
-      <td>0.168631</td>
-      <td>-0.112969</td>
-      <td>-0.092952</td>
-      <td>-0.135219</td>
-      <td>-0.094788</td>
+      <td>0.146761</td>
+      <td>-0.113853</td>
+      <td>-0.053943</td>
+      <td>-0.045028</td>
+      <td>0.194942</td>
+      <td>0.168757</td>
+      <td>-0.023447</td>
+      <td>-0.123250</td>
+      <td>-0.124657</td>
+      <td>0.045813</td>
     </tr>
     <tr>
       <th>Jordan, Winifred Virginia</th>
-      <td>-0.077535</td>
-      <td>0.158204</td>
-      <td>0.092725</td>
-      <td>-0.045835</td>
-      <td>0.056141</td>
-      <td>-0.078717</td>
-      <td>-0.053491</td>
-      <td>0.039061</td>
-      <td>-0.184910</td>
-      <td>-0.103132</td>
+      <td>-0.021921</td>
+      <td>-0.024188</td>
+      <td>0.130939</td>
+      <td>-0.086400</td>
+      <td>0.022488</td>
+      <td>0.012627</td>
+      <td>-0.081850</td>
+      <td>0.060509</td>
+      <td>-0.153339</td>
+      <td>-0.052867</td>
       <td>...</td>
-      <td>0.143040</td>
-      <td>0.058913</td>
-      <td>-0.072947</td>
-      <td>0.070599</td>
-      <td>0.155172</td>
-      <td>0.245620</td>
-      <td>-0.143554</td>
-      <td>0.012945</td>
-      <td>-0.104854</td>
-      <td>-0.107230</td>
+      <td>0.062487</td>
+      <td>-0.107765</td>
+      <td>-0.036501</td>
+      <td>-0.035063</td>
+      <td>0.267293</td>
+      <td>0.216486</td>
+      <td>-0.022669</td>
+      <td>-0.071365</td>
+      <td>-0.018398</td>
+      <td>0.000308</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1116,123 +1116,123 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>Terrell, Mary Church</th>
-      <td>0.094052</td>
-      <td>0.148374</td>
-      <td>-0.020648</td>
-      <td>-0.033299</td>
-      <td>-0.005953</td>
-      <td>-0.067020</td>
-      <td>-0.019023</td>
-      <td>0.183618</td>
-      <td>-0.031534</td>
-      <td>0.018490</td>
+      <td>-0.019102</td>
+      <td>0.189205</td>
+      <td>-0.010767</td>
+      <td>-0.054634</td>
+      <td>0.216671</td>
+      <td>-0.027373</td>
+      <td>0.119313</td>
+      <td>0.284082</td>
+      <td>0.054390</td>
+      <td>-0.118064</td>
       <td>...</td>
-      <td>0.018560</td>
-      <td>0.069740</td>
-      <td>0.090657</td>
-      <td>-0.042307</td>
-      <td>0.008105</td>
-      <td>0.027212</td>
-      <td>-0.066501</td>
-      <td>0.105342</td>
-      <td>0.056889</td>
-      <td>0.068751</td>
+      <td>0.154468</td>
+      <td>0.090586</td>
+      <td>0.056607</td>
+      <td>-0.124871</td>
+      <td>0.099951</td>
+      <td>-0.069538</td>
+      <td>-0.054098</td>
+      <td>-0.023747</td>
+      <td>0.040949</td>
+      <td>-0.067500</td>
     </tr>
     <tr>
       <th>Talbert, Mary B.</th>
-      <td>-0.031491</td>
-      <td>0.046151</td>
-      <td>0.132586</td>
-      <td>-0.005028</td>
-      <td>0.088305</td>
-      <td>-0.103874</td>
-      <td>-0.024019</td>
-      <td>0.036936</td>
-      <td>0.024953</td>
-      <td>-0.000273</td>
+      <td>-0.077914</td>
+      <td>0.030996</td>
+      <td>0.060747</td>
+      <td>0.232345</td>
+      <td>-0.015181</td>
+      <td>-0.089152</td>
+      <td>0.178361</td>
+      <td>0.093685</td>
+      <td>-0.086642</td>
+      <td>-0.132102</td>
       <td>...</td>
-      <td>0.058227</td>
-      <td>-0.017527</td>
-      <td>-0.080974</td>
-      <td>0.004457</td>
-      <td>0.198480</td>
-      <td>-0.001466</td>
-      <td>0.026825</td>
-      <td>-0.182625</td>
-      <td>-0.039851</td>
-      <td>-0.117449</td>
+      <td>0.133784</td>
+      <td>-0.012749</td>
+      <td>-0.159933</td>
+      <td>0.116228</td>
+      <td>0.015762</td>
+      <td>0.049418</td>
+      <td>0.001978</td>
+      <td>-0.214959</td>
+      <td>0.063799</td>
+      <td>0.092499</td>
     </tr>
     <tr>
       <th>Carter, George R.</th>
-      <td>-0.001198</td>
-      <td>0.044724</td>
-      <td>0.140711</td>
-      <td>-0.064000</td>
-      <td>0.137794</td>
-      <td>-0.109665</td>
-      <td>0.059661</td>
-      <td>0.100359</td>
-      <td>0.027985</td>
-      <td>-0.040802</td>
+      <td>-0.051244</td>
+      <td>-0.004525</td>
+      <td>0.124548</td>
+      <td>0.159453</td>
+      <td>0.043794</td>
+      <td>-0.070615</td>
+      <td>0.136225</td>
+      <td>0.096625</td>
+      <td>-0.053521</td>
+      <td>-0.160537</td>
       <td>...</td>
-      <td>0.077283</td>
-      <td>-0.012614</td>
-      <td>-0.014167</td>
-      <td>-0.000290</td>
-      <td>0.183630</td>
-      <td>0.024500</td>
-      <td>0.090118</td>
-      <td>-0.221796</td>
-      <td>-0.040861</td>
-      <td>-0.098700</td>
+      <td>0.172834</td>
+      <td>-0.000660</td>
+      <td>-0.178560</td>
+      <td>0.151364</td>
+      <td>0.085470</td>
+      <td>0.110689</td>
+      <td>-0.012787</td>
+      <td>-0.192758</td>
+      <td>0.033476</td>
+      <td>0.108338</td>
     </tr>
     <tr>
       <th>Lewin, Rose Dorothy</th>
-      <td>-0.000641</td>
-      <td>0.092185</td>
-      <td>0.132756</td>
-      <td>-0.058825</td>
-      <td>0.102648</td>
-      <td>-0.130685</td>
-      <td>-0.020039</td>
-      <td>0.077489</td>
-      <td>0.068247</td>
-      <td>-0.056602</td>
+      <td>-0.079719</td>
+      <td>0.034412</td>
+      <td>0.104192</td>
+      <td>0.226275</td>
+      <td>0.090593</td>
+      <td>0.018407</td>
+      <td>0.125208</td>
+      <td>0.093208</td>
+      <td>-0.087839</td>
+      <td>-0.076088</td>
       <td>...</td>
-      <td>0.068259</td>
-      <td>0.038868</td>
-      <td>0.013926</td>
-      <td>-0.004676</td>
-      <td>0.168521</td>
-      <td>-0.010191</td>
-      <td>0.071184</td>
-      <td>-0.158256</td>
-      <td>-0.093682</td>
-      <td>-0.122516</td>
+      <td>0.123791</td>
+      <td>-0.045215</td>
+      <td>-0.191884</td>
+      <td>0.118400</td>
+      <td>0.077880</td>
+      <td>0.132260</td>
+      <td>-0.028190</td>
+      <td>-0.114548</td>
+      <td>0.103593</td>
+      <td>0.089797</td>
     </tr>
     <tr>
       <th>Holmes, John Haynes</th>
-      <td>0.010488</td>
-      <td>-0.005629</td>
-      <td>-0.007976</td>
-      <td>-0.011253</td>
-      <td>0.015870</td>
-      <td>-0.019870</td>
-      <td>-0.160801</td>
-      <td>-0.017222</td>
-      <td>0.037515</td>
-      <td>-0.045508</td>
+      <td>-0.127983</td>
+      <td>0.085846</td>
+      <td>0.029883</td>
+      <td>0.188128</td>
+      <td>0.014569</td>
+      <td>0.032871</td>
+      <td>0.142785</td>
+      <td>0.087874</td>
+      <td>-0.156569</td>
+      <td>0.014203</td>
       <td>...</td>
-      <td>0.209413</td>
-      <td>0.141649</td>
-      <td>-0.102108</td>
-      <td>0.088207</td>
-      <td>0.171813</td>
-      <td>0.038995</td>
-      <td>-0.137308</td>
-      <td>0.082746</td>
-      <td>0.008355</td>
-      <td>-0.122149</td>
+      <td>0.091168</td>
+      <td>-0.053934</td>
+      <td>0.051694</td>
+      <td>-0.068327</td>
+      <td>-0.047715</td>
+      <td>-0.014012</td>
+      <td>-0.090595</td>
+      <td>-0.087750</td>
+      <td>0.106351</td>
+      <td>-0.054960</td>
     </tr>
   </tbody>
 </table>
@@ -1260,7 +1260,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4403509e9ac02190150cd8b7e1ab39bb41fc5b3ef728b1aa3cfbf5c04219696a.png" src="../_images/4403509e9ac02190150cd8b7e1ab39bb41fc5b3ef728b1aa3cfbf5c04219696a.png" />
+<img alt="../_images/fa9a4dcfbd073aa30da52ca2ef3217b69886400972e4156959bc420e96ce3093.png" src="../_images/fa9a4dcfbd073aa30da52ca2ef3217b69886400972e4156959bc420e96ce3093.png" />
 </div>
 </div>
 <p>Node2Vec has succeeded in identifying nodes that are near one another as similar. It could be interesting to compare this method to the community detection algorithms we learned in the last section.</p>

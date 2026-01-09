@@ -14,20 +14,19 @@ Ahnert, Ruth, et al. [*The Network Turn: Changing Perspectives in the Humanities
 
 Date|Topics & Slides|Readings|Assignments
 --|---|---|---
-25 Jan.|Introduction to the course|
-30 Jan. & 1 Feb.|Basics: Working with Network Data & The History of Network Analysis|NT Intro, Ch. 1 & 2
-6 & 8 Feb.|Basics: Network Metrics & Centrality, The Small World|NCM Ch. 2
-13 & 15 Feb.|Visualization: Static & Interactive|NT Ch. 4
-20 & 22 Feb.|Community Structure: Strong & Weak Ties, Triadic Closure|NCM Ch. 3
-27 & 29 Feb.|Community Structure: Homophily, Community Detection|NCM Ch. 4|Project 1 Due Tuesday at 12:50pm
-5 & 7 Mar.|Special Networks: Signed Networks & Structural Balance|NCM Ch. 5
-12 & 14 Mar.|Special Networks:  Directed Networks & the Web|NCM Ch. 13
-19 & 21 Mar.|NO CLASS: Spring Break
-26 & 28 Mar.|Work on Project 2||Bring Project 2 Dataset & Question Tuesday
-2 & 4 Apr.|Special Networks: Multipartite, Dynamic & Multilayer Networks||Project 2 Due Tuesday at 12:50pm
-9 & 11 Apr.|Behavior: Cascades|NCM Ch. 19
-16 & 18 Apr.|Behavior: Epidemics|NCM Ch. 21
-23 & 25 Apr.|Behavior: Search Algorithms & Statistical Modeling|NCM Ch. 14
-30 Apr. & 2 May|Work on Projects & Presentations|
-7 May|Open House||
-11 May 2-5pm|TBA||Project 3 Due at 2pm
+13 & 15 Jan.|Basics: Working with Network Data & The History of Network Analysis|NT Intro, Ch. 1 & 2
+20 & 22 Jan.|Basics: Network Metrics & Centrality, The Small World|NCM Ch. 2
+27 & 29 Jan.|Visualization: Gephi|NT Ch. 4
+3 & 5 Feb.|Visualization: Python, Layout Algorithms|
+10 & 12 Feb.|Community Structure: Strong & Weak Ties, Triadic Closure|NCM Ch. 3|Project 1 Due Tuesday at 12:50pm
+17 & 19 Feb.|Community Structure: Homophily, Community Detection|NCM Ch. 4
+24 & 26 Feb.|Special Networks: Signed Networks & Structural Balance|NCM Ch. 5
+3 & 5 Mar.|Special Networks:  Directed Networks & the Web|NCM Ch. 13
+10 & 12 Mar.|NO CLASS: Spring Break
+17 & 19 Mar.|Work on Project 2||Bring Project 2 Dataset & Question Tuesday
+24 & 26 Mar.|Special Networks: Multipartite, Dynamic & Multilayer Networks||Project 2 Due Tuesday at 12:50pm
+31 Mar. & 2 Apr.|Behavior: Cascades|NCM Ch. 19
+7 & 9 Apr.|Behavior: Epidemics|NCM Ch. 21
+14 & 16 Apr.|Behavior: Search Algorithms & Statistical Modeling|NCM Ch. 14
+21 & 23 Apr.|Work on Projects & Presentations|
+28 Apr. **2pm–3:50pm**|CIS Open House on Scholars Day!||**Project 3 Due Sun. 3 May at 2pm**
