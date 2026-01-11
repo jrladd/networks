@@ -1,0 +1,109 @@
+version: 1
+project:
+  title: Network Analysis in Python
+  authors:
+    - name: John R. Ladd
+  github: jrladd/networks
+  bibliography:
+    - references.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: intro.md
+    - title: Network Concepts
+      children:
+        - title: Data Basics
+          children:
+            - file: basics/jupyter.md
+            - file: basics/python.ipynb
+            - file: basics/pandas.ipynb
+            - file: basics/altair.ipynb
+        - title: Visualizing Networks
+          children:
+            - file: visualization/visualization.md
+            - file: visualization/python-visualization.ipynb
+        - title: Analyzing Networks
+          children:
+            - file: analyze/networkx.ipynb
+            - file: analyze/metrics.ipynb
+            - file: analyze/homophily.ipynb
+            - file: analyze/community.ipynb
+            - file: analyze/node2vec.ipynb
+        - title: Special Networks
+          children:
+            - file: special/directed.ipynb
+            - file: special/bipartite.ipynb
+            - file: special/dynamic.ipynb
+        - file: creating.md
+    - title: CIS 345/397
+      children:
+        - file: course-info/general-info.md
+        - file: course-info/schedule.md
+        - file: assignments/assignments.md
+          children:
+            - file: assignments/create-visualization.md
+            - file: assignments/descriptive.md
+            - file: assignments/predictive.md
+            - file: assignments/presentation.md
+        - title: Homework
+          children:
+            - file: homework/01_python.ipynb
+            - file: homework/02_centrality.ipynb
+            - file: homework/03_visualization.ipynb
+            - file: homework/04_clustering.ipynb
+            - file: homework/05_homophily.ipynb
+            - file: homework/06_signed.ipynb
+            - file: homework/07_directed.ipynb
+            - file: homework/08_multipartite.ipynb
+            - file: homework/09_cascades.ipynb
+            - file: homework/10_epidemics.ipynb
+            - file: homework/11_search.ipynb
+        - file: course-info/course-policies.md
+          children:
+            - file: course-info/criteria.md
+            - file: course-info/ground-rules.md
+    - title: Resources
+      children:
+        - file: resources/datasets.md
+        - file: resources/glossary.md
+site:
+  title: "Network Analysis in Python"
+  options:
+    logo: logo_gephi.png
+    logo_text: Network Analysis in Python
+    folders: true
+    hide_toc: false
+  template: book-theme
+  nav:
+  - title: Network Concepts
+    children:
+      - title: Python
+        url: /basics/python
+      - title: Pandas
+        url: /basics/pandas
+      - title: Altair
+        url: /basics/altair
+      - title: Overview of Visualization
+        url: /visualization/visualization
+      - title: Working with Graph Objects
+        url: /analyze/networkx
+      - title: Creating a Network
+        url: /creating
+  - title: CIS 345
+    children:
+      - title: Course Info
+        url: /course-info/general-info
+      - title: Schedule & Readings
+        url: /course-info/schedule
+      - title: Assignments
+        url: /assignments/assignments
+      - title: Course Policies
+        url: /course-info/course-policies
+  - title: Resources
+    children:
+      - title: Where to Find Network Data
+        url: /resources/datasets
+      - title: Key Terms and Definitions
+        url: /resources/glossary

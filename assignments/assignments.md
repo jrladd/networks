@@ -15,6 +15,3 @@ Project 1: Visualization|15%
 Project 2: Descriptive|25%
 Presentation|10%
 Project 3: Predictive|25%
-
-```{tableofcontents}
-```

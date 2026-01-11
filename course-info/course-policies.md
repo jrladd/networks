@@ -1,8 +1,5 @@
 # Course Policies
 
-```{tableofcontents}
-```
-
 ## Shared Expectations for this Class
 
 ### Preparation and Pacing

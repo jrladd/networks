@@ -27,5 +27,6 @@
     },
     "performSiteBuild": true
   },
-  "exports": []
+  "exports": [],
+  "buildSite": true
 }
