@@ -1,6 +1,6 @@
 # Project 2: Descriptive Network Analysis
 
-**Complete by: Tuesday 2 Apr. by 12:50pm**
+**Complete by: Tuesday 24 Mar. by class time**
 
 Now that you've learned how to describe the main features of different kinds of networks, you're ready to begin asking and answering questions using network analysis. For your first major project of the semester, you'll create a Jupyter notebook report that explores a question about a network of your choice.
 

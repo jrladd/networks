@@ -21,7 +21,7 @@ Each class must create its own learning community as the result of shared effort
 
 Good participation should be understood as consistent and thoughtful contribution to the classroom community, an engagement with course materials and conversations, and a general responsiveness to (and respect for) one’s fellow students and instructor. This isn’t an accounting of how often you speak in class. Instead, it’s about what you offer to the intellectual life of the class, and everyone contributes to this on-going work in different ways. Particularly because so much of the class will consist of hands-on work, you’ll get participation credit simply for attending class and doing the work with care.
 
-Attending class is not optional: regular attendance is necessary to succeed in this course. Each day will have new content, activities, and learning opportunities. You’ll want to attend as much as possible to avoid falling behind. **If you have to miss class for any reason, please let me know in advance**, especially if you have to miss more than one class in a row. Missing class is not an excuse for missing assignment deadlines, being unprepared for the next class session, or falling behind on the weekly workshops. You are responsible for keeping up-to-date with the work of the course or for communicating with me about unexpected circumstances which change your ability to do so. You can always reach out to me or a classmate to find out what you missed. We’re all in this together, and I’ll do my best to make sure no one falls behind.
+Attending class is not optional: regular attendance is necessary to succeed in this course. Each day will have new content, activities, and learning opportunities. You’ll want to attend as much as possible to avoid falling behind. **If you have to miss class for any reason, please let me know in advance**, especially if you have to miss more than one class in a row. Missing class is not an excuse for missing assignment deadlines, being unprepared for the next class session, or falling behind on the homework. You are responsible for keeping up-to-date with the work of the course or for communicating with me about unexpected circumstances which change your ability to do so. You can always reach out to me or a classmate to find out what you missed. We’re all in this together, and I’ll do my best to make sure no one falls behind.
 
 ### Lateness and Extensions
 
@@ -33,7 +33,7 @@ But keep in mind: **I cannot accept any assignment more than 48 hours late.** As
 
 #### Longer Absences
 
-The guidelines above apply to typical short absences (missing just one class in a row and catching up on work as normal). However, I recognize that COVID and other issues may lead to an *extended* absence, when you might be out of class for several classes in a row, or even a week or more.
+The guidelines above apply to typical short absences (missing just one class in a row and catching up on work as normal). However, I recognize that illness and other issues may lead to an *extended* absence, when you might be out of class for several classes in a row, or even a week or more.
 
 In these cases, **it's your responsibility to contact me as soon as you know you'll be out**. Let me know how long you expect the absence to be, and we can talk through what some of the expectations will be during this time and how you will complete the work.
 
@@ -51,7 +51,10 @@ In general, when completing writing assignments, ensure all work is your own, an
 
 #### Academic Honesty & Coding
 
-These standards of academic integrity apply to coding as well as other kinds of classwork. Citation isn't just for papers! It's very common, and perfectly permissible, to borrow code snippets from a classmate or from somewhere online. When you do, make sure to include a note in your code's comments about where the code came from. Not only will this let you give appropriate intellectual credit and avoid plagiarism, it will also help you remember what you were trying to do when you revise your code later.
+These standards of academic integrity apply to coding as well as other kinds of classwork. Citation isn’t just for papers! It’s very common, and perfectly permissible, to borrow code snippets from a classmate or from somewhere online. When you do, make sure to include a note in your code’s comments about where the code came from. Keep in mind that this includes the use of any automated writing or code assistants like ChatGPT—any use of such programs should be cited like any website, with a link to the chat record. Not only will this let you give appropriate intellectual credit and avoid plagiarism, it will also help you remember what you were trying to do when you revise your code later.
+
+With regard to ChatGPT, Gemini, GitHub Copilot, or any related generative AI systems, keep in mind that in this class *you are only permitted to use these systems to help with your code, never with your writing*. If you do use a code assistant to help, you **must** cite what you used in a comment and include a link to the chat record. Using an AI code assistant without proper citation will result in a 0. **And keep in mind that these tools may not give you the best advice! It’s always better to work from our course materials or ask a classmate for help.**
+
 
 ### Names and Pronouns
 
@@ -60,6 +63,10 @@ Everyone has the right to be addressed as they feel most comfortable. It’s har
 ### Class Technology
 
 Please be respectful with your use of laptops and technology in class. I request that you only use them for class related purposes, as I and others may find them distracting (For example, no email or social media should be open in your browser tabs!). Cell phones should be kept silent and put away, and you can expect the same from me.
+
+### Email Response Time
+
+I encourage you to email me anytime with questions or thoughts about the class. It can sometimes take me up to 24 hours to respond to your message, but I will do my best to get back to you within that period. On the weekends (Friday 5pm–Monday 9am), the response time is 48 hours. This means that if you have a question about an assignment that you email to me the night before something is due, I may not be able to get back to you until after the assignment was due. In these cases, it’s best to plan ahead. But don’t hesitate to email whenever you have a question, and I’ll get back to you as soon as I can!
 
 ## Important Resources for this Class and Your College Journey
 
@@ -73,11 +80,7 @@ All the CIS PAL tutors are students who've taken multiple CIS classes before and
 
 What we do in college is not easy, on many fronts. Students are challenged with feelings of depression, anxiety, and self harm at astonishingly high rates. Learning is hard, and you will likely be challenged in college in ways that you haven’t experienced before. Learning while life is hard is even harder. Please take care of yourself. Drink water, eat well, and get more than seven hours of sleep. Have some hobbies, but don’t feel the need to do everything. If you are feeling depressed, withdrawn, anxious, like an impostor, or you are having specific problems with harassment, assault, bias, etc., please seek help. There are many resources on campus, and my door and email are always open.
 
-W&J faculty and staff recognize that mental or physical health concerns can affect any of us, and sometimes make it difficult for students to manage their academics or daily life. If you find yourself struggling this semester, please let me know. I am one of many people here at W&J who care about you and your welfare.
-
-Please also consider contacting the Student Health & Counseling Center (724) 223-6107 or the 24/7/365 Counseling Support Line (833) 434-1217, for support if you’re feeling stressed, overwhelmed, anxious, depressed, lost, or are struggling with personal issues. Services are free and confidential.
-
-Students have access to free, confidential in-the-moment counseling, self-help, and meditation programs including the prepaid version of HeadSpace, and online therapy options via (833) 434-1217 or the CampusWell app that you can download to your phone.
+W&J’s Student Health and Counseling Center offers confidential counseling services: <https://www.washjeff.edu/student-life/student-health-and-counseling-center/>
 
 ### Disability Support Services
 

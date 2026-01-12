@@ -1,12 +1,12 @@
 # Project 3: Predictive Network Analysis
 
-**Complete by: Saturday 11 May by 5pm**
+**Complete by: Sunday 3 May at 5pm**
 
-You've now learned a much wider array of techniques for working with networks, and it's time to apply those in a thirdd big project.  This third project will follow the same form as the second: you'll create a Jupyter notebook report that explores a question about a network of your choice.
+You've now learned a much wider array of techniques for working with networks, and it's time to apply those in a third big project.  This third project will follow the same form as the second: you'll create a Jupyter notebook report that explores a question about a network of your choice.
 
 To choose a dataset, refer to our [Network Datasets](../resources/datasets.md) page. You may use the same dataset you used for either of the previous assignments if you so choose, but keep in mind that if you are interested in a particular techinique, you'll want to choose a network that makes sense for that technique. A good example of this might be: you can't do an analysis of structural balance if your network doesn't have signed edges!
 
-**On Thursday 18 April (by our class time, 12:50pm), you'll turn in a one-page proposal that suggests a dataset and gives some possible research questions, with a paragraph or two explaining the steps you plan to take. This will allow us to meet and discuss your project over the next few weeks.**
+**On Thursday 9 April (by our class time), you'll turn in a one-page proposal that suggests a dataset and gives some possible research questions, with a paragraph or two explaining the steps you plan to take. This will allow us to meet and discuss your project over the next few weeks.**
 
 ## Step 1: Ask a Question
 

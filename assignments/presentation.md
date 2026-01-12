@@ -1,6 +1,6 @@
 # Presentation: Shared Challenges
 
-**Open House date: Tuesday 7 May at 12:50pm**
+**Scholars Day: Tuesday 28 Apr. 2–3:50pm**
 
 All semester long, you've worked with your classmates to think through an array of complex network analysis methods. Now that you're working on your final projects, it's time to share this knowledge with the wider world!
 

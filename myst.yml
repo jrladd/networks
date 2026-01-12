@@ -10,6 +10,8 @@ project:
     - format: pdf
       template: plain_latex_book
       output: exports/book.pdf
+  exclude:
+    - analyze/homophily.ipynb
   toc:
     - file: intro.md
     - title: Network Concepts
@@ -28,7 +30,6 @@ project:
           children:
             - file: analyze/networkx.ipynb
             - file: analyze/metrics.ipynb
-            - file: analyze/homophily.ipynb
             - file: analyze/community.ipynb
             - file: analyze/node2vec.ipynb
         - title: Special Networks
@@ -47,6 +48,7 @@ project:
             - file: assignments/descriptive.md
             - file: assignments/predictive.md
             - file: assignments/presentation.md
+              hidden: true
         - title: Homework
           children:
             - file: homework/01_python.ipynb
@@ -71,6 +73,7 @@ project:
 site:
   title: "Network Analysis in Python"
   options:
+    favicon: logo_gephi.png
     logo: logo_gephi.png
     logo_text: Network Analysis in Python
     folders: true
