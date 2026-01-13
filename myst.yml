@@ -73,7 +73,7 @@ project:
 site:
   title: "Network Analysis in Python"
   options:
-    favicon: logo_gephi.png
+    favicon: spiderweb.png
     logo: logo_gephi.png
     logo_text: Network Analysis in Python
     folders: true
