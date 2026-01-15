@@ -2,7 +2,7 @@
 
 This page will help you make sure you are set up to use Python and Jupyter Lab on your own computer as well as in the classroom. You will use the Jupyter Notebook file `getting_started.ipynb` linked below and also available in the Python folder in the Resources tab to test that you are set up properly. (When you get to the page, download it with the download icon at the top right.)
 
-<a href="../homework/00_getting_started.html">getting_started.ipynb</a>
+<a href="../homework/getting-started">getting_started.ipynb</a>
 
 ## Getting Set Up In The Classroom
 

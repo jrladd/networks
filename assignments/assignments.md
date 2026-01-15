@@ -6,6 +6,10 @@ Some of these assignments, especially Projects 2 & 3, will take the form of Jupy
 
 You can also view the weekly homework assignments (see dropdown at left).
 
+**All assignments will be turned in via Github Classroom. For this, you will need to set up a [Github](https://github.com/) account (with [Github Education](https://github.com/education/students) enabled, for extra features). Links to our Github Classroom assignments are on Sakai.**
+
+*The homework assignments will be collected in one Github Classroom assignment repo that you will update throughout the semester. That link is also on Sakai.*
+
 ## Assignment Breakdown
 
 Assignment|Percentage

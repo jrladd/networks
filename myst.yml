@@ -51,6 +51,7 @@ project:
               hidden: true
         - title: Homework
           children:
+            - file: homework/00_getting_started.ipynb
             - file: homework/01_python.ipynb
             - file: homework/02_centrality.ipynb
             - file: homework/03_visualization.ipynb
