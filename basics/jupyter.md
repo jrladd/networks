@@ -1,8 +1,8 @@
 # Set Up Jupyter Lab
 
-This page will help you make sure you are set up to use Python and Jupyter Lab on your own computer as well as in the classroom. You will use the Jupyter Notebook file `getting_started.ipynb` linked below and also available in the Python folder in the Resources tab to test that you are set up properly. (When you get to the page, download it with the download icon at the top right.)
+This page will help you make sure you are set up to use Python and Jupyter Lab on your own computer as well as in the classroom. You will use the Jupyter Notebook file `getting_started.ipynb` linked below.
 
-<a href="../homework/getting-started">getting_started.ipynb</a>
+[getting_started.ipynb](/homework/00_getting_started.ipynb)
 
 ## Getting Set Up In The Classroom
 
@@ -12,8 +12,8 @@ To use python in the classroom, we will use the Anaconda package already install
 
 1. Create a folder in your share space (that is, your H: drive) with a name like "python" or "CIS397".
 2. Download and save the getting_started.ipynb file linked above to that folder
-3. Download the <a href="https://jrladd.com/CIS241/resources/Jupyter.txt" download>Jupyter.txt</a> file linked here and save it to the desktop
-4. Rename the `Jupyter.txt` file to `Jupyter.bat`
+3. Download the [Jupyter.txt](/resources/Jupyter.txt) file linked here and save it to the desktop
+4. Rename the `Jupyter.txt` file to `Jupyter.bat` (There may be additional numbers and letters in the filename: you can remove those.)
 5. Double click the `Jupyter.bat` icon to launch Jupyter Lab
 6. In the interface that appears, navigate to the folder you created with the `getting_started.ipynb` file in it
 7. Click on the `getting_started.ipynb` file to open it; you should see a collection of Python code and markdown comments, broken up between a number of boxes/cells
