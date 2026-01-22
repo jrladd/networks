@@ -18,3 +18,8 @@ No matter where your data came from, **remember to always appropriately cite you
 - [CoW Dataset](../data/Cow_edit.net) (This dataset of international relations is derived from the [Correlates of War Project](https://correlatesofwar.org/).)
 - [KONECT datasets](http://konect.cc/networks/): The Koblenz Network Collection
 - The temporal Quaker network data: [Edgelist](../data/quaker_edgelist.csv), [Nodelist](../data/quaker_nodelist.csv)
+
+## Other Resources
+
+- [Centrality Zoo](https://centralityzoo.github.io/)
+- [Martin Grandjean](https://www.martingrandjean.ch/)
