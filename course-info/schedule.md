@@ -10,6 +10,8 @@ Easley, David and John Kleinberg. [*Networks, Crowds, and Markets: Reasoning Abo
 
 Ahnert, Ruth, et al. [*The Network Turn: Changing Perspectives in the Humanities*](https://doi.org/10.1017/9781108866804). Cambridge UP, 2020. (NT)
 
+Wilke, Claus O. [*Fundamentals of Data Visualization*](https://clauswilke.com/dataviz/). O'Reilly, 2019. (Wilke)
+
 ## Class Schedule
 
 **All assignments are due at class time (12:50pm). Readings should be done by Tuesday of the week they're listed.**
@@ -19,7 +21,7 @@ Date|Topics & Slides|Readings|Assignments
 13 & 15 Jan.|Basics: Working with Network Data & The History of Network Analysis|NT Intro & Ch. 1
 20 & 22 Jan.|Basics: Network Metrics & Centrality, The Small World|NCM Ch. 2|Homework 1 Due 1/22
 27 & 29 Jan.|Visualization: Gephi|NT Ch. 4|Homework 2 Due 1/29
-3 & 5 Feb.|Visualization: Python, Layout Algorithms||Homework 3 Due 2/5
+3 & 5 Feb.|Visualization: Python, Layout Algorithms|Wilke Ch. 4, 19, & *especially* 29|Homework 3 Due 2/5
 10 & 12 Feb.|Community Structure: Strong & Weak Ties, Triadic Closure|NCM Ch. 3|**Project 1 Due 2/10**
 17 & 19 Feb.|Community Structure: Homophily, Community Detection|NCM Ch. 4|Homework 4 Due 2/17
 24 & 26 Feb.|Work on Project 2||**Bring Project 2 Dataset & Question 2/24**; Homework 5 Due 2/26

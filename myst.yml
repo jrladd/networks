@@ -38,7 +38,7 @@ project:
             - file: special/bipartite.ipynb
             - file: special/dynamic.ipynb
         - file: creating.md
-    - title: CIS 345/397
+    - title: CIS 345
       children:
         - file: course-info/general-info.md
         - file: course-info/schedule.md
