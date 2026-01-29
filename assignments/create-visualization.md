@@ -1,6 +1,6 @@
 # Project 1: Create a Visualization
 
-**Complete by: Tuesday 12 Feb. at class time**
+**Complete by: Tuesday 10 Feb. at class time**
 
 Now that you've learned some of the principles and techniques behind network visualization, you'll create your own visualization. You'll complete the following two items:
 
