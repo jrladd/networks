@@ -1,3 +1,7 @@
+# Set Up an IDE or Programming Environment
+
+You can use any Python environment you like for this class, as long as you complete all the requirements of each assignment. Below are suggestions for two interactive notebook formats: Jupyter and Marimo.
+
 # Set Up Jupyter Lab
 
 This page will help you make sure you are set up to use Python and Jupyter Lab on your own computer as well as in the classroom. You will use the Jupyter Notebook file `getting_started.ipynb` linked below.
@@ -30,3 +34,19 @@ To use python on your own computer, you will install Anaconda, available at http
 5. In the interface that appears, navigate through the directories/folders on your computer to the space where you have saved the getting_started.ipynb file.
 6. Click on the getting_started.ipynb file to open it; you should see a collection of Python code and markdown comments, broken up between a number of boxes/cells
 7. Follow the instructions in the file to run the code and review the output
+
+# Set Up Marimo
+
+[Marimo](https://docs.marimo.io/) is a newer type of interactive Python notebook
+
+## Getting Set Up In The Classroom
+
+1. In a Powershell window, run `python.exe`.
+2. This command should launch the Windows store, where you can download and install Python.
+3. Once Python is installed, install Marimo in Powershell with `pip.exe install marimo`. (You will need to use the same method to install other necessary libraries, such as `networkx` and `pandas`.)
+4. In Powershell navigate to your H-drive by running `cd H:\`.
+5. Launch Marimo with the command `marimo edit`.
+
+## Getting Set Up On Your Own Computer
+
+Follow the [Quickstart Guide](https://docs.marimo.io/#quickstart) on Marimo's website. Once it's installed, you will use the same command to launch Marimo on your own computer: `marimo edit`.

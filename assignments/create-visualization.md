@@ -31,7 +31,7 @@ All of these datasets are in GML format, which is compatible with most of the so
 
 **Requirements**:
 
-- Turn in your assignment via Sakai.
+- Turn in your assignment via Github Classroom.
 - For your written explanation, submit a PDF that has your name, the date, your wordcount, and the citation for the dataset you used at the top. (You can find citations on Newman's website.) If your prefer, you can include the writing in your Jupyter HTML instead.
-- For your Gephi visualization, you should submit an image file on Sakai (and it may also be useful to include it in your Jupyter notebook). For your Python visualization, you should submit a Jupyter HTML export or another file with your visualization in it. It is your responsibility to make sure that your network is complete and viewable by the deadline.
+- For your Gephi visualization, you should submit a png file (and it may also be useful to include it in your Jupyter notebook). For your Python visualization, you should submit a Jupyter HTML export or another file with your visualization in it. It is your responsibility to make sure that your network is complete and viewable by the deadline.
 - Explanation should be 2-3 paragraphs, about 300-400 words.
