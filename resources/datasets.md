@@ -23,3 +23,5 @@ No matter where your data came from, **remember to always appropriately cite you
 
 - [Centrality Zoo](https://centralityzoo.github.io/)
 - [Martin Grandjean](https://www.martingrandjean.ch/)
+- [Historical Network Research Journal](https://historicalnetworkresearch.org/jhnr/)
+- [Applied Network Science Journal](https://link.springer.com/journal/41109/articles)
