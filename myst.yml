@@ -62,10 +62,6 @@ project:
             - file: homework/05_homophily.ipynb
             - file: homework/06_signed.ipynb
             - file: homework/07_directed.ipynb
-            - file: homework/08_multipartite.ipynb
-            - file: homework/09_cascades.ipynb
-            - file: homework/10_epidemics.ipynb
-            - file: homework/11_search.ipynb
         - file: course-info/course-policies.md
           children:
             - file: course-info/criteria.md
