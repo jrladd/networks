@@ -12,6 +12,10 @@ project:
       output: exports/book.pdf
   exclude:
     - analyze/homophily.ipynb
+    - homework/08_multipartite.ipynb
+    - homework/09_cascades.ipynb
+    - homework/10_epidemics.ipynb
+    - homework/11_search.ipynb
   toc:
     - file: intro.md
     - title: Network Concepts
