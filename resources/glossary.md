@@ -111,9 +111,12 @@
 - **hypergraph**: another kind of network representing group affiliation, in which nodes are placed into groups rather than mapped to specific connections.
 - **hyperedge**: the assignment to overlapping groups that occurs in a hypergraph. Hyperedges are usually visually represented as curving areas drawn around groups of nodes.
 - **projection**: the process of turning a bipartite network into a unipartite network by turning one node set into the new network's nodes and the second node set into its edges.
-- **multilayer network**: a network with more than type of edges, usually organized into "layers."
+- **multilayer network**: a network with more than one type of edge, usually organized into "layers." NetworkX refers to this as a `Multigraph`.
 - **temporal/dynamic network**: a special kind of multilayer network showing change over time, in which the nodes are persistent but the edges change over time. A temporal network is a type of "multiplex" network, i.e. a multilayer network with nodes that persist across layers.
 - **topological overlap**: the amount of agreement or similarity between edges across layers in a multilayer network, usually expressed as a value between 0 and 1. A network that stays relatively the same over time will have high topological overlap.
+- **time-respecting path**: a network path that respects the time ranges and attributes set by a dynamic network. In a time-respecting path, the next edge of the path cannot be before the previous one.
+- **shortest distance**: the distance of a time-respecting path in terms of the number of edges (the same as standard distance, but with a time-constraint).
+- **fastest distance**: the distance of a time-respecting path in terms of the time it takes to get from one node to another.
 
 ## Network Behavior
 
