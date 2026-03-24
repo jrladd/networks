@@ -1,4 +1,4 @@
-# Presentation: Shared Challenges
+# Presentation: Scholars Day
 
 **Scholars Day: Tuesday 28 Apr. 2–3:50pm**
 
