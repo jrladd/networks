@@ -52,7 +52,6 @@ project:
             - file: assignments/descriptive.md
             - file: assignments/predictive.md
             - file: assignments/presentation.md
-              hidden: true
         - title: Homework
           children:
             - file: homework/01_python.ipynb

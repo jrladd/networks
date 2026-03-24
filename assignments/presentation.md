@@ -2,20 +2,22 @@
 
 **Scholars Day: Tuesday 28 Apr. 2–3:50pm**
 
-All semester long, you've worked with your classmates to think through an array of complex network analysis methods. Now that you're working on your final projects, it's time to share this knowledge with the wider world!
+On the afternoon of Scholars Day, you'll present your project *asynchronously* to the wider college community. Like other Scholars Day events for 300-level CIS courses, this is a drop-in event where people will be walking in and out. You should be prepared to discuss your project in about 5–10 minutes alongside some engaging visuals.
 
-In groups you will discuss your third (predictive) network analysis projects and identify a **shared challenge** that will become the topic of your presentation. A shared challenge is something that applies to all of your projects: a topic, process, or method that you all worked with in different ways. *Your goal is to explain this shared challenge to an audience of people who might not know anything about network analysis. You will need to clearly explain (1) the challenge itself, (2) any background information necessary to understand the problem, and (3) how it applies to each of your projects.*
+**You are required to be present for at least an hour of the CIS Open House on Scholars Day.** You will be expected to have your materials available for attendees to review for the entire duration of the open house. For at least an hour of the open house, you will need to be present to welcome attendees to interact with your content and answer questions. During that time, you should also be prepared to help attendees interact with content from any classmates who are not present at that moment. *If you are presenting with a partner, you must both be there for at least an hour, but it doesn't need to be the same hour. All members of your team should be able to speak about the whole project.*
 
-Examples of shared challenges might be:
+**Your plans for sharing information with your class and the broader community must allow them to consume information about your project in an asynchronous manner.** The goal is information sharing, but not through scheduled in-class presentations. The audience here is the overall college community, but you still must communicate completely and accurately. As a target, your content should be reasonable for an interested community member to consume in 5-10 minutes, so editing will be a major part of your task in preparing this content.
 
-- Change over time: everyone in the group is working on how networks change over time, but some people are using multilayer networks, others are looking at cascades, and others are using a machine learning model.
-- Supplementing datasets: everyone in the group needs to add additional data to their network in order to answer their research questions. But they're each using the additional data to do something different.
-- Biological network: everyone in the group is working on a biological or ecological network dataset. Because biological networks have different properties than social networks, each group member has some different approaches in mind.
+You have some freedom to choose exactly what content to share. There will be computers around the room and also space on the board to display print or digital materials. You may also bring laptops or other devices to display content.
 
-As the above examples illustrate, your shared challenge can come from any stage of the data analysis process: it can be about data collection and wrangling, similar subject matter, or a shared methodological problem. No matter what you choose, the challenge should be clearly defined and it should apply to everyone in the group.
+Your presentation content should include the following:
 
-On the final day of class, we'll have an open house for you to present your shared challenges to me and the other attendees! The central goal here is to practice explaining network analysis to others clearly and in detail. Your presentation should be about 5 minutes long---short enough that you can repeat it as different people join you to listen. Think of this a bit like the poster session: you'll have a presentation set up, and attendees will walk by to hear what you have to say and ask questions. You should be prepared to give an overview of your shared challenge and how it applies to each of your projects, and you should also be ready to answer questions and dig more deeply into the details if asked.
+- A way of sharing and explaining your central research questions
+- A way of explaining your methods and initial findings
+- At least two network visualizations that show key findings and make an *argument* about your network
 
-You will prepare a 7-slide deck that describes your shared challenge and gives you something to talk through. These will be set up on a short loop during the open house, but you can also stop them and return to a specific slide if you need to. The slide structure should include: (1) a title slide that includes all of your names, (2 & 3) two slides defining and explaining your shared challenge, and (4-7) four slides, one for each of your projects showing how the challenge applies to your network project specifically. You should work to make these slides visually engaging as you'll be using them to grab people's attention. 
+This should *not* be a traditional slide presentation, since most attendees will not have time to view multiple slideshows in a row. You are encouraged to get creative and think carefully about what will make for an effective walkthrough presentation.
 
-I will assign the groups and post them on Sakai. After the presentation, you'll fill out a short form to assess your own contributions and those of your groupmates. You'll be assessed based on your prepared presentation, your ability to answer questions about your presentation, and your team-assessment form.
+**You will turn in your presentation materials on the last day of class, Thursday 23 Apr.** This will give us a chance to review and discuss your materials before Scholars Day.
+
+<small>(With thanks to AMH for some of the language in this prompt!)</small>
