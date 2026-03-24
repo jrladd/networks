@@ -29,7 +29,7 @@ Date|Topics & Slides|Readings|Assignments
 10 & 12 Mar.|NO CLASS: Spring Break
 17 & 19 Mar.|Special Networks:  Directed Networks & the Web|NCM Ch. 13|Homework 6 Due 3/19
 24 & 26 Mar.|Special Networks: Multipartite, Dynamic & Multilayer Networks||**Project 2 Due 3/24**; Homework 7 Due 3/26
-31 Mar. & 2 Apr.|Behavior: Cascades|NCM Ch. 19|**Project 3 Proposal Due 4/2**; Homework 8 Due 4/2
+31 Mar. & 2 Apr.|Behavior: Cascades|NCM Ch. 19|**Project 3 Proposal Due 4/2**; [Homework 8](https://classroom.github.com/a/ppQm1hg-) Due 4/2
 7 & 9 Apr.|Behavior: Epidemics|NCM Ch. 21|Homework 9 Due 4/9
 14 & 16 Apr.|Behavior: Search Algorithms & Statistical Modeling|NCM Ch. 14|Homework 10 Due 4/16
 21 & 23 Apr.|Work on Projects & Presentations||**Presentation Materials Due 4/23**; Homework 11 Due 4/23
