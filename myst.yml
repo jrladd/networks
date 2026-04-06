@@ -26,10 +26,7 @@ project:
         - file: basics/python.ipynb
         - file: basics/pandas.ipynb
         - file: basics/altair.ipynb
-        - file: visualization/visualization.md
-          title: Visualization Basics
         - file: visualization/python-visualization.ipynb
-          title: Visualize with Python
         - file: analyze/networkx.ipynb
           title: NetworkX Basics
         - file: analyze/metrics.ipynb
@@ -37,8 +34,6 @@ project:
         - file: analyze/community.ipynb
         - file: analyze/node2vec.ipynb
         - file: special/directed.ipynb
-        - file: special/bipartite.ipynb
-        - file: special/dynamic.ipynb
     - title: CIS 345
       children:
         - file: course-info/general-info.md
