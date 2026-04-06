@@ -32,8 +32,8 @@ project:
         - file: analyze/metrics.ipynb
           title: NetworkX Metrics
         - file: analyze/community.ipynb
-        - file: analyze/node2vec.ipynb
         - file: special/directed.ipynb
+        - file: analyze/node2vec.ipynb
     - title: CIS 345
       children:
         - file: course-info/general-info.md
