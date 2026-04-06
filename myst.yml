@@ -20,27 +20,25 @@ project:
     - file: intro.md
     - title: Network Concepts
       children:
+        - file: creating.md
         - file: basics/jupyter.md
           title: Set Up an IDE
         - file: basics/python.ipynb
         - file: basics/pandas.ipynb
         - file: basics/altair.ipynb
-        - title: Visualizing Networks
-          children:
-            - file: visualization/visualization.md
-            - file: visualization/python-visualization.ipynb
-        - title: Analyzing Networks
-          children:
-            - file: analyze/networkx.ipynb
-            - file: analyze/metrics.ipynb
-            - file: analyze/community.ipynb
-            - file: analyze/node2vec.ipynb
-        - title: Special Networks
-          children:
-            - file: special/directed.ipynb
-            - file: special/bipartite.ipynb
-            - file: special/dynamic.ipynb
-        - file: creating.md
+        - file: visualization/visualization.md
+          title: Visualization Basics
+        - file: visualization/python-visualization.ipynb
+          title: Visualize with Python
+        - file: analyze/networkx.ipynb
+          title: NetworkX Basics
+        - file: analyze/metrics.ipynb
+          title: NetworkX Metrics
+        - file: analyze/community.ipynb
+        - file: analyze/node2vec.ipynb
+        - file: special/directed.ipynb
+        - file: special/bipartite.ipynb
+        - file: special/dynamic.ipynb
     - title: CIS 345
       children:
         - file: course-info/general-info.md
