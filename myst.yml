@@ -20,12 +20,11 @@ project:
     - file: intro.md
     - title: Network Concepts
       children:
-        - title: Data Basics
-          children:
-            - file: basics/jupyter.md
-            - file: basics/python.ipynb
-            - file: basics/pandas.ipynb
-            - file: basics/altair.ipynb
+        - file: basics/jupyter.md
+          title: Set Up an IDE
+        - file: basics/python.ipynb
+        - file: basics/pandas.ipynb
+        - file: basics/altair.ipynb
         - title: Visualizing Networks
           children:
             - file: visualization/visualization.md
