@@ -77,14 +77,10 @@ site:
         url: /basics/python
       - title: Pandas
         url: /basics/pandas
-      - title: Altair
-        url: /basics/altair
-      - title: Overview of Visualization
-        url: /visualization/visualization
-      - title: Working with Graph Objects
+      - title: Visualization
+        url: /visualization/python-visualization
+      - title: NetworkX
         url: /analyze/networkx
-      - title: Creating a Network
-        url: /creating
   - title: CIS 345
     children:
       - title: Course Info
