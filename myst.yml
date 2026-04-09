@@ -20,9 +20,6 @@ project:
     - file: intro.md
     - title: Network Concepts
       children:
-        - file: creating.md
-        - file: basics/jupyter.md
-          title: Set Up an IDE
         - file: basics/python.ipynb
         - file: basics/pandas.ipynb
         - file: basics/altair.ipynb
@@ -59,6 +56,9 @@ project:
             - file: course-info/ground-rules.md
     - title: Resources
       children:
+        - file: creating.md
+        - file: basics/jupyter.md
+          title: Set Up an IDE
         - file: resources/datasets.md
         - file: resources/glossary.md
 site:
@@ -93,6 +93,10 @@ site:
         url: /course-info/course-policies
   - title: Resources
     children:
+      - title: Creating a Network 
+        url: creating.md
+      - title: Set Up an IDE
+        url: basics/jupyter.md
       - title: Where to Find Network Data
         url: /resources/datasets
       - title: Key Terms and Definitions
