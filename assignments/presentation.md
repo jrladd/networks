@@ -18,6 +18,6 @@ Your presentation content should include the following:
 
 This should *not* be a traditional slide presentation, since most attendees will not have time to view multiple slideshows in a row. You are encouraged to get creative and think carefully about what will make for an effective walkthrough presentation.
 
-**You will turn in your presentation materials on the last day of class, Thursday 23 Apr.** This will give us a chance to review and discuss your materials before Scholars Day.
+**You will [turn in your presentation materials](https://classroom.github.com/a/mZP2_077) on the last day of class, Thursday 23 Apr.** This will give us a chance to review and discuss your materials before Scholars Day.
 
 <small>(With thanks to AMH for some of the language in this prompt!)</small>
