@@ -32,5 +32,5 @@ Date|Topics & Slides|Readings|Assignments
 31 Mar. & 2 Apr.|Behavior: Cascades|NCM Ch. 19|**Project 3 Proposal Due 4/2**; [Homework 8](https://classroom.github.com/a/ppQm1hg-) Due 4/2
 7 & 9 Apr.|Behavior: Epidemics|NCM Ch. 21|[Homework 9](https://classroom.github.com/a/SEaz-oto) Due 4/9
 14 & 16 Apr.|Behavior: Search Algorithms & Statistical Modeling|NCM Ch. 14|[Homework 10](https://classroom.github.com/a/N-2VvtBe) Due 4/16
-21 & 23 Apr.|Work on Projects & Presentations||**[Presentation Materials](https://classroom.github.com/a/mZP2_077) Due 4/23**; Homework 11 Due 4/23
+21 & 23 Apr.|Work on Projects & Presentations||**[Presentation Materials](https://classroom.github.com/a/mZP2_077) Due 4/23**; [Homework 11](https://classroom.github.com/a/DgBySz21) Due 4/23
 28 Apr. **2pm–2:50pm**|CIS Open House on Scholars Day!||**Project 3 Due Sun. 3 May at 5pm**
