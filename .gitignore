@@ -1,7 +1,12 @@
 .ipynb_checkpoints/
-pyproject.toml
-uv.lock
 .venv/
+.claude/
+.DS_Store
 
-# MyST build outputs
+# Quarto build output
+_site/
+/.quarto/
+**/*.quarto_ipynb
+
+# Legacy Jupyter Book build output
 _build
