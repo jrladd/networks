@@ -1,0 +1,113 @@
+project:
+  type: website
+  render:
+    - "*.md"
+    - "**/*.md"
+    - "**/*.ipynb"
+    - "!README.md"
+    - "!analyze/analyzing-networks.md"
+    - "!analyze/homophily.ipynb"
+    - "!basics/data-basics.md"
+    - "!homework/00_getting_started.ipynb"
+    - "!homework/08_multipartite.ipynb"
+    - "!homework/09_cascades.ipynb"
+    - "!homework/10_epidemics.ipynb"
+    - "!homework/11_search.ipynb"
+    - "!homework/homework.md"
+    - "!special/bipartite.ipynb"
+    - "!special/dynamic.ipynb"
+    - "!special/special-networks.md"
+    - "!visualization/visualization.md"
+    - "!visualization/visualizing-networks.md"
+
+website:
+  title: "Network Analysis in Python"
+  favicon: spiderweb.png
+  repo-url: https://github.com/jrladd/networks
+  repo-actions: [edit, source, issue]
+  page-navigation: true
+  navbar:
+    logo: logo.svg
+    title: "Network Analysis in Python"
+    left:
+      - text: "Network Concepts"
+        menu:
+          - text: "Python"
+            href: basics/python.ipynb
+          - text: "Pandas"
+            href: basics/pandas.ipynb
+          - text: "Visualization"
+            href: visualization/python-visualization.ipynb
+          - text: "NetworkX"
+            href: analyze/networkx.ipynb
+      - text: "CIS 345"
+        menu:
+          - text: "Course Info"
+            href: course-info/general-info.md
+          - text: "Schedule & Readings"
+            href: course-info/schedule.md
+          - text: "Assignments"
+            href: assignments/assignments.md
+          - text: "Course Policies"
+            href: course-info/course-policies.md
+      - text: "Resources"
+        menu:
+          - text: "Creating a Network"
+            href: creating.md
+          - text: "Set Up an IDE"
+            href: basics/jupyter.md
+          - text: "Where to Find Network Data"
+            href: resources/datasets.md
+          - text: "Key Terms and Definitions"
+            href: resources/glossary.md
+  sidebar:
+    contents:
+      - section: "Network Concepts"
+        contents:
+          - basics/python.ipynb
+          - basics/pandas.ipynb
+          - basics/altair.ipynb
+          - visualization/python-visualization.ipynb
+          - analyze/networkx.ipynb
+          - analyze/metrics.ipynb
+          - analyze/community.ipynb
+          - special/directed.ipynb
+          - analyze/node2vec.ipynb
+      - section: "CIS 345"
+        contents:
+          - course-info/general-info.md
+          - course-info/schedule.md
+          - section: assignments/assignments.md
+            contents:
+              - assignments/create-visualization.md
+              - assignments/descriptive.md
+              - assignments/predictive.md
+              - assignments/presentation.md
+          - section: "Homework"
+            contents:
+              - homework/01_python.ipynb
+              - homework/02_centrality.ipynb
+              - homework/03_visualization.ipynb
+              - homework/04_clustering.ipynb
+              - homework/05_homophily.ipynb
+              - homework/06_signed.ipynb
+              - homework/07_directed.ipynb
+          - section: course-info/course-policies.md
+            contents:
+              - course-info/criteria.md
+              - course-info/ground-rules.md
+      - section: "Resources"
+        contents:
+          - creating.md
+          - href: basics/jupyter.md
+            text: "Set Up an IDE"
+          - resources/datasets.md
+          - resources/glossary.md
+
+execute:
+  freeze: auto
+
+format:
+  html:
+    toc: true
+    theme: cosmo
